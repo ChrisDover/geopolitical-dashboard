@@ -1,0 +1,548 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-11-18T00:00:00Z",
+    "totalCapital": 118500,
+    "deployedCapital": 32800,
+    "cashReserve": 85700,
+    "totalPositions": 8,
+    "realizedPnL": 12400,
+    "unrealizedPnL": 6100
+  },
+  "portfolioThesis": {
+    "title": "Geopolitical Risk Arbitrage - Underpriced Tail Events",
+    "summary": "Markets systematically misprice geopolitical tail risk due to recency bias and institutional risk aversion. We exploit market inefficiencies by taking long positions in underpriced conflict scenarios and short positions in overpriced fear trades.",
+    "coreBeliefs": [
+      "Prediction markets underestimate Middle East escalation risk (Iran-Israel, Saudi-Iran)",
+      "Markets overestimate direct China-Taiwan invasion probability (institutions anchored to Ukraine analogy)",
+      "South China Sea confrontation risk is significantly mispriced given naval buildups",
+      "North Korea crisis probability is elevated due to Kim's health uncertainties",
+      "Market participants anchor to recent headlines rather than fundamental probability drivers"
+    ],
+    "edgeSources": [
+      "Proprietary geopolitical risk model incorporating 15+ fundamental factors",
+      "Real-time GDELT news analysis for event probability updates",
+      "Faster information processing than prediction market participants",
+      "Contrarian positioning against institutional fear-driven mispricing"
+    ],
+    "riskManagement": "Conservative 30-40% capital deployment with strict stop losses. Each position sized at 0.5-3% of capital. Diversified across 8 uncorrelated scenarios. Cash reserve maintained for opportunistic deployment.",
+    "yearToDatePerformance": "+18.5% vs S&P 500 +24.2% (Alpha: -5.7%)",
+    "performanceAttribution": "Strong gains from Iran-Israel escalation trades (+$4.2k), South China Sea positioning (+$3.8k), and early North Korea shorts (+$2.1k). Underperformance vs equities due to cash drag (60%+ cash position) and hedging costs."
+  },
+  "positions": [
+    {
+      "id": "pos-001",
+      "scenario": "Iran-Israel War Q1 2026",
+      "market": "Polymarket",
+      "marketUrl": "https://polymarket.com/event/iran-israel-war-q1-2026",
+      "side": "YES",
+      "contracts": 8500,
+      "entryPrice": 0.32,
+      "currentPrice": 0.44,
+      "costBasis": 2720,
+      "currentValue": 3740,
+      "unrealizedPnL": 1020,
+      "unrealizedPnLPercent": 37.50,
+      "openDate": "2025-03-15T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model shows 48% vs market 32% at entry - massive 16% edge. Hezbollah-Israel border war escalating, Iran nuclear breakout capacity reached. Scaled position 3x since entry as thesis validated.",
+      "targetExit": 0.55,
+      "stopLoss": 0.38
+    },
+    {
+      "id": "pos-002",
+      "scenario": "US-Venezuela 2026",
+      "market": "Polymarket",
+      "marketUrl": "https://polymarket.com/event/us-venezuela-2026",
+      "side": "YES",
+      "contracts": 4200,
+      "entryPrice": 0.18,
+      "currentPrice": 0.28,
+      "costBasis": 756,
+      "currentValue": 1176,
+      "unrealizedPnL": 420,
+      "unrealizedPnLPercent": 55.56,
+      "openDate": "2025-07-22T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model 32% vs market 18% at entry - Maduro regime crumbling, oil production collapse, border tensions with Colombia. Market severely underpriced intervention probability.",
+      "targetExit": 0.38,
+      "stopLoss": 0.22
+    },
+    {
+      "id": "pos-003",
+      "scenario": "South China Sea Confrontation 2026",
+      "market": "Polymarket",
+      "marketUrl": null,
+      "side": "YES",
+      "contracts": 11000,
+      "entryPrice": 0.14,
+      "currentPrice": 0.26,
+      "costBasis": 1540,
+      "currentValue": 2860,
+      "unrealizedPnL": 1320,
+      "unrealizedPnLPercent": 85.71,
+      "openDate": "2025-02-08T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model 31% vs market 14% at entry - MASSIVE 17% edge. Chinese island fortification accelerating, Philippines requesting additional US naval presence. Best trade of the year.",
+      "targetExit": 0.35,
+      "stopLoss": 0.20
+    },
+    {
+      "id": "pos-004",
+      "scenario": "North Korea Crisis 2026",
+      "market": "Kalshi",
+      "marketUrl": "https://kalshi.com/events/NK-CRISIS-2026",
+      "side": "YES",
+      "contracts": 6500,
+      "entryPrice": 0.22,
+      "currentPrice": 0.31,
+      "costBasis": 1430,
+      "currentValue": 2015,
+      "unrealizedPnL": 585,
+      "unrealizedPnLPercent": 40.91,
+      "openDate": "2025-09-15T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model 36% vs market 22% - Kim health concerns resurfacing, military purges, nuclear test preparation detected. Flipped from short to long position.",
+      "targetExit": 0.40,
+      "stopLoss": 0.26
+    },
+    {
+      "id": "pos-005",
+      "scenario": "India-Pakistan Kashmir 2026",
+      "market": "Polymarket",
+      "marketUrl": null,
+      "side": "YES",
+      "contracts": 3200,
+      "entryPrice": 0.12,
+      "currentPrice": 0.19,
+      "costBasis": 384,
+      "currentValue": 608,
+      "unrealizedPnL": 224,
+      "unrealizedPnLPercent": 58.33,
+      "openDate": "2025-06-11T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model 21% vs market 12% - Cross-border terrorism increasing, India election rhetoric hawkish, Pakistan economic crisis forcing aggressive posture.",
+      "targetExit": 0.25,
+      "stopLoss": 0.14
+    },
+    {
+      "id": "pos-006",
+      "scenario": "Russia-NATO 2026",
+      "market": "Polymarket",
+      "marketUrl": "https://polymarket.com/event/russia-nato-2026",
+      "side": "NO",
+      "contracts": 28000,
+      "entryPrice": 0.11,
+      "currentPrice": 0.04,
+      "costBasis": 3080,
+      "currentValue": 1120,
+      "unrealizedPnL": -1960,
+      "unrealizedPnLPercent": -63.64,
+      "openDate": "2025-04-13T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Selling NO at 11% (model shows 5%) - market massively overpricing direct NATO conflict. Ukraine stalemate, Russia exhausted. WORST POSITION - considering stop loss.",
+      "targetExit": 0.03,
+      "stopLoss": 0.06
+    },
+    {
+      "id": "pos-007",
+      "scenario": "Saudi-Iran Regional War 2026",
+      "market": "Kalshi",
+      "marketUrl": null,
+      "side": "YES",
+      "contracts": 5800,
+      "entryPrice": 0.16,
+      "currentPrice": 0.25,
+      "costBasis": 928,
+      "currentValue": 1450,
+      "unrealizedPnL": 522,
+      "unrealizedPnLPercent": 56.25,
+      "openDate": "2025-05-14T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Model 27% vs market 16% - Yemen Houthi attacks on Saudi infrastructure, Iran-backed militias expanding, normalization talks collapsed. Red Sea shipping disrupted.",
+      "targetExit": 0.32,
+      "stopLoss": 0.19
+    },
+    {
+      "id": "pos-008",
+      "scenario": "China-Taiwan 2026",
+      "market": "Polymarket",
+      "marketUrl": "https://polymarket.com/event/china-taiwan-2026",
+      "side": "NO",
+      "contracts": 18000,
+      "entryPrice": 0.15,
+      "currentPrice": 0.08,
+      "costBasis": 2700,
+      "currentValue": 1440,
+      "unrealizedPnL": -1260,
+      "unrealizedPnLPercent": -46.67,
+      "openDate": "2025-08-09T00:00:00Z",
+      "status": "OPEN",
+      "reasoning": "Selling NO at 15% (model shows 11%) - Market fear-mongering post-Taiwan election. Xi focused on economic recovery, invasion timeline pushed to 2027+. Position underwater but thesis intact.",
+      "targetExit": 0.06,
+      "stopLoss": 0.10
+    }
+  ],
+  "tripWires": [
+    {
+      "id": "tw-001",
+      "scenario": "Iran-Israel War Q1 2026",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 0.45,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_50%",
+      "status": "ACTIVE",
+      "reasoning": "Lock in profits if market catches up to our model (45% close to our 42% estimate)",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-002",
+      "scenario": "Iran-Israel War Q1 2026",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 0.30,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if thesis invalidated - deescalation scenario",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-003",
+      "scenario": "Iran-Israel War Q1 2026",
+      "type": "EVENT_TRIGGER",
+      "event": "Iranian nuclear facility airstrike",
+      "action": "ADD_100%_POSITION",
+      "status": "ACTIVE",
+      "reasoning": "Major catalyst - double down immediately",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-004",
+      "scenario": "South China Sea Confrontation 2026",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 0.35,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_75%",
+      "status": "ACTIVE",
+      "reasoning": "Massive edge realized - book most of the profit",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-005",
+      "scenario": "South China Sea Confrontation 2026",
+      "type": "EVENT_TRIGGER",
+      "event": "Chinese naval blockade of Taiwan",
+      "action": "CLOSE_POSITION_IMMEDIATE",
+      "status": "ACTIVE",
+      "reasoning": "Scenario escalated beyond prediction - take profits immediately",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-006",
+      "scenario": "North Korea Crisis 2026",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 0.32,
+      "direction": "ABOVE",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Thesis breaking - exit NO position if market rises above entry",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-007",
+      "scenario": "Russia-NATO 2026",
+      "type": "EVENT_TRIGGER",
+      "event": "NATO Article 5 invoked",
+      "action": "CLOSE_POSITION_IMMEDIATE",
+      "status": "ACTIVE",
+      "reasoning": "Black swan event - exit all positions immediately",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-008",
+      "scenario": "US-Venezuela 2026",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 0.32,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_50%",
+      "status": "ACTIVE",
+      "reasoning": "Strong move - lock in half the gains",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-009",
+      "type": "PORTFOLIO_RISK",
+      "threshold": -5000,
+      "action": "REDUCE_ALL_POSITIONS_25%",
+      "status": "ACTIVE",
+      "reasoning": "Portfolio drawdown limit - reduce risk if down $5k",
+      "triggerCount": 0
+    },
+    {
+      "id": "tw-010",
+      "type": "PORTFOLIO_RISK",
+      "threshold": 10000,
+      "action": "TAKE_PROFIT_50%_ALL",
+      "status": "ACTIVE",
+      "reasoning": "Portfolio profit target - lock in gains if up $10k",
+      "triggerCount": 0
+    }
+  ],
+  "gamePlans": {
+    "Iran-Israel War Q1 2026": {
+      "baseCase": {
+        "probability": 42,
+        "scenario": "Limited military confrontation in Q1 2026",
+        "position": "LONG YES @ 0.35",
+        "sizing": "$1,225 (1.2% of capital)",
+        "rationale": "Model shows 42% vs market 35% - clear 7% edge",
+        "expectedValue": "+$86",
+        "timeHorizon": "3-6 months"
+      },
+      "bullCase": {
+        "triggers": [
+          "Israeli airstrike on Iranian nuclear facility",
+          "Hezbollah launches rockets into Tel Aviv",
+          "Iran closes Strait of Hormuz",
+          "Israeli ground invasion of Lebanon"
+        ],
+        "action": "DOUBLE POSITION - Buy additional $1,225 at market",
+        "newProbability": "65-75%",
+        "reasoning": "Major escalation catalysts - probability spikes dramatically"
+      },
+      "bearCase": {
+        "triggers": [
+          "US-Iran diplomatic breakthrough",
+          "Ceasefire agreement reached",
+          "Israel-Hezbollah de-escalation",
+          "New Iranian moderate government installed"
+        ],
+        "action": "CLOSE POSITION - Sell all contracts immediately",
+        "newProbability": "10-20%",
+        "reasoning": "Thesis invalidated - cut losses quickly"
+      },
+      "adaptivePlan": {
+        "if_price_hits_40": "Take profit on 30% of position - lock in some edge realization",
+        "if_price_hits_45": "Take profit on 50% of position - market catching up to model",
+        "if_price_hits_50": "Close entire position - market has overshot model estimate",
+        "if_price_drops_30": "Stop loss triggered - exit entire position",
+        "if_price_drops_25": "Review thesis - consider averaging down if conviction remains",
+        "rebalance_trigger": "If position grows >3% of portfolio, trim to 2%"
+      },
+      "exitStrategy": {
+        "target": "Exit at 0.45 (45%) for +28% gain",
+        "stopLoss": "Exit at 0.30 (30%) for -14% loss",
+        "timeStop": "Close position by March 31, 2026 regardless of price",
+        "partialExits": [
+          { "price": 0.40, "amount": "25%", "reason": "Lock in some profits" },
+          { "price": 0.45, "amount": "50%", "reason": "Major profit target" },
+          { "price": 0.50, "amount": "100%", "reason": "Full exit - overvalued" }
+        ]
+      }
+    },
+    "South China Sea Confrontation 2026": {
+      "baseCase": {
+        "probability": 28,
+        "scenario": "Naval confrontation between China and Philippines/US",
+        "position": "LONG YES @ 0.18",
+        "sizing": "$900 (0.9% of capital)",
+        "rationale": "Model shows 28% vs market 18% - massive 10% edge",
+        "expectedValue": "+$90",
+        "timeHorizon": "6-12 months"
+      },
+      "bullCase": {
+        "triggers": [
+          "Chinese naval blockade of Second Thomas Shoal",
+          "Sinking of Philippine vessel by Chinese navy",
+          "US destroyer collision with Chinese warship",
+          "Chinese island fortification expansion accelerates"
+        ],
+        "action": "TRIPLE POSITION - Highest conviction trade",
+        "newProbability": "50-65%",
+        "reasoning": "Direct military confrontation makes scenario highly likely"
+      },
+      "bearCase": {
+        "triggers": [
+          "Philippines-China bilateral agreement reached",
+          "US withdraws support for Philippines",
+          "China announces naval withdrawal",
+          "ASEAN mediation success"
+        ],
+        "action": "REDUCE POSITION 75% - Keep small exposure",
+        "newProbability": "8-12%",
+        "reasoning": "Diplomatic resolution reduces probability significantly"
+      },
+      "adaptivePlan": {
+        "if_price_hits_25": "Take profit on 30% - significant edge realization",
+        "if_price_hits_30": "Take profit on 50% - lock in major gains",
+        "if_price_hits_35": "Take profit on 75% - near model estimate",
+        "if_price_drops_14": "Stop loss - thesis broken",
+        "if_price_drops_16": "Review and potentially average down",
+        "rebalance_trigger": "If position grows >2.5% of portfolio, trim to 1.5%"
+      },
+      "exitStrategy": {
+        "target": "Exit at 0.35 (35%) for +94% gain",
+        "stopLoss": "Exit at 0.14 (14%) for -22% loss",
+        "timeStop": "Close by December 31, 2026",
+        "partialExits": [
+          { "price": 0.25, "amount": "30%", "reason": "Secure some profits" },
+          { "price": 0.30, "amount": "50%", "reason": "Large gain realized" },
+          { "price": 0.35, "amount": "100%", "reason": "Full target hit" }
+        ]
+      }
+    },
+    "North Korea Crisis 2026": {
+      "baseCase": {
+        "probability": 23,
+        "scenario": "Major North Korean provocation or regime instability",
+        "position": "SHORT (selling NO @ 0.28)",
+        "sizing": "$2,240 (2.2% of capital)",
+        "rationale": "Model shows 23% but market pricing at 28% - sell overpriced NO contracts",
+        "expectedValue": "+$112",
+        "timeHorizon": "3-9 months"
+      },
+      "bullCase": {
+        "triggers": [
+          "Kim Jong Un health crisis confirmed",
+          "North Korean nuclear test",
+          "ICBM launch over Japan",
+          "Coup attempt or military purge"
+        ],
+        "action": "CLOSE POSITION IMMEDIATELY - Wrong side of trade",
+        "newProbability": "45-60%",
+        "reasoning": "Major catalysts invalidate short thesis - exit fast"
+      },
+      "bearCase": {
+        "triggers": [
+          "North Korea-US diplomatic talks resume",
+          "China increases pressure on NK successfully",
+          "Kim Jong Un appears healthy at public event",
+          "Economic reforms announced"
+        ],
+        "action": "ADD TO POSITION - Double down on NO contracts",
+        "newProbability": "10-15%",
+        "reasoning": "Stability confirmed - short thesis strengthened"
+      },
+      "adaptivePlan": {
+        "if_price_drops_22": "Take profit on 25% - thesis working",
+        "if_price_drops_18": "Take profit on 50% - strong conviction",
+        "if_price_drops_15": "Close 75% - major win",
+        "if_price_rises_32": "Stop loss - exit immediately",
+        "if_price_rises_30": "Review position - prepare for stop",
+        "rebalance_trigger": "Monitor daily - short positions riskier"
+      },
+      "exitStrategy": {
+        "target": "Exit at 0.18 (18%) for +35% gain",
+        "stopLoss": "Exit at 0.32 (32%) for -14% loss",
+        "timeStop": "Close by September 30, 2026",
+        "partialExits": [
+          { "price": 0.22, "amount": "25%", "reason": "Thesis working" },
+          { "price": 0.18, "amount": "50%", "reason": "Target reached" },
+          { "price": 0.15, "amount": "100%", "reason": "Exceptional result" }
+        ]
+      }
+    },
+    "PORTFOLIO_LEVEL": {
+      "riskManagement": {
+        "maxDrawdown": "-10% ($10,000)",
+        "maxPositionSize": "5% of capital ($5,000)",
+        "maxSectorExposure": "Middle East 40%, Asia 40%, Other 20%",
+        "cashReserve": "Maintain minimum 60% cash for opportunities",
+        "correlationLimit": "No more than 3 highly correlated positions"
+      },
+      "rebalancing": {
+        "frequency": "Weekly review, monthly rebalance",
+        "triggers": [
+          "Any position grows >5% of portfolio - trim to 3%",
+          "Portfolio hits -$5k unrealized - reduce all positions 25%",
+          "Portfolio hits +$10k unrealized - take profits on 50%",
+          "New high-conviction opportunity - reallocate from lower conviction"
+        ]
+      },
+      "capitalDeployment": {
+        "current": "24.5% deployed ($24,500)",
+        "target": "30-40% deployed in normal conditions",
+        "aggressive": "Up to 60% in high-conviction environment",
+        "defensive": "Down to 15% in uncertain environment",
+        "reserveFor": "Keep 60-70% dry powder for major opportunities"
+      }
+    }
+  },
+  "performanceMetrics": {
+    "totalReturn": 1250,
+    "totalReturnPercent": 5.10,
+    "winRate": 62.5,
+    "avgWinSize": 127.5,
+    "avgLossSize": 236.67,
+    "sharpeRatio": null,
+    "maxDrawdown": -320,
+    "maxDrawdownPercent": -14.29,
+    "bestTrade": {
+      "scenario": "South China Sea Confrontation 2026",
+      "return": 150,
+      "returnPercent": 16.67
+    },
+    "worstTrade": {
+      "scenario": "North Korea Crisis 2026",
+      "return": -320,
+      "returnPercent": -14.29
+    },
+    "openPositions": 8,
+    "closedPositions": 0,
+    "avgHoldingPeriod": "8 days"
+  },
+  "equityCurve": [
+    { "date": "2024-11-18", "portfolioValue": 100000, "sp500Value": 100000 },
+    { "date": "2024-11-25", "portfolioValue": 100200, "sp500Value": 100850 },
+    { "date": "2024-12-02", "portfolioValue": 100100, "sp500Value": 101200 },
+    { "date": "2024-12-09", "portfolioValue": 99800, "sp500Value": 101500 },
+    { "date": "2024-12-16", "portfolioValue": 99500, "sp500Value": 102100 },
+    { "date": "2024-12-23", "portfolioValue": 99600, "sp500Value": 102800 },
+    { "date": "2024-12-30", "portfolioValue": 99800, "sp500Value": 103200 },
+    { "date": "2025-01-06", "portfolioValue": 100200, "sp500Value": 103500 },
+    { "date": "2025-01-13", "portfolioValue": 100500, "sp500Value": 104200 },
+    { "date": "2025-01-20", "portfolioValue": 100800, "sp500Value": 104800 },
+    { "date": "2025-01-27", "portfolioValue": 101200, "sp500Value": 105200 },
+    { "date": "2025-02-03", "portfolioValue": 102500, "sp500Value": 105800 },
+    { "date": "2025-02-10", "portfolioValue": 104200, "sp500Value": 106500 },
+    { "date": "2025-02-17", "portfolioValue": 105800, "sp500Value": 107200 },
+    { "date": "2025-02-24", "portfolioValue": 106500, "sp500Value": 107800 },
+    { "date": "2025-03-03", "portfolioValue": 107200, "sp500Value": 108500 },
+    { "date": "2025-03-10", "portfolioValue": 108800, "sp500Value": 109200 },
+    { "date": "2025-03-17", "portfolioValue": 109500, "sp500Value": 110000 },
+    { "date": "2025-03-24", "portfolioValue": 111200, "sp500Value": 110800 },
+    { "date": "2025-03-31", "portfolioValue": 112500, "sp500Value": 111500 },
+    { "date": "2025-04-07", "portfolioValue": 111800, "sp500Value": 112200 },
+    { "date": "2025-04-14", "portfolioValue": 110200, "sp500Value": 112800 },
+    { "date": "2025-04-21", "portfolioValue": 108500, "sp500Value": 113500 },
+    { "date": "2025-04-28", "portfolioValue": 107200, "sp500Value": 114200 },
+    { "date": "2025-05-05", "portfolioValue": 108800, "sp500Value": 114800 },
+    { "date": "2025-05-12", "portfolioValue": 110500, "sp500Value": 115500 },
+    { "date": "2025-05-19", "portfolioValue": 112200, "sp500Value": 116200 },
+    { "date": "2025-05-26", "portfolioValue": 113500, "sp500Value": 116800 },
+    { "date": "2025-06-02", "portfolioValue": 114200, "sp500Value": 117500 },
+    { "date": "2025-06-09", "portfolioValue": 115800, "sp500Value": 118200 },
+    { "date": "2025-06-16", "portfolioValue": 116500, "sp500Value": 118800 },
+    { "date": "2025-06-23", "portfolioValue": 117200, "sp500Value": 119500 },
+    { "date": "2025-06-30", "portfolioValue": 118500, "sp500Value": 120200 },
+    { "date": "2025-07-07", "portfolioValue": 119200, "sp500Value": 120800 },
+    { "date": "2025-07-14", "portfolioValue": 120500, "sp500Value": 121500 },
+    { "date": "2025-07-21", "portfolioValue": 121800, "sp500Value": 122200 },
+    { "date": "2025-07-28", "portfolioValue": 123200, "sp500Value": 122800 },
+    { "date": "2025-08-04", "portfolioValue": 122500, "sp500Value": 123500 },
+    { "date": "2025-08-11", "portfolioValue": 120800, "sp500Value": 124200 },
+    { "date": "2025-08-18", "portfolioValue": 118200, "sp500Value": 123800 },
+    { "date": "2025-08-25", "portfolioValue": 116500, "sp500Value": 123200 },
+    { "date": "2025-09-01", "portfolioValue": 115200, "sp500Value": 122800 },
+    { "date": "2025-09-08", "portfolioValue": 116800, "sp500Value": 123500 },
+    { "date": "2025-09-15", "portfolioValue": 118500, "sp500Value": 124200 },
+    { "date": "2025-09-22", "portfolioValue": 119800, "sp500Value": 124800 },
+    { "date": "2025-09-29", "portfolioValue": 121200, "sp500Value": 125500 },
+    { "date": "2025-10-06", "portfolioValue": 122500, "sp500Value": 126200 },
+    { "date": "2025-10-13", "portfolioValue": 121800, "sp500Value": 125800 },
+    { "date": "2025-10-20", "portfolioValue": 120200, "sp500Value": 125200 },
+    { "date": "2025-10-27", "portfolioValue": 119500, "sp500Value": 124800 },
+    { "date": "2025-11-03", "portfolioValue": 118800, "sp500Value": 124500 },
+    { "date": "2025-11-10", "portfolioValue": 119200, "sp500Value": 124800 },
+    { "date": "2025-11-18", "portfolioValue": 118500, "sp500Value": 124200 }
+  ]
+}

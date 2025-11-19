@@ -1,0 +1,602 @@
+{
+  "scenarios": {
+    "Iran-Israel War Q1 2026": {
+      "baselineProbability": 35,
+      "factors": [
+        {
+          "name": "Proxy Escalation",
+          "weight": 0.25,
+          "currentScore": 75,
+          "description": "Hezbollah/Hamas activity levels, border incidents, drone attacks"
+        },
+        {
+          "name": "Israeli Cabinet Composition",
+          "weight": 0.20,
+          "currentScore": 80,
+          "description": "Hawkish minister influence, Ben-Gvir/Smotrich coalition power"
+        },
+        {
+          "name": "Iran Nuclear Progress",
+          "weight": 0.20,
+          "currentScore": 65,
+          "description": "Enrichment levels, IAEA compliance, breakout timeline"
+        },
+        {
+          "name": "US Election Cycle Impact",
+          "weight": 0.15,
+          "currentScore": 60,
+          "description": "Administration appetite for Middle East engagement"
+        },
+        {
+          "name": "Oil Market Tension",
+          "weight": 0.10,
+          "currentScore": 55,
+          "description": "Strait of Hormuz threats, tanker incidents, price volatility"
+        },
+        {
+          "name": "Regional Diplomatic Temperature",
+          "weight": 0.10,
+          "currentScore": 40,
+          "description": "Saudi-Iran normalization, Abraham Accords expansion"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1981 Osirak Strike",
+          "similarity": 0.65,
+          "outcome": "Limited Israeli strike, no full war"
+        },
+        {
+          "event": "2020 Soleimani Assassination",
+          "similarity": 0.55,
+          "outcome": "Tit-for-tat escalation, contained"
+        }
+      ],
+      "catalystEvents": [
+        "Major Israeli airstrike on Iranian nuclear facility",
+        "Hezbollah precision missile attack on Tel Aviv",
+        "Iranian Revolutionary Guard attack on US base",
+        "Assassination of senior Israeli or Iranian official"
+      ]
+    },
+    "China-Taiwan 2026": {
+      "baselineProbability": 12,
+      "factors": [
+        {
+          "name": "PLA Readiness Assessment",
+          "weight": 0.25,
+          "currentScore": 55,
+          "description": "Amphibious capability, logistics, joint operations maturity"
+        },
+        {
+          "name": "Xi Political Timeline",
+          "weight": 0.20,
+          "currentScore": 45,
+          "description": "Legacy ambitions, domestic political pressure, third term mandate"
+        },
+        {
+          "name": "Taiwan Election Outcome",
+          "weight": 0.20,
+          "currentScore": 70,
+          "description": "DPP vs KMT, independence rhetoric, US alignment"
+        },
+        {
+          "name": "US Deterrence Posture",
+          "weight": 0.15,
+          "currentScore": 60,
+          "description": "Forward deployment, alliance commitments, semiconductor strategy"
+        },
+        {
+          "name": "Economic Cost-Benefit",
+          "weight": 0.12,
+          "currentScore": 30,
+          "description": "Sanctions risk, TSMC disruption, trade interdependence"
+        },
+        {
+          "name": "International Window",
+          "weight": 0.08,
+          "currentScore": 50,
+          "description": "US distraction (Ukraine, Middle East), alliance cohesion"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1996 Taiwan Strait Crisis",
+          "similarity": 0.60,
+          "outcome": "Show of force, no invasion"
+        },
+        {
+          "event": "Russia-Ukraine 2022",
+          "similarity": 0.45,
+          "outcome": "Full invasion (different context)"
+        }
+      ],
+      "catalystEvents": [
+        "Taiwan formal independence declaration",
+        "US defense treaty with Taiwan",
+        "Major Chinese economic crisis requiring distraction",
+        "Xi consolidation of absolute power"
+      ]
+    },
+    "US-Venezuela 2026": {
+      "baselineProbability": 18,
+      "factors": [
+        {
+          "name": "Regime Economic Desperation",
+          "weight": 0.25,
+          "currentScore": 85,
+          "description": "Oil revenue collapse, hyperinflation, food shortages"
+        },
+        {
+          "name": "Border Crisis Escalation",
+          "weight": 0.22,
+          "currentScore": 70,
+          "description": "Migration surge, drug trafficking, gang violence spillover"
+        },
+        {
+          "name": "US Administration Hawkishness",
+          "weight": 0.18,
+          "currentScore": 55,
+          "description": "Monroe Doctrine rhetoric, regime change appetite, election year posturing"
+        },
+        {
+          "name": "Colombian Border Incidents",
+          "weight": 0.15,
+          "currentScore": 60,
+          "description": "Cross-border military activity, Colombian pressure on US"
+        },
+        {
+          "name": "Opposition Strength",
+          "weight": 0.12,
+          "currentScore": 45,
+          "description": "Guaido/opposition credibility, internal regime fractures"
+        },
+        {
+          "name": "China-Russia Support",
+          "weight": 0.08,
+          "currentScore": 65,
+          "description": "Financial backing, military advisors, diplomatic cover"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1989 Panama Invasion",
+          "similarity": 0.70,
+          "outcome": "Quick US regime change operation"
+        },
+        {
+          "event": "2019 Venezuela Coup Attempt",
+          "similarity": 0.55,
+          "outcome": "Failed, regime survived"
+        }
+      ],
+      "catalystEvents": [
+        "Major terrorist attack traced to Venezuela",
+        "Seizure of US oil assets",
+        "Chemical weapons use on opposition",
+        "Direct military confrontation with Colombia"
+      ]
+    },
+    "Russia-NATO 2026": {
+      "baselineProbability": 8,
+      "factors": [
+        {
+          "name": "Ukraine War Trajectory",
+          "weight": 0.30,
+          "currentScore": 40,
+          "description": "Stalemate vs breakthrough, Western aid sustainability"
+        },
+        {
+          "name": "Putin Regime Stability",
+          "weight": 0.20,
+          "currentScore": 65,
+          "description": "Domestic opposition, Wagner/military discontent, succession uncertainty"
+        },
+        {
+          "name": "NATO Article 5 Tripwires",
+          "weight": 0.20,
+          "currentScore": 35,
+          "description": "Baltic states incidents, Poland border security, cyber attacks"
+        },
+        {
+          "name": "Nuclear Escalation Risk",
+          "weight": 0.15,
+          "currentScore": 25,
+          "description": "Tactical nuke threats, doctrine changes, weapons deployments"
+        },
+        {
+          "name": "Western Unity",
+          "weight": 0.10,
+          "currentScore": 70,
+          "description": "Sanctions coherence, aid packages, alliance resolve"
+        },
+        {
+          "name": "Economic Pressure",
+          "weight": 0.05,
+          "currentScore": 60,
+          "description": "Sanctions impact, oil revenue, military production capacity"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1962 Cuban Missile Crisis",
+          "similarity": 0.50,
+          "outcome": "Brinkmanship, negotiated resolution"
+        },
+        {
+          "event": "2008 Georgia War",
+          "similarity": 0.55,
+          "outcome": "Limited Russian incursion, no NATO response"
+        }
+      ],
+      "catalystEvents": [
+        "Russian forces cross NATO border (Poland/Baltics)",
+        "Major chemical/nuclear weapons use in Ukraine",
+        "Wagner/PMC attack on NATO base",
+        "Massive cyber attack taking down critical infrastructure"
+      ]
+    },
+    "North Korea Crisis 2026": {
+      "baselineProbability": 22,
+      "factors": [
+        {
+          "name": "Nuclear Test Escalation",
+          "weight": 0.28,
+          "currentScore": 70,
+          "description": "ICBM tests, miniaturization progress, enrichment activity"
+        },
+        {
+          "name": "Kim Regime Instability",
+          "weight": 0.22,
+          "currentScore": 45,
+          "description": "Leadership health, succession concerns, internal purges"
+        },
+        {
+          "name": "US-ROK Joint Exercises",
+          "weight": 0.18,
+          "currentScore": 65,
+          "description": "Scale of drills, nuclear bomber deployments, THAAD expansion"
+        },
+        {
+          "name": "China Buffer Commitment",
+          "weight": 0.15,
+          "currentScore": 55,
+          "description": "Beijing willingness to restrain DPRK, sanctions enforcement"
+        },
+        {
+          "name": "Economic Desperation",
+          "weight": 0.12,
+          "currentScore": 80,
+          "description": "Food shortages, currency collapse, COVID isolation impact"
+        },
+        {
+          "name": "South Korea Political Will",
+          "weight": 0.05,
+          "currentScore": 50,
+          "description": "Conservative vs progressive government, reunification appetite"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1994 Nuclear Crisis",
+          "similarity": 0.65,
+          "outcome": "Agreed Framework negotiated, war avoided"
+        },
+        {
+          "event": "2017 Fire and Fury Standoff",
+          "similarity": 0.70,
+          "outcome": "Brinkmanship followed by Singapore Summit"
+        }
+      ],
+      "catalystEvents": [
+        "DPRK nuclear test targeting US territory",
+        "Assassination attempt on Kim Jong Un",
+        "North Korean attack on South Korean island",
+        "US preemptive strike on nuclear facilities"
+      ]
+    },
+    "India-Pakistan Kashmir 2026": {
+      "baselineProbability": 16,
+      "factors": [
+        {
+          "name": "Kashmir Incident Severity",
+          "weight": 0.30,
+          "currentScore": 60,
+          "description": "Terrorist attacks, ceasefire violations, civilian casualties"
+        },
+        {
+          "name": "Indian Domestic Politics",
+          "weight": 0.22,
+          "currentScore": 65,
+          "description": "BJP electoral pressure, nationalist sentiment, Modi posture"
+        },
+        {
+          "name": "Pakistan Military Influence",
+          "weight": 0.20,
+          "currentScore": 70,
+          "description": "ISI proxy support, army vs civilian control, nuclear doctrine"
+        },
+        {
+          "name": "US-China Mediation",
+          "weight": 0.15,
+          "currentScore": 40,
+          "description": "Diplomatic bandwidth, UNSC intervention capability"
+        },
+        {
+          "name": "Nuclear Threshold Clarity",
+          "weight": 0.08,
+          "currentScore": 35,
+          "description": "Pakistan first-use doctrine, Indian no-first-use commitment"
+        },
+        {
+          "name": "Economic Interdependence",
+          "weight": 0.05,
+          "currentScore": 30,
+          "description": "Trade ties, water-sharing agreements, diplomatic channels"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1999 Kargil War",
+          "similarity": 0.75,
+          "outcome": "Limited conflict, international pressure for ceasefire"
+        },
+        {
+          "event": "2019 Balakot Airstrike",
+          "similarity": 0.80,
+          "outcome": "Tit-for-tat strikes, escalation contained"
+        }
+      ],
+      "catalystEvents": [
+        "Major terrorist attack in Delhi or Mumbai",
+        "Pakistani nuclear test or deployment",
+        "Indian surgical strike on Islamabad",
+        "Kashmir independence declaration"
+      ]
+    },
+    "South China Sea Confrontation 2026": {
+      "baselineProbability": 25,
+      "factors": [
+        {
+          "name": "Naval Incident Frequency",
+          "weight": 0.28,
+          "currentScore": 75,
+          "description": "Ship collisions, aircraft intercepts, fishing disputes"
+        },
+        {
+          "name": "Philippine Alliance Strength",
+          "weight": 0.22,
+          "currentScore": 65,
+          "description": "US base access, defense treaty commitment, Marcos posture"
+        },
+        {
+          "name": "Chinese Militarization",
+          "weight": 0.20,
+          "currentScore": 80,
+          "description": "Artificial island buildout, PLAN deployments, A2/AD systems"
+        },
+        {
+          "name": "ASEAN Unity",
+          "weight": 0.15,
+          "currentScore": 35,
+          "description": "Collective response capability, Cambodia/Laos influence"
+        },
+        {
+          "name": "Taiwan Spillover Risk",
+          "weight": 0.10,
+          "currentScore": 60,
+          "description": "Strait tensions affecting broader region"
+        },
+        {
+          "name": "Energy Resource Competition",
+          "weight": 0.05,
+          "currentScore": 55,
+          "description": "Oil/gas exploration conflicts, fishing rights"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "2016 Hague Tribunal Ruling",
+          "similarity": 0.60,
+          "outcome": "China rejected ruling, status quo maintained"
+        },
+        {
+          "event": "2012 Scarborough Shoal Standoff",
+          "similarity": 0.70,
+          "outcome": "China gained control, Philippines backed down"
+        }
+      ],
+      "catalystEvents": [
+        "Chinese seizure of Philippine-occupied reef",
+        "US-China naval collision with casualties",
+        "Taiwan Strait crisis spillover",
+        "ASEAN military coalition formation"
+      ]
+    },
+    "Saudi-Iran Regional War 2026": {
+      "baselineProbability": 20,
+      "factors": [
+        {
+          "name": "Yemen Proxy War Intensity",
+          "weight": 0.25,
+          "currentScore": 65,
+          "description": "Houthi missile attacks, Saudi air campaign, humanitarian crisis"
+        },
+        {
+          "name": "Oil Infrastructure Attacks",
+          "weight": 0.22,
+          "currentScore": 60,
+          "description": "Abqaiq-style attacks, tanker incidents, refinery targeting"
+        },
+        {
+          "name": "MBS Risk Appetite",
+          "weight": 0.20,
+          "currentScore": 55,
+          "description": "Crown Prince assertiveness, Vision 2030 timeline, succession security"
+        },
+        {
+          "name": "Iran Domestic Pressure",
+          "weight": 0.15,
+          "currentScore": 70,
+          "description": "Economic sanctions impact, regime legitimacy, protest movements"
+        },
+        {
+          "name": "US Security Guarantee",
+          "weight": 0.12,
+          "currentScore": 50,
+          "description": "Troop presence, weapons sales, Abraham Accords support"
+        },
+        {
+          "name": "China Mediation Effort",
+          "weight": 0.06,
+          "currentScore": 45,
+          "description": "Beijing normalization deal sustainability, energy interests"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "2019 Abqaiq Attack",
+          "similarity": 0.75,
+          "outcome": "Iranian proxy attack, limited Saudi response"
+        },
+        {
+          "event": "1980s Iran-Iraq War",
+          "similarity": 0.50,
+          "outcome": "Prolonged regional conflict with international involvement"
+        }
+      ],
+      "catalystEvents": [
+        "Iranian direct attack on Saudi oil infrastructure",
+        "Saudi ground invasion of Yemen",
+        "Assassination of senior Saudi or Iranian official",
+        "Houthi seizure of Saudi territory"
+      ]
+    },
+    "India-China Border War 2026": {
+      "baselineProbability": 14,
+      "factors": [
+        {
+          "name": "LAC Incident Severity",
+          "weight": 0.30,
+          "currentScore": 55,
+          "description": "Galwan-style clashes, casualties, infrastructure buildout"
+        },
+        {
+          "name": "Nationalist Pressure India",
+          "weight": 0.22,
+          "currentScore": 60,
+          "description": "BJP electoral considerations, media pressure, military posture"
+        },
+        {
+          "name": "Chinese Strategic Priorities",
+          "weight": 0.20,
+          "currentScore": 45,
+          "description": "Taiwan focus vs India distraction, two-front war capability"
+        },
+        {
+          "name": "Russian Mediation",
+          "weight": 0.12,
+          "currentScore": 40,
+          "description": "Moscow ties to both, SCO framework, arms sales"
+        },
+        {
+          "name": "US-India Partnership",
+          "weight": 0.10,
+          "currentScore": 65,
+          "description": "Quad strengthening, intelligence sharing, weapons transfers"
+        },
+        {
+          "name": "Himalayan Terrain Advantage",
+          "weight": 0.06,
+          "currentScore": 50,
+          "description": "Logistics constraints, weather limitations, defensive advantage"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1962 Sino-Indian War",
+          "similarity": 0.60,
+          "outcome": "Chinese victory, territory seized, humiliation for India"
+        },
+        {
+          "event": "2020 Galwan Valley Clash",
+          "similarity": 0.85,
+          "outcome": "Hand-to-hand combat, casualties, temporary disengagement"
+        }
+      ],
+      "catalystEvents": [
+        "Major LAC incursion with significant casualties",
+        "Indian airstrike on Chinese positions",
+        "Chinese dam construction threatening Indian water",
+        "Simultaneous Taiwan crisis straining Chinese forces"
+      ]
+    },
+    "Turkey-Greece Aegean Crisis 2026": {
+      "baselineProbability": 18,
+      "factors": [
+        {
+          "name": "EEZ Dispute Intensity",
+          "weight": 0.28,
+          "currentScore": 65,
+          "description": "Oil/gas exploration conflicts, maritime boundary disagreements"
+        },
+        {
+          "name": "Erdogan Political Survival",
+          "weight": 0.24,
+          "currentScore": 60,
+          "description": "Domestic popularity, nationalist posturing, election pressures"
+        },
+        {
+          "name": "Cyprus Frozen Conflict",
+          "weight": 0.18,
+          "currentScore": 55,
+          "description": "Northern Cyprus recognition, Turkish troop presence, energy resources"
+        },
+        {
+          "name": "NATO Article 5 Clarity",
+          "weight": 0.15,
+          "currentScore": 40,
+          "description": "Alliance position on intra-NATO conflict, US mediation"
+        },
+        {
+          "name": "EU Backing of Greece",
+          "weight": 0.10,
+          "currentScore": 70,
+          "description": "Sanctions threats, defense pact, diplomatic support"
+        },
+        {
+          "name": "Russian Opportunism",
+          "weight": 0.05,
+          "currentScore": 50,
+          "description": "Moscow support for Turkey, S-400 implications, gas deals"
+        }
+      ],
+      "historicalAnalogs": [
+        {
+          "event": "1996 Imia/Kardak Crisis",
+          "similarity": 0.80,
+          "outcome": "Near-war over uninhabited islets, US mediation prevented escalation"
+        },
+        {
+          "event": "1974 Cyprus Invasion",
+          "similarity": 0.55,
+          "outcome": "Turkish military operation, partition of Cyprus"
+        }
+      ],
+      "catalystEvents": [
+        "Turkish drilling in declared Greek EEZ",
+        "Naval collision with casualties",
+        "Erdogan recognition of Northern Cyprus",
+        "Greek military mobilization in response to Turkish provocations"
+      ]
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-01-18T00:00:00Z",
+    "modelVersion": "1.1",
+    "methodology": "Weighted factor scoring with historical analog comparison",
+    "updateFrequency": "Weekly manual review, daily factor score adjustments",
+    "totalScenarios": 10,
+    "coverageRegions": ["Middle East", "East Asia", "South Asia", "Europe", "South America"]
+  }
+}

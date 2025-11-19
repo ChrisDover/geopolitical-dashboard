@@ -1,0 +1,90 @@
+{
+  "baseline": {
+    "immediate": {
+      "energy": 0,
+      "defense": 0,
+      "oil": 0,
+      "natgas": 0,
+      "gold": 0,
+      "bonds": 0,
+      "equities": 0,
+      "emerging": 0
+    },
+    "30day": {
+      "energy": 0,
+      "defense": 0,
+      "oil": 0,
+      "natgas": 0,
+      "gold": 0,
+      "bonds": 0,
+      "equities": 0,
+      "emerging": 0
+    }
+  },
+  "iranIsraelWar": {
+    "immediate": {
+      "energy": 20,
+      "defense": 25,
+      "oil": 35,
+      "natgas": 15,
+      "gold": 12,
+      "bonds": 4,
+      "equities": -10,
+      "emerging": -15
+    },
+    "30day": {
+      "energy": 25,
+      "defense": 28,
+      "oil": 50,
+      "natgas": 20,
+      "gold": 15,
+      "bonds": 5,
+      "equities": -12,
+      "emerging": -18
+    }
+  },
+  "taiwanInvasion": {
+    "immediate": {
+      "energy": 5,
+      "defense": 50,
+      "oil": 15,
+      "natgas": 20,
+      "gold": 15,
+      "bonds": 8,
+      "equities": -20,
+      "emerging": -35
+    },
+    "30day": {
+      "energy": 8,
+      "defense": 60,
+      "oil": 25,
+      "natgas": 30,
+      "gold": 20,
+      "bonds": 12,
+      "equities": -25,
+      "emerging": -40
+    }
+  },
+  "venezuelaGround": {
+    "immediate": {
+      "energy": 15,
+      "defense": 35,
+      "oil": 25,
+      "natgas": 12,
+      "gold": 8,
+      "bonds": 5,
+      "equities": -8,
+      "emerging": -12
+    },
+    "30day": {
+      "energy": 18,
+      "defense": 40,
+      "oil": 30,
+      "natgas": 15,
+      "gold": 10,
+      "bonds": 6,
+      "equities": -5,
+      "emerging": -10
+    }
+  }
+}

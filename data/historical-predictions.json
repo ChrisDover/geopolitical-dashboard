@@ -1,0 +1,48 @@
+{
+  "predictions": [
+    {
+      "date": "2025-01-18T00:00:00Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 42,
+          "polymarketPrice": 35,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalPredictions": 1,
+    "correctPredictions": 0,
+    "accuracy": null,
+    "averageDivergence": 3.0,
+    "lastUpdate": "2025-01-18T00:00:00Z"
+  }
+}
