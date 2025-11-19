@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navigation from '../../components/Navigation';
 import Portfolio from '../../components/tabs/Portfolio';
 import NewsFeed from '../../components/tabs/NewsFeed';
-import PredictionMarkets from '../../components/tabs/PredictionMarkets';
+import MarketDivergence from '../../components/tabs/MarketDivergence';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -63,7 +63,8 @@ const Section = styled.div``;
 
 export default function EventsPage() {
   const [newsData, setNewsData] = useState<any>({ data: [], loading: true });
-  const [marketData, setMarketData] = useState<any>(null);
+  const [marketData, setMarketData] = useState<any[]>([]);
+  const [marketLoading, setMarketLoading] = useState(true);
 
   React.useEffect(() => {
     // Fetch news feed
@@ -75,8 +76,16 @@ export default function EventsPage() {
     // Fetch market divergence data
     fetch('/api/markets/divergence')
       .then(res => res.json())
-      .then(data => setMarketData(data))
-      .catch(err => console.error('Market data error:', err));
+      .then(data => {
+        if (data.success) {
+          setMarketData(data.data);
+        }
+        setMarketLoading(false);
+      })
+      .catch(err => {
+        console.error('Market data error:', err);
+        setMarketLoading(false);
+      });
   }, []);
 
   return (
@@ -101,7 +110,7 @@ export default function EventsPage() {
         </GridLayout>
 
         <Section>
-          <PredictionMarkets />
+          <MarketDivergence data={marketData} loading={marketLoading} />
         </Section>
       </ContentContainer>
     </PageContainer>
