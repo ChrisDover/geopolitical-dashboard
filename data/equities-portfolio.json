@@ -37,7 +37,7 @@
       "type": "EQUITY",
       "sector": "Defense & Aerospace",
       "shares": 100,
-      "entryPrice": 165.20,
+      "entryPrice": 165.2,
       "currentPrice": 174.69,
       "costBasis": 16520,
       "currentValue": 17469,
@@ -46,8 +46,8 @@
       "openDate": "2025-02-22T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Patriot missile system orders from Middle East allies. Q2 earnings beat on international defense sales. Pentagon FY26 budget +$2.8B for missile defense. Zero commission.",
-      "targetExit": 190.00,
-      "stopLoss": 155.00,
+      "targetExit": 190,
+      "stopLoss": 155,
       "commission": 0
     },
     {
@@ -66,8 +66,8 @@
       "openDate": "2025-03-10T00:00:00Z",
       "status": "OPEN",
       "reasoning": "F-35 production ramp, THAAD systems to Middle East. South China Sea tensions boost Pacific allies orders (Japan, Australia). Zero commission.",
-      "targetExit": 510.00,
-      "stopLoss": 445.00,
+      "targetExit": 510,
+      "stopLoss": 445,
       "commission": 0
     },
     {
@@ -86,8 +86,8 @@
       "openDate": "2025-07-15T00:00:00Z",
       "status": "OPEN",
       "reasoning": "B-21 Raider bomber program accelerating, space defense contracts. Taiwan contingency planning drives unmanned systems demand. Zero commission.",
-      "targetExit": 610.00,
-      "stopLoss": 505.00,
+      "targetExit": 610,
+      "stopLoss": 505,
       "commission": 0
     },
     {
@@ -106,8 +106,8 @@
       "openDate": "2025-05-20T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Defense segment undervalued vs pure-plays. Apache helicopters, P-8 Poseidon maritime patrol demand. Commercial recovery secondary thesis. Zero commission.",
-      "targetExit": 210.00,
-      "stopLoss": 170.00,
+      "targetExit": 210,
+      "stopLoss": 170,
       "commission": 0
     },
     {
@@ -117,17 +117,17 @@
       "type": "ETF",
       "sector": "Energy",
       "shares": 130,
-      "entryPrice": 86.20,
+      "entryPrice": 86.2,
       "currentPrice": 90.34,
       "costBasis": 11206,
       "currentValue": 11744,
       "unrealizedPnL": 538,
-      "unrealizedPnLPercent": 4.80,
+      "unrealizedPnLPercent": 4.8,
       "openDate": "2025-04-05T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Middle East supply disruption risk premium. Iran-Saudi tensions, Red Sea shipping threatened. Energy stocks diversification vs direct commodity exposure. Zero commission.",
-      "targetExit": 98.00,
-      "stopLoss": 82.00,
+      "targetExit": 98,
+      "stopLoss": 82,
       "commission": 0
     },
     {
@@ -146,14 +146,14 @@
       "openDate": "2025-09-18T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Small tactical bet (0.77% portfolio) on Iran-Israel escalation premium - WRONG. OPEC+ production increase, China demand weak. Down $7.31/bbl (-10.7%). $2.94 from stop loss. Commission: $9 total. Thesis broken - candidate for exit before Dec 13 roll to avoid $4.50 roll cost.",
-      "targetExit": 75.00,
-      "stopLoss": 58.00,
+      "targetExit": 75,
+      "stopLoss": 58,
       "contractSize": 1000,
       "marginPerContract": 770,
       "expiryDate": "2025-12-20",
       "commission": 9,
       "rollDate": "2025-12-13",
-      "rollCost": 4.50,
+      "rollCost": 4.5,
       "notionalExposure": 68250,
       "exitConsideration": "Thesis invalidated. No Iran-Israel escalation materialized. Bearish fundamentals (OPEC+ production up, China demand weak). Close to stop loss ($2.94). Roll in 25 days costs $4.50 - not worth holding broken thesis."
     },
@@ -173,8 +173,8 @@
       "openDate": "2025-01-28T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Broad defense sector exposure, lower idiosyncratic risk. Geopolitical model signaling sustained defense spending cycle. Diversification vs single stock concentration. Zero commission.",
-      "targetExit": 220.00,
-      "stopLoss": 185.00,
+      "targetExit": 220,
+      "stopLoss": 185,
       "commission": 0
     },
     {
@@ -193,8 +193,8 @@
       "openDate": "2025-09-08T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Columbia-class submarine program, Abrams tank upgrades for Eastern Europe. Gulfstream business jet recovering. Lower beta defensive play. Zero commission.",
-      "targetExit": 370.00,
-      "stopLoss": 305.00,
+      "targetExit": 370,
+      "stopLoss": 305,
       "commission": 0
     },
     {
@@ -213,8 +213,8 @@
       "openDate": "2025-07-03T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Small-cap energy producers levered to oil price recovery. Venezuela crisis reducing Western Hemisphere supply. Permian Basin production constraints. Zero commission.",
-      "targetExit": 145.00,
-      "stopLoss": 122.00,
+      "targetExit": 145,
+      "stopLoss": 122,
       "commission": 0
     },
     {
@@ -233,8 +233,8 @@
       "openDate": "2025-10-12T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Naval shipbuilding monopoly. South China Sea tensions driving destroyer/carrier orders. Multi-year backlog visibility. Virginia-class submarine ramp. Zero commission.",
-      "targetExit": 335.00,
-      "stopLoss": 275.00,
+      "targetExit": 335,
+      "stopLoss": 275,
       "commission": 0
     },
     {
@@ -253,64 +253,276 @@
       "openDate": "2025-09-25T00:00:00Z",
       "status": "OPEN",
       "reasoning": "Portfolio hedge (15% short exposure vs 85% long defense/energy). Negative correlation to defense. Losing on market rally but provides downside protection. Zero commission short sale.",
-      "targetExit": 580.00,
-      "stopLoss": 685.00,
+      "targetExit": 580,
+      "stopLoss": 685,
       "commission": 0
     }
   ],
   "equityCurve": [
-    { "date": "2024-11-18", "portfolioValue": 100000, "sp500Value": 100000 },
-    { "date": "2024-11-25", "portfolioValue": 100240, "sp500Value": 100850 },
-    { "date": "2024-12-02", "portfolioValue": 100420, "sp500Value": 101200 },
-    { "date": "2024-12-09", "portfolioValue": 100360, "sp500Value": 101500 },
-    { "date": "2024-12-16", "portfolioValue": 100640, "sp500Value": 102100 },
-    { "date": "2024-12-23", "portfolioValue": 100920, "sp500Value": 102800 },
-    { "date": "2024-12-30", "portfolioValue": 101220, "sp500Value": 103200 },
-    { "date": "2025-01-06", "portfolioValue": 101560, "sp500Value": 103500 },
-    { "date": "2025-01-13", "portfolioValue": 101900, "sp500Value": 104200 },
-    { "date": "2025-01-20", "portfolioValue": 102240, "sp500Value": 104800 },
-    { "date": "2025-01-27", "portfolioValue": 102680, "sp500Value": 105200 },
-    { "date": "2025-02-03", "portfolioValue": 103220, "sp500Value": 105800 },
-    { "date": "2025-02-10", "portfolioValue": 103780, "sp500Value": 106500 },
-    { "date": "2025-02-17", "portfolioValue": 104240, "sp500Value": 107200 },
-    { "date": "2025-02-24", "portfolioValue": 104760, "sp500Value": 107800 },
-    { "date": "2025-03-03", "portfolioValue": 105300, "sp500Value": 108500 },
-    { "date": "2025-03-10", "portfolioValue": 105820, "sp500Value": 109200 },
-    { "date": "2025-03-17", "portfolioValue": 106360, "sp500Value": 110000 },
-    { "date": "2025-03-24", "portfolioValue": 106840, "sp500Value": 110800 },
-    { "date": "2025-03-31", "portfolioValue": 107280, "sp500Value": 111500 },
-    { "date": "2025-04-07", "portfolioValue": 105200, "sp500Value": 105400 },
-    { "date": "2025-04-14", "portfolioValue": 102800, "sp500Value": 97800 },
-    { "date": "2025-04-21", "portfolioValue": 100200, "sp500Value": 91200 },
-    { "date": "2025-04-28", "portfolioValue": 98500, "sp500Value": 89200 },
-    { "date": "2025-05-05", "portfolioValue": 99800, "sp500Value": 92500 },
-    { "date": "2025-05-12", "portfolioValue": 101400, "sp500Value": 96800 },
-    { "date": "2025-05-19", "portfolioValue": 103200, "sp500Value": 101200 },
-    { "date": "2025-05-26", "portfolioValue": 104600, "sp500Value": 104500 },
-    { "date": "2025-06-02", "portfolioValue": 105800, "sp500Value": 107800 },
-    { "date": "2025-06-09", "portfolioValue": 106900, "sp500Value": 110200 },
-    { "date": "2025-06-16", "portfolioValue": 107800, "sp500Value": 112500 },
-    { "date": "2025-06-23", "portfolioValue": 108600, "sp500Value": 114800 },
-    { "date": "2025-06-30", "portfolioValue": 109400, "sp500Value": 116900 },
-    { "date": "2025-07-07", "portfolioValue": 110100, "sp500Value": 118600 },
-    { "date": "2025-07-14", "portfolioValue": 110800, "sp500Value": 120200 },
-    { "date": "2025-07-21", "portfolioValue": 111500, "sp500Value": 121800 },
-    { "date": "2025-07-28", "portfolioValue": 112200, "sp500Value": 123200 },
-    { "date": "2025-08-04", "portfolioValue": 111900, "sp500Value": 122600 },
-    { "date": "2025-08-11", "portfolioValue": 111400, "sp500Value": 122100 },
-    { "date": "2025-08-18", "portfolioValue": 111000, "sp500Value": 121500 },
-    { "date": "2025-08-25", "portfolioValue": 110600, "sp500Value": 121000 },
-    { "date": "2025-09-01", "portfolioValue": 110300, "sp500Value": 120600 },
-    { "date": "2025-09-08", "portfolioValue": 110700, "sp500Value": 121200 },
-    { "date": "2025-09-15", "portfolioValue": 111100, "sp500Value": 121900 },
-    { "date": "2025-09-22", "portfolioValue": 104800, "sp500Value": 122500 },
-    { "date": "2025-09-29", "portfolioValue": 104300, "sp500Value": 123100 },
-    { "date": "2025-10-06", "portfolioValue": 103800, "sp500Value": 123800 },
-    { "date": "2025-10-13", "portfolioValue": 103500, "sp500Value": 123400 },
-    { "date": "2025-10-20", "portfolioValue": 103000, "sp500Value": 122900 },
-    { "date": "2025-10-27", "portfolioValue": 102700, "sp500Value": 122500 },
-    { "date": "2025-11-03", "portfolioValue": 102400, "sp500Value": 122200 },
-    { "date": "2025-11-10", "portfolioValue": 102100, "sp500Value": 122500 },
-    { "date": "2025-11-18", "portfolioValue": 100300, "sp500Value": 122000 }
+    {
+      "date": "2024-11-18",
+      "portfolioValue": 100000,
+      "sp500Value": 100000
+    },
+    {
+      "date": "2024-11-25",
+      "portfolioValue": 100240,
+      "sp500Value": 101595
+    },
+    {
+      "date": "2024-12-02",
+      "portfolioValue": 100420,
+      "sp500Value": 102632
+    },
+    {
+      "date": "2024-12-09",
+      "portfolioValue": 100360,
+      "sp500Value": 102811
+    },
+    {
+      "date": "2024-12-16",
+      "portfolioValue": 100640,
+      "sp500Value": 103169
+    },
+    {
+      "date": "2024-12-23",
+      "portfolioValue": 100920,
+      "sp500Value": 101112
+    },
+    {
+      "date": "2024-12-30",
+      "portfolioValue": 101220,
+      "sp500Value": 100012
+    },
+    {
+      "date": "2025-01-06",
+      "portfolioValue": 101560,
+      "sp500Value": 101226
+    },
+    {
+      "date": "2025-01-13",
+      "portfolioValue": 101900,
+      "sp500Value": 98851
+    },
+    {
+      "date": "2025-01-20",
+      "portfolioValue": 102240,
+      "sp500Value": 104800
+    },
+    {
+      "date": "2025-01-27",
+      "portfolioValue": 102680,
+      "sp500Value": 101908
+    },
+    {
+      "date": "2025-02-03",
+      "portfolioValue": 103220,
+      "sp500Value": 101636
+    },
+    {
+      "date": "2025-02-10",
+      "portfolioValue": 103780,
+      "sp500Value": 102839
+    },
+    {
+      "date": "2025-02-17",
+      "portfolioValue": 104240,
+      "sp500Value": 107200
+    },
+    {
+      "date": "2025-02-24",
+      "portfolioValue": 104760,
+      "sp500Value": 101540
+    },
+    {
+      "date": "2025-03-03",
+      "portfolioValue": 105300,
+      "sp500Value": 99255
+    },
+    {
+      "date": "2025-03-10",
+      "portfolioValue": 105820,
+      "sp500Value": 95312
+    },
+    {
+      "date": "2025-03-17",
+      "portfolioValue": 106360,
+      "sp500Value": 96429
+    },
+    {
+      "date": "2025-03-24",
+      "portfolioValue": 106840,
+      "sp500Value": 97608
+    },
+    {
+      "date": "2025-03-31",
+      "portfolioValue": 107280,
+      "sp500Value": 95110
+    },
+    {
+      "date": "2025-04-07",
+      "portfolioValue": 105200,
+      "sp500Value": 85757
+    },
+    {
+      "date": "2025-04-14",
+      "portfolioValue": 102800,
+      "sp500Value": 91664
+    },
+    {
+      "date": "2025-04-21",
+      "portfolioValue": 100200,
+      "sp500Value": 87372
+    },
+    {
+      "date": "2025-04-28",
+      "portfolioValue": 98500,
+      "sp500Value": 93658
+    },
+    {
+      "date": "2025-05-05",
+      "portfolioValue": 99800,
+      "sp500Value": 95811
+    },
+    {
+      "date": "2025-05-12",
+      "portfolioValue": 101400,
+      "sp500Value": 99123
+    },
+    {
+      "date": "2025-05-19",
+      "portfolioValue": 103200,
+      "sp500Value": 101139
+    },
+    {
+      "date": "2025-05-26",
+      "portfolioValue": 104600,
+      "sp500Value": 104500
+    },
+    {
+      "date": "2025-06-02",
+      "portfolioValue": 105800,
+      "sp500Value": 100775
+    },
+    {
+      "date": "2025-06-09",
+      "portfolioValue": 106900,
+      "sp500Value": 101960
+    },
+    {
+      "date": "2025-06-16",
+      "portfolioValue": 107800,
+      "sp500Value": 102470
+    },
+    {
+      "date": "2025-06-23",
+      "portfolioValue": 108600,
+      "sp500Value": 102040
+    },
+    {
+      "date": "2025-06-30",
+      "portfolioValue": 109400,
+      "sp500Value": 105050
+    },
+    {
+      "date": "2025-07-07",
+      "portfolioValue": 110100,
+      "sp500Value": 105531
+    },
+    {
+      "date": "2025-07-14",
+      "portfolioValue": 110800,
+      "sp500Value": 106233
+    },
+    {
+      "date": "2025-07-21",
+      "portfolioValue": 111500,
+      "sp500Value": 106906
+    },
+    {
+      "date": "2025-07-28",
+      "portfolioValue": 112200,
+      "sp500Value": 108296
+    },
+    {
+      "date": "2025-08-04",
+      "portfolioValue": 111900,
+      "sp500Value": 107314
+    },
+    {
+      "date": "2025-08-11",
+      "portfolioValue": 111400,
+      "sp500Value": 108122
+    },
+    {
+      "date": "2025-08-18",
+      "portfolioValue": 111000,
+      "sp500Value": 109377
+    },
+    {
+      "date": "2025-08-25",
+      "portfolioValue": 110600,
+      "sp500Value": 109236
+    },
+    {
+      "date": "2025-09-01",
+      "portfolioValue": 110300,
+      "sp500Value": 120600
+    },
+    {
+      "date": "2025-09-08",
+      "portfolioValue": 110700,
+      "sp500Value": 110317
+    },
+    {
+      "date": "2025-09-15",
+      "portfolioValue": 111100,
+      "sp500Value": 112371
+    },
+    {
+      "date": "2025-09-22",
+      "portfolioValue": 104800,
+      "sp500Value": 113379
+    },
+    {
+      "date": "2025-09-29",
+      "portfolioValue": 104300,
+      "sp500Value": 112842
+    },
+    {
+      "date": "2025-10-06",
+      "portfolioValue": 103800,
+      "sp500Value": 114190
+    },
+    {
+      "date": "2025-10-13",
+      "portfolioValue": 103500,
+      "sp500Value": 112733
+    },
+    {
+      "date": "2025-10-20",
+      "portfolioValue": 103000,
+      "sp500Value": 114138
+    },
+    {
+      "date": "2025-10-27",
+      "portfolioValue": 102700,
+      "sp500Value": 116508
+    },
+    {
+      "date": "2025-11-03",
+      "portfolioValue": 102400,
+      "sp500Value": 116185
+    },
+    {
+      "date": "2025-11-10",
+      "portfolioValue": 102100,
+      "sp500Value": 115862
+    },
+    {
+      "date": "2025-11-18",
+      "portfolioValue": 100300,
+      "sp500Value": 122000
+    }
   ]
 }
