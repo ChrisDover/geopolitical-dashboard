@@ -1535,7 +1535,7 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
                   style={{ fontSize: '0.75rem' }}
                   tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                 />
-                <Tooltip
+                <ChartTooltip
                   contentStyle={{
                     background: '#1a1a1a',
                     border: '1px solid #333',
