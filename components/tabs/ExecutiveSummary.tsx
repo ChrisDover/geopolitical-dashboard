@@ -1089,7 +1089,7 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
           value: `$${Math.abs(position.currentPrice - position.stopLoss).toFixed(2)} (${stopDistance.toFixed(1)}%)`,
           severity: 'warning'
         });
-        if (urgency !== 'critical') urgency = 'high';
+        if (urgency === 'medium') urgency = 'high';
       }
     }
 
@@ -1100,7 +1100,7 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
         value: 'INVALIDATED',
         severity: 'negative'
       });
-      if (urgency !== 'critical') urgency = 'high';
+      if (urgency === 'medium') urgency = 'high';
     }
 
     // Check roll date for futures
