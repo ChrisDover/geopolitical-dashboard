@@ -101,16 +101,28 @@ export default async function handler(
       }
     }
 
-    // Fetch from AllSides RSS (alternative to Ground News)
+    // Fetch from AllSides RSS (alternative to Ground News) with timeout
     try {
-      const parser = new Parser();
-      const feed = await parser.parseURL('https://www.allsides.com/rss/news');
+      const parser = new Parser({
+        timeout: 5000, // 5 second timeout
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; GeopoliticalDashboard/1.0)'
+        }
+      });
 
-      if (feed.items && feed.items.length > 0) {
+      // Wrap in Promise.race with timeout
+      const feedPromise = parser.parseURL('https://www.allsides.com/rss/news');
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('AllSides RSS timeout')), 5000)
+      );
+
+      const feed = await Promise.race([feedPromise, timeoutPromise]) as any;
+
+      if (feed && feed.items && feed.items.length > 0) {
         const allsidesArticles = feed.items
           .slice(0, 15) // Limit to 15 most recent articles
-          .filter(item => item && item.title && item.link)
-          .map(item => ({
+          .filter((item: any) => item && item.title && item.link)
+          .map((item: any) => ({
             timestamp: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
             source: 'AllSides.com',
             priority: calculatePriority(item.title || ''),
@@ -125,8 +137,8 @@ export default async function handler(
         allArticles.push(...allsidesArticles);
       }
     } catch (error) {
-      // Continue even if AllSides fetch fails
-      console.error('AllSides RSS fetch error:', error);
+      // Continue even if AllSides fetch fails - don't block GDELT data
+      console.error('AllSides RSS fetch error (continuing with GDELT only):', error);
     }
 
     // Sort by priority and recency
