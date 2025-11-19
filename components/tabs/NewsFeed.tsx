@@ -253,9 +253,20 @@ const EmptyState = styled.div`
 export default function NewsFeed({ data = [], loading }: NewsFeedProps) {
   const [filter, setFilter] = useState<'all' | 'critical'>('all');
 
+  // Deduplicate articles by headline (case-insensitive)
+  const deduplicatedData = data.reduce((acc: NewsArticle[], current) => {
+    const isDuplicate = acc.some(article =>
+      article.headline.toLowerCase() === current.headline.toLowerCase()
+    );
+    if (!isDuplicate) {
+      acc.push(current);
+    }
+    return acc;
+  }, []);
+
   const filteredData = filter === 'all'
-    ? data
-    : data.filter(item => ['CRITICAL', 'HIGH'].includes(item.priority));
+    ? deduplicatedData
+    : deduplicatedData.filter(item => ['CRITICAL', 'HIGH'].includes(item.priority));
 
   if (loading) {
     return (
@@ -278,13 +289,13 @@ export default function NewsFeed({ data = [], loading }: NewsFeedProps) {
             $active={filter === 'all'}
             onClick={() => setFilter('all')}
           >
-            All Events ({data.length})
+            All Events ({deduplicatedData.length})
           </FilterButton>
           <FilterButton
             $active={filter === 'critical'}
             onClick={() => setFilter('critical')}
           >
-            Critical Only ({data.filter(n => ['CRITICAL', 'HIGH'].includes(n.priority)).length})
+            Critical Only ({deduplicatedData.filter(n => ['CRITICAL', 'HIGH'].includes(n.priority)).length})
           </FilterButton>
         </FilterContainer>
       </Header>

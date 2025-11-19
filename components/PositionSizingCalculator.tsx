@@ -201,6 +201,28 @@ const WarningBox = styled.div`
   font-size: 0.9rem;
 `;
 
+const CheckboxContainer = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  color: #aaa;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+  }
+`;
+
+const Checkbox = styled.input`
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #ff6b00;
+`;
+
 export default function PositionSizingCalculator({
   portfolioType,
   positions,
@@ -209,6 +231,7 @@ export default function PositionSizingCalculator({
   const [accountSize, setAccountSize] = useState<string>('');
   const [calculatedPositions, setCalculatedPositions] = useState<any[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [allowFractional, setAllowFractional] = useState(true);
 
   const calculatePositions = () => {
     const userCapital = parseFloat(accountSize);
@@ -221,36 +244,47 @@ export default function PositionSizingCalculator({
     const scaleFactor = userCapital / baseCapital;
 
     const scaled = positions.map(pos => {
-      let quantity: number;
+      let quantityWhole: number;
+      let quantityFractional: number;
       let cost: number;
 
       if (pos.type === 'FUTURES') {
-        // Futures: scale contracts, round to nearest whole number
+        // Futures: scale contracts, round to nearest whole number (futures don't support fractional)
         const scaledContracts = Math.round((pos.contracts || 0) * scaleFactor);
-        quantity = scaledContracts;
+        quantityWhole = scaledContracts;
+        quantityFractional = scaledContracts;
         // Cost is margin per contract * number of contracts
         const marginPerContract = 770; // Based on CL contract
-        cost = quantity * marginPerContract;
+        cost = quantityWhole * marginPerContract;
       } else {
         // Stocks/ETFs: scale shares
         const scaledShares = (pos.shares || 0) * scaleFactor;
 
-        // For very small positions, round to at least 1 share if scaled > 0.5
+        // Store fractional quantity (exact)
+        quantityFractional = scaledShares;
+
+        // Whole number quantity (rounded)
         if (Math.abs(scaledShares) < 1 && Math.abs(scaledShares) >= 0.5) {
-          quantity = scaledShares > 0 ? 1 : -1;
+          quantityWhole = scaledShares > 0 ? 1 : -1;
         } else {
-          quantity = Math.round(scaledShares);
+          quantityWhole = Math.round(scaledShares);
         }
 
-        cost = Math.abs(quantity) * pos.currentPrice;
+        // Cost based on whether fractional shares are allowed
+        const effectiveQuantity = allowFractional ? quantityFractional : quantityWhole;
+        cost = Math.abs(effectiveQuantity) * pos.currentPrice;
       }
+
+      const effectiveQuantity = allowFractional ? quantityFractional : quantityWhole;
 
       return {
         ...pos,
-        scaledQuantity: quantity,
+        scaledQuantity: effectiveQuantity,
+        scaledQuantityWhole: quantityWhole,
+        scaledQuantityFractional: quantityFractional,
         estimatedCost: cost
       };
-    }).filter(p => p.scaledQuantity !== 0); // Remove positions that round to 0
+    }).filter(p => Math.abs(p.scaledQuantity) >= 0.01); // Remove positions that are essentially 0
 
     setCalculatedPositions(scaled);
     setShowResults(true);
@@ -279,6 +313,16 @@ export default function PositionSizingCalculator({
             if (e.key === 'Enter') calculatePositions();
           }}
         />
+        <CheckboxContainer>
+          <Checkbox
+            type="checkbox"
+            checked={allowFractional}
+            onChange={(e) => setAllowFractional(e.target.checked)}
+          />
+          <span>
+            Allow fractional shares (for brokerages like Robinhood, Fidelity, etc.)
+          </span>
+        </CheckboxContainer>
         <CalculateButton onClick={calculatePositions}>
           Calculate Positions
         </CalculateButton>
@@ -291,25 +335,35 @@ export default function PositionSizingCalculator({
           </ResultsTitle>
 
           <PositionsTable>
-            {calculatedPositions.map((pos, idx) => (
-              <PositionRow key={idx}>
-                <PositionSymbol>{pos.symbol}</PositionSymbol>
-                <PositionName>{pos.name}</PositionName>
-                <PositionPrice>
-                  ${pos.currentPrice.toFixed(2)}
-                </PositionPrice>
-                <PositionShares>
-                  {pos.type === 'FUTURES'
-                    ? `${pos.scaledQuantity} contract${Math.abs(pos.scaledQuantity) !== 1 ? 's' : ''}`
-                    : `${pos.scaledQuantity} share${Math.abs(pos.scaledQuantity) !== 1 ? 's' : ''}`
-                  }
-                  {pos.scaledQuantity < 0 && ' (SHORT)'}
-                </PositionShares>
-                <PositionCost>
-                  ${pos.estimatedCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}
-                </PositionCost>
-              </PositionRow>
-            ))}
+            {calculatedPositions.map((pos, idx) => {
+              const isFractional = allowFractional && pos.type !== 'FUTURES' && pos.scaledQuantity % 1 !== 0;
+              const displayQuantity = isFractional
+                ? pos.scaledQuantity.toFixed(2)
+                : pos.scaledQuantity.toString();
+
+              return (
+                <PositionRow key={idx}>
+                  <PositionSymbol>{pos.symbol}</PositionSymbol>
+                  <PositionName>{pos.name}</PositionName>
+                  <PositionPrice>
+                    ${pos.currentPrice.toFixed(2)}
+                  </PositionPrice>
+                  <PositionShares>
+                    {pos.type === 'FUTURES'
+                      ? `${displayQuantity} contract${Math.abs(pos.scaledQuantity) !== 1 ? 's' : ''}`
+                      : `${displayQuantity} share${Math.abs(pos.scaledQuantity) !== 1 ? 's' : ''}`
+                    }
+                    {pos.scaledQuantity < 0 && ' (SHORT)'}
+                  </PositionShares>
+                  <PositionCost>
+                    ${pos.estimatedCost.toLocaleString(undefined, {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2
+                    })}
+                  </PositionCost>
+                </PositionRow>
+              );
+            })}
           </PositionsTable>
 
           <SummarySection>
