@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navigation from '../../components/Navigation';
 import Analytics from '../../components/tabs/Analytics';
@@ -62,6 +62,25 @@ export default function RiskPage() {
   const equitiesPnL = -2748; // From stocks/ETFs
   const totalPnL = eventsPnL + equitiesPnL;
 
+  const [marketData, setMarketData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch market divergence data
+    fetch('/api/markets/divergence')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setMarketData(data.data);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Market data error:', err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <PageContainer>
       <Navigation totalPnL={totalPnL} />
@@ -83,7 +102,7 @@ export default function RiskPage() {
         </Section>
 
         <Section>
-          <MarketDivergence />
+          <MarketDivergence data={marketData} loading={loading} />
         </Section>
       </ContentContainer>
     </PageContainer>
