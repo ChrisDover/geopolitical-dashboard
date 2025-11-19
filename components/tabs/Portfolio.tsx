@@ -471,6 +471,9 @@ export default function Portfolio() {
 
       <SectionCard>
         <SectionTitle>Active Positions</SectionTitle>
+        <div style={{ background: '#0a0a0a', border: '1px solid #333', borderRadius: '8px', padding: '16px', marginBottom: '20px', color: '#888', fontSize: '0.9rem' }}>
+          <strong style={{ color: '#ff6b00' }}>How to Use:</strong> Click any position row (look for the <span style={{ color: '#ff6b00', fontWeight: 700 }}>► arrow</span>) to expand its detailed game plan with bull case, bear case, and exit strategies. Selected positions highlight in orange with a <span style={{ color: '#ff6b00' }}>▼ arrow</span>. Click again to collapse.
+        </div>
         <PositionsTable>
           <thead>
             <tr>
@@ -606,44 +609,100 @@ export default function Portfolio() {
 
       <SectionCard>
         <SectionTitle>Trip Wires ({tripWires.filter((tw: any) => tw.status === 'ACTIVE').length} Active)</SectionTitle>
-        {tripWires.map((tw: any) => {
-          const isTriggered = triggeredTripWires?.some((t: any) => t.id === tw.id);
-          return (
-            <TripWireCard key={tw.id} $status={isTriggered ? 'TRIGGERED' : tw.status}>
-              <TripWireHeader>
-                <TripWireTitle>
-                  {tw.scenario || 'Portfolio Level'} - {tw.action}
-                </TripWireTitle>
-                <TripWireStatus $status={isTriggered ? 'TRIGGERED' : tw.status}>
-                  {isTriggered ? 'TRIGGERED' : tw.status}
-                </TripWireStatus>
-              </TripWireHeader>
-              {tw.type === 'PRICE_THRESHOLD' && (
-                <TripWireDetail>
-                  Price {tw.direction === 'ABOVE' ? 'e' : 'd'} ${tw.threshold.toFixed(2)}
+        <div style={{ background: 'rgba(255, 107, 0, 0.1)', border: '1px solid #ff6b00', borderRadius: '8px', padding: '16px', marginBottom: '20px', color: '#ddd', fontSize: '0.9rem' }}>
+          <strong style={{ color: '#ff6b00' }}>What This Means:</strong> Trip wires are automatic alerts that tell you exactly what to do when prices hit specific levels or events occur. When triggered, you'll see clear instructions like "SELL 100 shares of RTX at $155 (stop loss)" - no guessing, just follow the action.
+        </div>
+        {tripWires.length === 0 ? (
+          <div style={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: '8px', padding: '30px', textAlign: 'center', color: '#888' }}>
+            <div style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#aaa' }}>No trip wires configured for this portfolio</div>
+            <div style={{ fontSize: '0.9rem' }}>Trip wires automatically alert you when it's time to buy, sell, or adjust positions. Configure them to automate your risk management.</div>
+          </div>
+        ) : (
+          tripWires.map((tw: any) => {
+            const isTriggered = triggeredTripWires?.some((t: any) => t.id === tw.id);
+
+            // Get position details for clear instructions
+            const position = positions.find((p: any) => p.scenario === tw.scenario || p.symbol === tw.scenario);
+            const getActionInstruction = () => {
+              if (!position) return tw.action.replace(/_/g, ' ');
+
+              const currentPrice = position.currentPrice || position.entryPrice;
+              const quantity = position.contracts || position.shares || 0;
+
+              switch (tw.action) {
+                case 'STOP_LOSS':
+                  return `EXIT IMMEDIATELY: Sell all ${quantity.toLocaleString()} ${position.contracts ? 'contracts' : 'shares'} at market. Stop loss triggered at $${tw.threshold?.toFixed(2) || position.stopLoss?.toFixed(2)}`;
+                case 'TAKE_PROFIT_50%':
+                  const half = Math.floor(quantity / 2);
+                  return `TAKE PROFIT: Sell ${half.toLocaleString()} ${position.contracts ? 'contracts' : 'shares'} at $${tw.threshold?.toFixed(2)} or better. Keep ${(quantity - half).toLocaleString()}.`;
+                case 'TAKE_PROFIT_75%':
+                  const threeQuarters = Math.floor(quantity * 0.75);
+                  return `TAKE PROFIT: Sell ${threeQuarters.toLocaleString()} ${position.contracts ? 'contracts' : 'shares'} at $${tw.threshold?.toFixed(2)} or better. Keep ${(quantity - threeQuarters).toLocaleString()}.`;
+                case 'ADD_100%_POSITION':
+                  return `DOUBLE DOWN: Buy ${quantity.toLocaleString()} more ${position.contracts ? 'contracts' : 'shares'} immediately at market price (currently $${currentPrice.toFixed(2)})`;
+                case 'CLOSE_POSITION_IMMEDIATE':
+                  return `CLOSE NOW: Sell all ${quantity.toLocaleString()} ${position.contracts ? 'contracts' : 'shares'} immediately at market price. Exit entire position.`;
+                case 'REDUCE_ALL_POSITIONS_25%':
+                  return `REDUCE RISK: Sell 25% of ALL positions across portfolio. Reduce each holding by one quarter.`;
+                case 'TAKE_PROFIT_50%_ALL':
+                  return `LOCK GAINS: Sell 50% of ALL positions across portfolio. Take profit on half of everything.`;
+                default:
+                  return tw.action.replace(/_/g, ' ');
+              }
+            };
+
+            return (
+              <TripWireCard key={tw.id} $status={isTriggered ? 'TRIGGERED' : tw.status}>
+                <TripWireHeader>
+                  <TripWireTitle>
+                    {tw.scenario || 'Portfolio Level'}
+                  </TripWireTitle>
+                  <TripWireStatus $status={isTriggered ? 'TRIGGERED' : tw.status}>
+                    {isTriggered ? '🚨 TRIGGERED' : '✓ ACTIVE'}
+                  </TripWireStatus>
+                </TripWireHeader>
+
+                <div style={{
+                  background: isTriggered ? 'rgba(255, 0, 0, 0.15)' : 'rgba(0, 255, 0, 0.05)',
+                  border: `1px solid ${isTriggered ? '#ff0000' : '#00c853'}`,
+                  borderRadius: '6px',
+                  padding: '12px',
+                  marginTop: '12px',
+                  marginBottom: '12px'
+                }}>
+                  <div style={{ fontSize: '0.75rem', color: '#888', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {isTriggered ? '⚡ ACTION REQUIRED' : '📋 WHAT TO DO'}
+                  </div>
+                  <div style={{ fontSize: '1rem', fontWeight: 700, color: isTriggered ? '#ff0000' : '#00c853', lineHeight: '1.5' }}>
+                    {getActionInstruction()}
+                  </div>
+                </div>
+
+                {tw.type === 'PRICE_THRESHOLD' && (
+                  <TripWireDetail>
+                    <strong>Trigger:</strong> Price {tw.direction === 'ABOVE' ? 'rises above' : 'falls below'} ${tw.threshold.toFixed(2)}
+                    {position && ` (currently $${position.currentPrice?.toFixed(2) || position.entryPrice.toFixed(2)})`}
+                  </TripWireDetail>
+                )}
+                {tw.type === 'PORTFOLIO_RISK' && (
+                  <TripWireDetail>
+                    <strong>Trigger:</strong> Total portfolio P&L {tw.threshold > 0 ? 'reaches' : 'drops to'} ${Math.abs(tw.threshold).toLocaleString()}
+                  </TripWireDetail>
+                )}
+                {tw.type === 'EVENT_TRIGGER' && (
+                  <TripWireDetail>
+                    <strong>Trigger:</strong> {tw.event}
+                  </TripWireDetail>
+                )}
+                <TripWireDetail style={{ color: '#aaa', marginTop: '10px', fontStyle: 'italic' }}>
+                  {tw.reasoning}
                 </TripWireDetail>
-              )}
-              {tw.type === 'PORTFOLIO_RISK' && (
-                <TripWireDetail>
-                  Portfolio P&L {tw.threshold > 0 ? 'e' : 'd'} ${tw.threshold.toLocaleString()}
-                </TripWireDetail>
-              )}
-              {tw.type === 'EVENT_TRIGGER' && (
-                <TripWireDetail>
-                  Event: {tw.event}
-                </TripWireDetail>
-              )}
-              <TripWireDetail style={{ color: '#aaa', marginTop: '6px' }}>
-                {tw.reasoning}
-              </TripWireDetail>
-            </TripWireCard>
-          );
-        })}
+              </TripWireCard>
+            );
+          })
+        )}
       </SectionCard>
 
-      <div style={{ background: '#0a0a0a', border: '1px solid #333', borderRadius: '8px', padding: '20px', color: '#888', fontSize: '0.85rem' }}>
-        <strong style={{ color: '#ff6b00' }}>Interactive Features:</strong> Click any position row (look for the <span style={{ color: '#ff6b00', fontWeight: 700 }}>► arrow</span>) to expand its detailed game plan with bull case, bear case, and exit strategies. Selected positions highlight in orange with a <span style={{ color: '#ff6b00' }}>▼ arrow</span>. Click again to collapse. Trip wires are monitored in real-time and will trigger alerts when thresholds are hit.
-      </div>
     </Container>
   );
 }

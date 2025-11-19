@@ -529,5 +529,135 @@
       "portfolioValue": 100300,
       "sp500Value": 112230
     }
+  ],
+  "tripWires": [
+    {
+      "id": "eq-tw-001",
+      "scenario": "RTX",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 155,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if RTX drops to $155 - stop loss level. Defense budget concerns or earnings miss.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-002",
+      "scenario": "RTX",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 190,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_50%",
+      "status": "ACTIVE",
+      "reasoning": "Take profit at $190 target - lock in gains on 50 shares. Let remaining 50 shares ride.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-003",
+      "scenario": "LMT",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 445,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if LMT drops to $445 - stop loss level. F-35 program delays or budget cuts.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-004",
+      "scenario": "LMT",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 510,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_50%",
+      "status": "ACTIVE",
+      "reasoning": "Take profit at $510 target - sell 18 shares. Keep 18 shares for upside.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-005",
+      "scenario": "NOC",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 505,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if NOC drops to $505 - stop loss level. B-21 program concerns.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-006",
+      "scenario": "NOC",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 610,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_75%",
+      "status": "ACTIVE",
+      "reasoning": "Take profit at $610 target - sell 18 shares. Lock in 75% of position gains.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-007",
+      "scenario": "BA",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 165,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if BA drops to $165 - stop loss level. 737 MAX issues or production problems.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-008",
+      "scenario": "XLE",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 82,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit if XLE drops to $82 - energy sector breakdown. Oil demand concerns.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-009",
+      "scenario": "CL",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 55,
+      "direction": "BELOW",
+      "action": "STOP_LOSS",
+      "status": "ACTIVE",
+      "reasoning": "Exit oil futures if crude drops to $55 - stop loss. Supply glut or demand destruction.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-010",
+      "scenario": "CL",
+      "type": "PRICE_THRESHOLD",
+      "threshold": 75,
+      "direction": "ABOVE",
+      "action": "TAKE_PROFIT_50%",
+      "status": "ACTIVE",
+      "reasoning": "Take profit if crude hits $75 - exit 1 contract. Lock in gains on supply disruption.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-011",
+      "type": "PORTFOLIO_RISK",
+      "threshold": -10000,
+      "action": "REDUCE_ALL_POSITIONS_25%",
+      "status": "ACTIVE",
+      "reasoning": "Portfolio down $10k - reduce all positions by 25%. Cut risk immediately.",
+      "triggerCount": 0
+    },
+    {
+      "id": "eq-tw-012",
+      "type": "PORTFOLIO_RISK",
+      "threshold": 15000,
+      "action": "TAKE_PROFIT_50%_ALL",
+      "status": "ACTIVE",
+      "reasoning": "Portfolio up $15k - take profit on 50% of all positions. Lock in gains.",
+      "triggerCount": 0
+    }
   ]
 }
