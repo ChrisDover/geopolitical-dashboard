@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navigation from '../../components/Navigation';
 import ExecutiveSummary from '../../components/tabs/ExecutiveSummary';
@@ -47,6 +47,22 @@ const PageSubtitle = styled.p`
 `;
 
 export default function EquitiesPage() {
+  const [newsData, setNewsData] = useState<any[]>([]);
+  const [marketData, setMarketData] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Fetch news and market data
+    Promise.all([
+      fetch('/api/news/feed?limit=10').then(r => r.json()),
+      fetch('/api/markets/divergence').then(r => r.json())
+    ])
+      .then(([news, markets]) => {
+        if (news.success) setNewsData(news.data);
+        if (markets.success) setMarketData(markets.data);
+      })
+      .catch(error => console.error('Failed to fetch data:', error));
+  }, []);
+
   return (
     <PageContainer>
       <Navigation totalPnL={-2748} />
@@ -59,7 +75,7 @@ export default function EquitiesPage() {
           </PageSubtitle>
         </Header>
 
-        <ExecutiveSummary />
+        <ExecutiveSummary news={newsData} markets={marketData} />
       </ContentContainer>
     </PageContainer>
   );
