@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import PositionSizingCalculator from '../PositionSizingCalculator';
 
 interface NewsArticle {
   timestamp: string;
@@ -1573,6 +1574,20 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
             })}
           </PositionsList>
         </div>
+
+        <PositionSizingCalculator
+          portfolioType={title.includes('PREDICTION') ? 'prediction-markets' : 'equities'}
+          positions={portfolioData.positions.map((pos: any) => ({
+            symbol: pos.symbol || pos.scenario,
+            name: pos.name || pos.scenario,
+            type: pos.type || (pos.contracts ? 'FUTURES' : 'EQUITY'),
+            shares: pos.shares,
+            contracts: pos.contracts,
+            currentPrice: pos.currentPrice,
+            sector: pos.sector || pos.region
+          }))}
+          baseCapital={100000}
+        />
       </PortfolioSection>
     );
   };
