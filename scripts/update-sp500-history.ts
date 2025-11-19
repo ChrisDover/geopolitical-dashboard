@@ -32,6 +32,29 @@ async function fetchSP500History(): Promise<DailyData[]> {
     });
   }
 
+  // Also fetch today's price using GLOBAL_QUOTE to ensure we have the latest data
+  console.log('Fetching latest SPY price...');
+  const quoteUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=SPY&apikey=${ALPHAVANTAGE_API_KEY}`;
+  const quoteResponse = await fetch(quoteUrl);
+  const quoteData = await quoteResponse.json();
+
+  if (quoteData['Global Quote'] && quoteData['Global Quote']['05. price']) {
+    const latestDate = quoteData['Global Quote']['07. latest trading day'];
+    const latestPrice = parseFloat(quoteData['Global Quote']['05. price']);
+
+    // Add or update today's price if not already in the data
+    const existingIndex = dailyData.findIndex(d => d.date === latestDate);
+    if (existingIndex >= 0) {
+      dailyData[existingIndex].close = latestPrice;
+    } else {
+      dailyData.push({
+        date: latestDate,
+        close: latestPrice
+      });
+    }
+    console.log(`Latest price: $${latestPrice} on ${latestDate}`);
+  }
+
   // Sort by date ascending
   dailyData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
@@ -75,6 +98,17 @@ async function updateEquityCurves() {
 
     // Move to next week
     currentDate.setDate(currentDate.getDate() + 7);
+  }
+
+  // Ensure we include the end date if we have data for it and it's not already included
+  const endDateStr = endDate.toISOString().split('T')[0];
+  const hasEndDate = weeklyData.some(d => d.date === endDateStr);
+  if (!hasEndDate) {
+    const endDateData = sp500Data.find(d => d.date === endDateStr);
+    if (endDateData) {
+      weeklyData.push(endDateData);
+      console.log(`Added end date: ${endDateStr}`);
+    }
   }
 
   console.log(`\nGenerated ${weeklyData.length} weekly data points`);
@@ -126,12 +160,31 @@ async function updateEquityCurves() {
     const portfolioData = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
 
     // Update equity curve with real S&P 500 data
-    const updatedCurve = portfolioData.equityCurve.map((point: any) => {
-      const sp500Point = normalizedData.find(d => d.date === point.date);
-      return {
-        ...point,
-        sp500Value: sp500Point ? sp500Point.sp500Value : point.sp500Value
-      };
+    // Use normalized data as source of truth for dates, preserve portfolio values from existing curve
+    const updatedCurve = normalizedData.map((sp500Point) => {
+      const existingPoint = portfolioData.equityCurve.find((p: any) => p.date === sp500Point.date);
+
+      if (existingPoint) {
+        // Use existing portfolio value
+        return {
+          date: sp500Point.date,
+          portfolioValue: existingPoint.portfolioValue,
+          sp500Value: sp500Point.sp500Value
+        };
+      } else {
+        // New date - estimate portfolio value based on nearest existing point
+        const nearestPoint = portfolioData.equityCurve.reduce((nearest: any, point: any) => {
+          const nearestDiff = Math.abs(new Date(nearest.date).getTime() - new Date(sp500Point.date).getTime());
+          const pointDiff = Math.abs(new Date(point.date).getTime() - new Date(sp500Point.date).getTime());
+          return pointDiff < nearestDiff ? point : nearest;
+        });
+
+        return {
+          date: sp500Point.date,
+          portfolioValue: nearestPoint.portfolioValue,
+          sp500Value: sp500Point.sp500Value
+        };
+      }
     });
 
     portfolioData.equityCurve = updatedCurve;
