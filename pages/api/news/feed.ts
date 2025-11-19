@@ -1,4 +1,17 @@
+/**
+ * News Feed API
+ *
+ * Sources:
+ * - GDELT Project API (real-time global event database)
+ * - AllSides.com RSS (multi-perspective news, alternative to Ground News)
+ *
+ * Note: Ground News was requested but no longer provides public API access.
+ * They require a paid subscription. AllSides.com provides similar balanced,
+ * multi-perspective coverage and is used as an alternative.
+ */
+
 import type { NextApiRequest, NextApiResponse } from 'next';
+import Parser from 'rss-parser';
 
 interface Article {
   timestamp: string;
@@ -86,6 +99,34 @@ export default async function handler(
 
         allArticles.push(...processedArticles);
       }
+    }
+
+    // Fetch from AllSides RSS (alternative to Ground News)
+    try {
+      const parser = new Parser();
+      const feed = await parser.parseURL('https://www.allsides.com/rss/news');
+
+      if (feed.items && feed.items.length > 0) {
+        const allsidesArticles = feed.items
+          .slice(0, 15) // Limit to 15 most recent articles
+          .filter(item => item && item.title && item.link)
+          .map(item => ({
+            timestamp: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
+            source: 'AllSides.com',
+            priority: calculatePriority(item.title || ''),
+            region: categorizeRegion(item.title || '', item.link || ''),
+            headline: item.title || 'No headline',
+            url: item.link || '',
+            tags: extractTags((item.title || '') + ' ' + (item.contentSnippet || '')),
+            sentiment: 0, // AllSides provides balanced coverage, neutral sentiment
+            verified: true // AllSides is a verified multi-perspective source
+          }));
+
+        allArticles.push(...allsidesArticles);
+      }
+    } catch (error) {
+      // Continue even if AllSides fetch fails
+      console.error('AllSides RSS fetch error:', error);
     }
 
     // Sort by priority and recency
@@ -237,7 +278,7 @@ function isVerifiedSource(url: string): boolean {
     'reuters.com', 'bloomberg.com', 'apnews.com',
     'bbc.com', 'cnn.com', 'ft.com', 'wsj.com',
     'nytimes.com', 'washingtonpost.com', 'theguardian.com',
-    'aljazeera.com', 'axios.com'
+    'aljazeera.com', 'axios.com', 'ground.news', 'allsides.com'
   ];
   return verifiedDomains.some(domain => url.includes(domain));
 }

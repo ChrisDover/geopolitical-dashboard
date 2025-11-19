@@ -282,7 +282,7 @@ export default function NewsFeed({ data = [], loading }: NewsFeedProps) {
       <Header>
         <Title>Real-Time Intelligence Feed</Title>
         <Subtitle>
-          Live geopolitical events from verified sources worldwide
+          Live geopolitical events from GDELT Project and AllSides.com - verified multi-perspective sources worldwide
         </Subtitle>
         <FilterContainer>
           <FilterButton

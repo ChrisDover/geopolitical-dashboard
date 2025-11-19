@@ -17,6 +17,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "recharts": "^3.4.1",
+    "rss-parser": "^3.13.0",
     "styled-components": "^6.1.19",
     "swr": "^2.3.6",
     "yahoo-finance2": "^3.10.2"
