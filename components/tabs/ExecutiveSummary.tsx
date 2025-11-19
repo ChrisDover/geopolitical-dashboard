@@ -1141,7 +1141,7 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
     .map(analyzePositionAction)
     .filter(Boolean)
     .sort((a: any, b: any) => {
-      const urgencyOrder = { critical: 3, high: 2, medium: 1 };
+      const urgencyOrder: { [key: string]: number } = { critical: 3, high: 2, medium: 1 };
       return urgencyOrder[b.urgency] - urgencyOrder[a.urgency];
     });
 
