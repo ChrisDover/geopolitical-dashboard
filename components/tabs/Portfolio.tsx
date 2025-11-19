@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -110,10 +110,18 @@ const TableHeader = styled.th`
 
 const TableRow = styled.tr<{ $highlight?: boolean }>`
   border-bottom: 1px solid #333;
-  background: ${props => props.$highlight ? '#242424' : 'transparent'};
+  background: ${props => props.$highlight ? 'rgba(255, 107, 0, 0.15)' : 'transparent'};
+  border-left: 4px solid ${props => props.$highlight ? '#ff6b00' : 'transparent'};
+  transition: all 0.2s ease;
+  cursor: pointer;
 
   &:hover {
-    background: #242424;
+    background: ${props => props.$highlight ? 'rgba(255, 107, 0, 0.2)' : '#242424'};
+    border-left-color: ${props => props.$highlight ? '#ff6b00' : '#888'};
+  }
+
+  &:active {
+    background: rgba(255, 107, 0, 0.25);
   }
 `;
 
@@ -121,6 +129,14 @@ const TableCell = styled.td`
   padding: 12px;
   color: #ccc;
   font-size: 0.9rem;
+`;
+
+const ExpandIconCell = styled(TableCell)`
+  color: #ff6b00;
+  font-weight: 700;
+  width: 40px;
+  text-align: center;
+  font-size: 1.2rem;
 `;
 
 const PnLCell = styled(TableCell)<{ $positive: boolean }>`
@@ -272,12 +288,22 @@ export default function Portfolio() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
+  const gamePlanRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetchPortfolioData();
     const interval = setInterval(fetchPortfolioData, 30000); // Refresh every 30 seconds
     return () => clearInterval(interval);
   }, []);
+
+  // Scroll to game plan when a scenario is selected
+  useEffect(() => {
+    if (selectedScenario && gamePlanRef.current) {
+      setTimeout(() => {
+        gamePlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  }, [selectedScenario]);
 
   async function fetchPortfolioData() {
     try {
@@ -448,6 +474,7 @@ export default function Portfolio() {
         <PositionsTable>
           <thead>
             <tr>
+              <TableHeader style={{ width: '40px' }}></TableHeader>
               <TableHeader>Scenario</TableHeader>
               <TableHeader>Side</TableHeader>
               <TableHeader>Contracts</TableHeader>
@@ -466,8 +493,10 @@ export default function Portfolio() {
                 key={pos.id}
                 $highlight={selectedScenario === pos.scenario}
                 onClick={() => setSelectedScenario(selectedScenario === pos.scenario ? null : pos.scenario)}
-                style={{ cursor: 'pointer' }}
               >
+                <ExpandIconCell>
+                  {selectedScenario === pos.scenario ? '▼' : '►'}
+                </ExpandIconCell>
                 <TableCell style={{ fontWeight: 600, color: '#fff' }}>{pos.scenario}</TableCell>
                 <TableCell>
                   <SideBadge $side={pos.side}>{pos.side}</SideBadge>
@@ -493,7 +522,7 @@ export default function Portfolio() {
       </SectionCard>
 
       {selectedScenario && gamePlans[selectedScenario] && (
-        <SectionCard>
+        <SectionCard ref={gamePlanRef}>
           <SectionTitle>Game Plan: {selectedScenario}</SectionTitle>
           <GamePlanCard>
             <GamePlanTitle>Base Case</GamePlanTitle>
@@ -613,7 +642,7 @@ export default function Portfolio() {
       </SectionCard>
 
       <div style={{ background: '#0a0a0a', border: '1px solid #333', borderRadius: '8px', padding: '20px', color: '#888', fontSize: '0.85rem' }}>
-        <strong style={{ color: '#ff6b00' }}>Pro Tip:</strong> Click on any position to view its detailed game plan including bull case, bear case, and adaptive exit strategies. Trip wires are monitored in real-time and will trigger alerts when thresholds are hit.
+        <strong style={{ color: '#ff6b00' }}>Interactive Features:</strong> Click any position row (look for the <span style={{ color: '#ff6b00', fontWeight: 700 }}>► arrow</span>) to expand its detailed game plan with bull case, bear case, and exit strategies. Selected positions highlight in orange with a <span style={{ color: '#ff6b00' }}>▼ arrow</span>. Click again to collapse. Trip wires are monitored in real-time and will trigger alerts when thresholds are hit.
       </div>
     </Container>
   );
