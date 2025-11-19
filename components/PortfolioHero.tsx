@@ -77,14 +77,14 @@ const TrafficLight = styled.div<{ $status: string }>`
 `;
 
 const MainValue = styled.div`
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: #000;
   line-height: 1;
   margin-bottom: 12px;
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -101,34 +101,34 @@ const ReturnInfo = styled.div`
 `;
 
 const ReturnPercent = styled.div<{ $positive: boolean }>`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #000;
 
   @media (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;
 
 const ReturnDollar = styled.div<{ $positive: boolean }>`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.8);
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
 const Summary = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.9);
   font-weight: 500;
   max-width: 800px;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 `;
 

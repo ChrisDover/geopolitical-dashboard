@@ -81,21 +81,22 @@ const TrendBadge = styled.div<{ $trend: 'up' | 'down' | 'neutral' }>`
 `;
 
 const Value = styled.div`
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
   color: #fff;
   line-height: 1;
   margin-bottom: 12px;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 
 const Subtitle = styled.div`
-  color: #888;
-  font-size: 1rem;
+  color: #aaa;
+  font-size: 0.95rem;
   margin-bottom: 16px;
+  line-height: 1.4;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;

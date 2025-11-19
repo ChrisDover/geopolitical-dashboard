@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as ChartTooltip, Legend, ResponsiveContainer } from 'recharts';
 import PositionSizingCalculator from '../PositionSizingCalculator';
+import PortfolioHero from '../PortfolioHero';
+import Tooltip from '../Tooltip';
 
 interface NewsArticle {
   timestamp: string;
@@ -855,6 +857,52 @@ const RecommendationText = styled.div`
   line-height: 1.6;
 `;
 
+// Plain English Summary Styles
+const PlainEnglishBox = styled.div`
+  background: rgba(255, 107, 0, 0.1);
+  border: 2px solid #ff6b00;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    padding: 18px;
+  }
+`;
+
+const PlainEnglishTitle = styled.h3`
+  color: #ff6b00;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 1.05rem;
+  }
+`;
+
+const PlainEnglishText = styled.p`
+  color: #ddd;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin: 0 0 12px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+const HighlightText = styled.span<{ $color: string }>`
+  color: ${props => props.$color};
+  font-weight: 700;
+`;
+
 export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveSummaryProps) {
   const [predictionMarketsData, setPredictionMarketsData] = useState<any>(null);
   const [equitiesData, setEquitiesData] = useState<any>(null);
@@ -1224,16 +1272,67 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
   const renderPortfolio = (portfolioData: any, formatted: any, title: string) => {
     if (!portfolioData) return null;
 
+    // Calculate portfolio status
+    const totalValue = portfolioData.metadata?.totalCapital || 0;
+    const unrealizedPnL = portfolioData.metadata?.unrealizedPnL || 0;
+    const returnPercent = parseFloat(formatted.portfolioReturn) || 0;
+    const alpha = parseFloat(formatted.alpha) || 0;
+
+    const getPortfolioStatus = (): 'good' | 'caution' | 'danger' => {
+      if (unrealizedPnL > 5000 || returnPercent > 10) return 'good';
+      if (unrealizedPnL < -5000 || returnPercent < -5) return 'danger';
+      return 'caution';
+    };
+
+    const getSummary = (): string => {
+      const status = getPortfolioStatus();
+      if (status === 'good') {
+        return `Your portfolio is performing well. ${portfolioData.positions?.filter((p: any) => p.unrealizedPnL > 0).length || 0} out of ${portfolioData.positions?.length || 0} positions are profitable. Keep monitoring but no immediate action needed.`;
+      } else if (status === 'danger') {
+        return `Your portfolio needs attention. Some positions may be approaching stop losses. Review the positions below and consider adjusting your strategy.`;
+      }
+      return portfolioData.portfolioThesis?.yearToDatePerformance || "Your portfolio is stable with mixed performance across positions.";
+    };
+
+    const winningPositions = portfolioData.positions?.filter((p: any) => (p.unrealizedPnL || 0) > 0).length || 0;
+    const totalPositions = portfolioData.positions?.length || 0;
+
     return (
       <PortfolioSection>
+        {/* Traffic Light Hero */}
+        <PortfolioHero
+          totalValue={totalValue}
+          returnPercent={returnPercent}
+          returnDollar={unrealizedPnL}
+          status={getPortfolioStatus()}
+          summary={getSummary()}
+        />
+
+        {/* Plain English Summary */}
+        <PlainEnglishBox>
+          <PlainEnglishTitle>What This Means in Plain English</PlainEnglishTitle>
+          <PlainEnglishText>
+            You currently have <HighlightText $color="#fff">${totalValue.toLocaleString()}</HighlightText> in this portfolio.
+          </PlainEnglishText>
+          <PlainEnglishText>
+            <HighlightText $color={winningPositions >= totalPositions / 2 ? "#00c853" : "#ff6b00"}>
+              {winningPositions} out of {totalPositions}
+            </HighlightText> of your positions are making money right now.
+          </PlainEnglishText>
+          <PlainEnglishText>
+            {alpha >= 0 ? (
+              <>You're <HighlightText $color="#00c853">outperforming</HighlightText> the S&P 500 by {Math.abs(alpha).toFixed(1)}%.</>
+            ) : (
+              <>You're <HighlightText $color="#ffa000">{Math.abs(alpha).toFixed(1)}% behind</HighlightText> the S&P 500, but your defensive strategy protected you during market crashes.</>
+            )}
+          </PlainEnglishText>
+        </PlainEnglishBox>
+
         <PortfolioHeader>
           <PortfolioTitle style={{ color: '#ff6b00', marginBottom: '5px' }}>{title}</PortfolioTitle>
           <PortfolioTitle>{portfolioData.portfolioThesis?.title || 'Portfolio'}</PortfolioTitle>
           <PortfolioSubtitle>{portfolioData.portfolioThesis?.summary}</PortfolioSubtitle>
           <ThesisText>
-            <strong style={{ color: '#ff6b00' }}>Year-to-Date: </strong>
-            {portfolioData.portfolioThesis?.yearToDatePerformance}
-            <br/><br/>
             <strong style={{ color: '#ff6b00' }}>Performance Attribution: </strong>
             {portfolioData.portfolioThesis?.performanceAttribution}
           </ThesisText>
@@ -1294,7 +1393,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
               </GaugeContainer>
 
               <GaugeContainer>
-                <GaugeLabel>Profit Factor</GaugeLabel>
+                <Tooltip
+                  text="Profit Factor"
+                  explanation="Total gains divided by total losses. Above 1.0 means your winners are bigger than your losers. Above 2.0 is excellent."
+                >
+                  <GaugeLabel>Profit Factor</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={Math.min(100, ((portfolioData.riskMetrics.profitFactor || 0) / 3) * 100)}
                   $color={
@@ -1328,7 +1432,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
               </GaugeContainer>
 
               <GaugeContainer>
-                <GaugeLabel>Win Rate</GaugeLabel>
+                <Tooltip
+                  text="Win Rate"
+                  explanation="Percentage of your positions that are profitable. Above 60% is good. This shows how many of your bets are winning right now."
+                >
+                  <GaugeLabel>Win Rate</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={(() => {
                     const winners = portfolioData.positions?.filter((p: any) => p.unrealizedPnL > 0).length || 0;
@@ -1357,7 +1466,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
               </GaugeContainer>
 
               <GaugeContainer>
-                <GaugeLabel>Sharpe Ratio</GaugeLabel>
+                <Tooltip
+                  text="Sharpe Ratio"
+                  explanation="Risk-adjusted return. Higher is better. Compares your return vs the risk you took. Above 1.0 is good, above 2.0 is excellent. You're being compared to the S&P 500."
+                >
+                  <GaugeLabel>Sharpe Ratio</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={Math.min(100, Math.max(0, ((formatted.portfolioSharpe + 2) / 4) * 100))}
                   $color={
@@ -1376,7 +1490,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
               </GaugeContainer>
 
               <GaugeContainer>
-                <GaugeLabel>Max Drawdown</GaugeLabel>
+                <Tooltip
+                  text="Max Drawdown"
+                  explanation="Biggest loss from your peak. Your worst moment - how much you lost from the highest point. Smaller (less negative) is better. Shows how well you handle crashes."
+                >
+                  <GaugeLabel>Max Drawdown</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={Math.min(100, Math.abs(formatted.portfolioMaxDD))}
                   $color={
