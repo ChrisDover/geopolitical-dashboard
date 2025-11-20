@@ -25,6 +25,10 @@ async function fetchAlphaVantagePrice(symbol: string, type: string): Promise<num
       } else {
         return null;
       }
+    } else if (type === 'INDEX' || symbol.startsWith('^')) {
+      // Market indices (^GSPC for S&P 500)
+      const cleanSymbol = symbol.replace('^', '');
+      url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${cleanSymbol}&apikey=${ALPHAVANTAGE_API_KEY}`;
     } else {
       // Stocks and ETFs
       url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${ALPHAVANTAGE_API_KEY}`;
@@ -42,7 +46,7 @@ async function fetchAlphaVantagePrice(symbol: string, type: string): Promise<num
         return price;
       }
     } else {
-      // Stock/ETF data format
+      // Stock/ETF/Index data format
       if (data['Global Quote'] && data['Global Quote']['05. price']) {
         const price = parseFloat(data['Global Quote']['05. price']);
         console.log(`  ${symbol} -> $${price}`);
@@ -71,6 +75,11 @@ export default async function handler(
     const priceMap = new Map();
 
     console.log('Fetching live prices from AlphaVantage...');
+
+    // Fetch S&P 500 price first for benchmark calculations
+    console.log('Fetching live price for ^GSPC (S&P 500)...');
+    const sp500Price = await fetchAlphaVantagePrice('^GSPC', 'INDEX');
+    console.log(`S&P 500 current price: ${sp500Price || 'N/A'}`);
 
     for (const pos of portfolioData.positions) {
       console.log(`Fetching live price for ${pos.symbol} (${pos.type})...`);
@@ -146,18 +155,30 @@ export default async function handler(
 
     // Update equity curve with live data for today
     const equityCurve = [...portfolioData.equityCurve];
-    if (equityCurve.length > 0) {
+    if (equityCurve.length > 0 && sp500Price) {
       const today = new Date().toISOString().split('T')[0];
       const lastPoint = equityCurve[equityCurve.length - 1];
+      const firstPoint = equityCurve[0];
+
+      // Calculate S&P 500 value dynamically based on live price
+      // Starting S&P 500 price on Nov 18, 2024 was approximately 5,900
+      // First point has sp500Value = 100,000 (initial $100k investment)
+      // Current value = 100,000 * (current_price / starting_price)
+      const startingSp500Price = 5900; // S&P 500 price on Nov 18, 2024
+      const sp500CurrentValue = firstPoint.sp500Value * (sp500Price / startingSp500Price);
+      const sp500Return = ((sp500CurrentValue - firstPoint.sp500Value) / firstPoint.sp500Value) * 100;
+
+      console.log(`S&P 500 calculation: firstValue=${firstPoint.sp500Value}, startPrice=${startingSp500Price}, currentPrice=${sp500Price}, currentValue=${Math.round(sp500CurrentValue)}, return=${sp500Return.toFixed(2)}%`);
 
       // If last point is today, update it; otherwise add new point
       if (lastPoint.date === today) {
         lastPoint.portfolioValue = updatedMetadata.totalCapital;
+        lastPoint.sp500Value = Math.round(sp500CurrentValue);
       } else {
         equityCurve.push({
           date: today,
           portfolioValue: updatedMetadata.totalCapital,
-          sp500Value: lastPoint.sp500Value // Keep S&P 500 value (we'd need to fetch this live too)
+          sp500Value: Math.round(sp500CurrentValue)
         });
       }
     }

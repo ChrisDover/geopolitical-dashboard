@@ -226,7 +226,7 @@ export default function EquitiesPortfolio() {
 
   useEffect(() => {
     fetchEquitiesData();
-    const interval = setInterval(fetchEquitiesData, 60000); // Refresh every 60 seconds
+    const interval = setInterval(fetchEquitiesData, 15 * 60 * 1000); // Refresh every 15 minutes
     return () => clearInterval(interval);
   }, []);
 
