@@ -220,25 +220,40 @@ const SummaryValue = styled.div<{ $positive?: boolean }>`
 export default function OverviewPage() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
-  // Portfolio data
-  const eventsPnL = 14000;
-  const eventsPositions = 8;
-  const eventsAllocated = 142500;
+  // Portfolio data state
+  const [eventsPnL, setEventsPnL] = useState(0);
+  const [eventsPositions, setEventsPositions] = useState(0);
+  const [eventsAllocated, setEventsAllocated] = useState(0);
 
-  const equitiesPnL = -2748;
-  const equitiesPositions = 7;
-  const equitiesAllocated = 352985;
+  const [equitiesPnL, setEquitiesPnL] = useState(0);
+  const [equitiesPositions, setEquitiesPositions] = useState(0);
+  const [equitiesAllocated, setEquitiesAllocated] = useState(0);
 
   const totalPnL = eventsPnL + equitiesPnL;
   const totalAllocated = eventsAllocated + equitiesAllocated;
 
   useEffect(() => {
-    // Fetch critical notifications
+    // Fetch portfolio data and notifications
     Promise.all([
+      fetch('/api/portfolio').then(r => r.json()),
+      fetch('/api/portfolio/equities').then(r => r.json()),
       fetch('/api/news/feed?limit=5').then(r => r.json()),
       fetch('/api/markets/divergence').then(r => r.json())
     ])
-      .then(([news, markets]) => {
+      .then(([eventsPortfolio, equitiesPortfolio, news, markets]) => {
+        // Update events portfolio metrics
+        if (eventsPortfolio.success && eventsPortfolio.data) {
+          setEventsPnL(eventsPortfolio.data.metadata.unrealizedPnL || 0);
+          setEventsPositions(eventsPortfolio.data.positions.length || 0);
+          setEventsAllocated(eventsPortfolio.data.metadata.deployedCapital || 0);
+        }
+
+        // Update equities portfolio metrics
+        if (equitiesPortfolio.success && equitiesPortfolio.data) {
+          setEquitiesPnL(equitiesPortfolio.data.metadata.unrealizedPnL || 0);
+          setEquitiesPositions(equitiesPortfolio.data.positions.length || 0);
+          setEquitiesAllocated(equitiesPortfolio.data.metadata.deployedCapital || 0);
+        }
         const criticalNews = news.data?.filter((n: any) => n.priority === 'CRITICAL') || [];
         const newNotifications: Notification[] = criticalNews.slice(0, 2).map((item: any, idx: number) => ({
           id: Date.now() + idx,

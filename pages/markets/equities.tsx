@@ -49,14 +49,19 @@ const PageSubtitle = styled.p`
 export default function EquitiesPage() {
   const [newsData, setNewsData] = useState<any[]>([]);
   const [marketData, setMarketData] = useState<any[]>([]);
+  const [totalPnL, setTotalPnL] = useState(0);
 
   useEffect(() => {
-    // Fetch news and market data
+    // Fetch portfolio data, news and market data
     Promise.all([
+      fetch('/api/portfolio/equities').then(r => r.json()),
       fetch('/api/news/feed?limit=10').then(r => r.json()),
       fetch('/api/markets/divergence').then(r => r.json())
     ])
-      .then(([news, markets]) => {
+      .then(([portfolio, news, markets]) => {
+        if (portfolio.success && portfolio.data) {
+          setTotalPnL(portfolio.data.metadata.unrealizedPnL || 0);
+        }
         if (news.success) setNewsData(news.data);
         if (markets.success) setMarketData(markets.data);
       })
@@ -65,7 +70,7 @@ export default function EquitiesPage() {
 
   return (
     <PageContainer>
-      <Navigation totalPnL={-2748} />
+      <Navigation totalPnL={totalPnL} />
 
       <ContentContainer>
         <Header>

@@ -57,26 +57,33 @@ const Section = styled.div`
 `;
 
 export default function RiskPage() {
-  // Calculate combined P&L from both portfolios
-  const eventsPnL = 14000; // From prediction markets
-  const equitiesPnL = -2748; // From stocks/ETFs
-  const totalPnL = eventsPnL + equitiesPnL;
-
+  const [totalPnL, setTotalPnL] = useState(0);
   const [marketData, setMarketData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch market divergence data
-    fetch('/api/markets/divergence')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          setMarketData(data.data);
+    // Fetch both portfolios and market data
+    Promise.all([
+      fetch('/api/portfolio').then(r => r.json()),
+      fetch('/api/portfolio/equities').then(r => r.json()),
+      fetch('/api/markets/divergence').then(r => r.json())
+    ])
+      .then(([eventsPortfolio, equitiesPortfolio, markets]) => {
+        // Calculate combined P&L from both portfolios
+        const eventsPnL = eventsPortfolio.success && eventsPortfolio.data ?
+          eventsPortfolio.data.metadata.unrealizedPnL : 0;
+        const equitiesPnL = equitiesPortfolio.success && equitiesPortfolio.data ?
+          equitiesPortfolio.data.metadata.unrealizedPnL : 0;
+
+        setTotalPnL(eventsPnL + equitiesPnL);
+
+        if (markets.success) {
+          setMarketData(markets.data);
         }
         setLoading(false);
       })
       .catch(err => {
-        console.error('Market data error:', err);
+        console.error('Data fetch error:', err);
         setLoading(false);
       });
   }, []);
