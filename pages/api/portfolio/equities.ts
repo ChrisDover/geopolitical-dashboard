@@ -162,6 +162,10 @@ export default async function handler(
       }
     }
 
+    // Calculate total portfolio value for percentage calculations
+    const totalPortfolioValue = updatedPositions.reduce((sum: number, pos: any) =>
+      sum + Math.abs(pos.currentValue || 0), 0);
+
     const enrichedData = {
       ...portfolioData,
       metadata: updatedMetadata,
@@ -172,7 +176,7 @@ export default async function handler(
         profitFactor: calculateProfitFactor(updatedPositions),
         bestPosition: getBestPosition(updatedPositions),
         worstPosition: getWorstPosition(updatedPositions),
-        sectorExposure: calculateSectorExposure(updatedPositions),
+        sectorExposure: calculateSectorExposure(updatedPositions, totalPortfolioValue),
         longShortRatio: calculateLongShortRatio(updatedPositions)
       }
     };
@@ -213,7 +217,7 @@ function getWorstPosition(positions: any[]): any {
   , positions[0]);
 }
 
-function calculateSectorExposure(positions: any[]): any {
+function calculateSectorExposure(positions: any[], totalPortfolioValue: number): any {
   const sectorMap: any = {};
 
   positions.forEach(pos => {
@@ -224,6 +228,11 @@ function calculateSectorExposure(positions: any[]): any {
       sectorMap[sector] = 0;
     }
     sectorMap[sector] += value;
+  });
+
+  // Convert to percentages
+  Object.keys(sectorMap).forEach(sector => {
+    sectorMap[sector] = (sectorMap[sector] / totalPortfolioValue) * 100;
   });
 
   return sectorMap;

@@ -274,22 +274,36 @@ export default function EquitiesPortfolio() {
     'S&P 500': point.sp500Value
   })) || [];
 
-  // Map trades to chart data for markers
+  // Map trades to chart data for markers - find nearest date
   const tradeMarkers = tradeHistory?.map((trade: any) => {
-    const tradeDate = new Date(trade.date).toISOString().split('T')[0];
-    const chartPoint = chartData.find((point: any) => {
-      const pointDate = new Date(point.fullDate).toISOString().split('T')[0];
-      return pointDate === tradeDate;
+    const tradeDate = new Date(trade.date);
+
+    // Find the nearest chart point (within 7 days)
+    let nearestPoint = null;
+    let minDiff = Infinity;
+
+    chartData.forEach((point: any) => {
+      const pointDate = new Date(point.fullDate);
+      const diff = Math.abs(pointDate.getTime() - tradeDate.getTime());
+      const daysDiff = diff / (1000 * 60 * 60 * 24);
+
+      if (daysDiff <= 7 && diff < minDiff) {
+        minDiff = diff;
+        nearestPoint = point;
+      }
     });
 
-    return chartPoint ? {
-      date: chartPoint.date,
-      value: chartPoint.Portfolio,
+    return nearestPoint ? {
+      date: nearestPoint.date,
+      value: nearestPoint.Portfolio,
       type: trade.type,
       symbol: trade.symbol,
-      reasoning: trade.reasoning
+      reasoning: trade.reasoning,
+      tradeDate: new Date(trade.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
     } : null;
   }).filter((marker: any) => marker !== null) || [];
+
+  console.log('Trade markers:', tradeMarkers.length, 'out of', tradeHistory?.length || 0, 'trades');
 
   // Calculate performance metrics
   const portfolioReturn = equityCurve && equityCurve.length > 0
@@ -500,22 +514,26 @@ export default function EquitiesPortfolio() {
               />
 
               {/* Trade markers */}
-              {tradeMarkers.map((marker: any, idx: number) => (
-                <ReferenceLine
-                  key={`trade-${idx}`}
-                  x={marker.date}
-                  stroke={marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '#ff0000' : '#00c853'}
-                  strokeWidth={2}
-                  strokeDasharray="3 3"
-                  label={{
-                    value: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '▼' : '▲',
-                    position: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? 'bottom' : 'top',
-                    fill: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '#ff0000' : '#00c853',
-                    fontSize: 16,
-                    fontWeight: 'bold'
-                  }}
-                />
-              ))}
+              {tradeMarkers.map((marker: any, idx: number) => {
+                const isSell = marker.type === 'SELL' || marker.type === 'SELL_SHORT';
+                return (
+                  <ReferenceLine
+                    key={`trade-${idx}`}
+                    x={marker.date}
+                    stroke={isSell ? '#ff0000' : '#00c853'}
+                    strokeWidth={2}
+                    strokeDasharray="3 3"
+                    label={{
+                      value: `${isSell ? '▼' : '▲'} ${marker.symbol}`,
+                      position: isSell ? 'bottom' : 'top',
+                      fill: isSell ? '#ff0000' : '#00c853',
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                      offset: 10
+                    }}
+                  />
+                );
+              })}
             </LineChart>
           </ResponsiveContainer>
         </ChartContainer>
