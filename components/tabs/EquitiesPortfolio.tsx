@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Scatter } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Scatter, ScatterChart, ComposedChart } from 'recharts';
 
 const Container = styled.div`
   padding: 0;
@@ -271,7 +271,9 @@ export default function EquitiesPortfolio() {
     date: new Date(point.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
     fullDate: point.date,
     Portfolio: point.portfolioValue,
-    'S&P 500': point.sp500Value
+    'S&P 500': point.sp500Value,
+    buyTrade: null,  // Will be populated if there's a buy trade on this date
+    sellTrade: null  // Will be populated if there's a sell trade on this date
   })) || [];
 
   // Map trades to chart data for markers - find nearest date
@@ -287,14 +289,16 @@ export default function EquitiesPortfolio() {
     console.log('Last chart point:', chartData[chartData.length - 1].fullDate, '→', chartData[chartData.length - 1].date);
   }
 
-  const tradeMarkers = tradeHistory?.map((trade: any) => {
+  // Merge trades into chart data
+  tradeHistory?.forEach((trade: any) => {
     const tradeDate = new Date(trade.date);
 
     // Find the nearest chart point (within 7 days)
     let nearestPoint: any = null;
+    let nearestIndex = -1;
     let minDiff = Infinity;
 
-    chartData.forEach((point: any) => {
+    chartData.forEach((point: any, index: number) => {
       const pointDate = new Date(point.fullDate);
       const diff = Math.abs(pointDate.getTime() - tradeDate.getTime());
       const daysDiff = diff / (1000 * 60 * 60 * 24);
@@ -302,27 +306,33 @@ export default function EquitiesPortfolio() {
       if (daysDiff <= 7 && diff < minDiff) {
         minDiff = diff;
         nearestPoint = point;
+        nearestIndex = index;
       }
     });
 
-    if (nearestPoint) {
+    if (nearestPoint && nearestIndex >= 0) {
+      const isSell = trade.type === 'SELL' || trade.type === 'SELL_SHORT';
+      const tradeInfo = {
+        value: nearestPoint.Portfolio,
+        symbol: trade.symbol,
+        type: trade.type
+      };
+
+      // Add to appropriate field based on trade type
+      if (isSell) {
+        chartData[nearestIndex].sellTrade = tradeInfo;
+      } else {
+        chartData[nearestIndex].buyTrade = tradeInfo;
+      }
+
       console.log(`✓ Matched trade ${trade.symbol} (${trade.date}) to chart point ${nearestPoint.date}`);
     } else {
       console.log(`✗ No match for trade ${trade.symbol} (${trade.date})`);
     }
+  });
 
-    return nearestPoint ? {
-      date: nearestPoint.date,
-      value: nearestPoint.Portfolio,
-      type: trade.type,
-      symbol: trade.symbol,
-      reasoning: trade.reasoning,
-      tradeDate: new Date(trade.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-    } : null;
-  }).filter((marker: any) => marker !== null) || [];
-
-  console.log('Trade markers created:', tradeMarkers.length);
-  console.log('Markers:', tradeMarkers);
+  const tradesWithMarkers = chartData.filter((point: any) => point.buyTrade || point.sellTrade).length;
+  console.log('Chart points with trade markers:', tradesWithMarkers);
 
   // Calculate performance metrics
   const portfolioReturn = equityCurve && equityCurve.length > 0
@@ -490,7 +500,7 @@ export default function EquitiesPortfolio() {
 
         <ChartContainer>
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#333" />
               <XAxis
                 dataKey="date"
@@ -509,7 +519,10 @@ export default function EquitiesPortfolio() {
                   borderRadius: '8px',
                   color: '#fff'
                 }}
-                formatter={(value: any) => [`$${value.toLocaleString()}`, '']}
+                formatter={(value: any, name: string) => {
+                  if (name === 'buyTrade' || name === 'sellTrade') return [null, null];
+                  return [`$${value.toLocaleString()}`, name];
+                }}
               />
               <Legend
                 wrapperStyle={{ paddingTop: '20px' }}
@@ -532,28 +545,84 @@ export default function EquitiesPortfolio() {
                 strokeDasharray="5 5"
               />
 
-              {/* Trade markers */}
-              {tradeMarkers.map((marker: any, idx: number) => {
-                const isSell = marker.type === 'SELL' || marker.type === 'SELL_SHORT';
-                return (
-                  <ReferenceLine
-                    key={`trade-${idx}`}
-                    x={marker.date}
-                    stroke={isSell ? '#ff0000' : '#00c853'}
-                    strokeWidth={2}
-                    strokeDasharray="3 3"
-                    label={{
-                      value: `${isSell ? '▼' : '▲'} ${marker.symbol}`,
-                      position: isSell ? 'bottom' : 'top',
-                      fill: isSell ? '#ff0000' : '#00c853',
-                      fontSize: 12,
-                      fontWeight: 'bold',
-                      offset: 10
-                    }}
-                  />
-                );
-              })}
-            </LineChart>
+              {/* Buy trade markers (green triangles) */}
+              {chartData.filter((d: any) => d.buyTrade).length > 0 && (
+                <Scatter
+                  name="Buy"
+                  dataKey="value"
+                  data={chartData.filter((d: any) => d.buyTrade).map((d: any) => ({
+                    date: d.date,
+                    value: d.buyTrade.value,
+                    symbol: d.buyTrade.symbol
+                  }))}
+                  fill="#00c853"
+                  shape={(props: any) => {
+                    const { cx, cy, payload } = props;
+                    if (!cx || !cy) return null;
+                    return (
+                      <g>
+                        <polygon
+                          points={`${cx},${cy - 10} ${cx - 8},${cy + 6} ${cx + 8},${cy + 6}`}
+                          fill="#00c853"
+                          stroke="#00c853"
+                          strokeWidth={2}
+                        />
+                        <text
+                          x={cx}
+                          y={cy - 15}
+                          textAnchor="middle"
+                          fill="#00c853"
+                          fontSize={11}
+                          fontWeight="bold"
+                        >
+                          {payload.symbol}
+                        </text>
+                      </g>
+                    );
+                  }}
+                  legendType="none"
+                />
+              )}
+
+              {/* Sell trade markers (red triangles pointing down) */}
+              {chartData.filter((d: any) => d.sellTrade).length > 0 && (
+                <Scatter
+                  name="Sell"
+                  dataKey="value"
+                  data={chartData.filter((d: any) => d.sellTrade).map((d: any) => ({
+                    date: d.date,
+                    value: d.sellTrade.value,
+                    symbol: d.sellTrade.symbol
+                  }))}
+                  fill="#ff0000"
+                  shape={(props: any) => {
+                    const { cx, cy, payload } = props;
+                    if (!cx || !cy) return null;
+                    return (
+                      <g>
+                        <polygon
+                          points={`${cx},${cy + 10} ${cx - 8},${cy - 6} ${cx + 8},${cy - 6}`}
+                          fill="#ff0000"
+                          stroke="#ff0000"
+                          strokeWidth={2}
+                        />
+                        <text
+                          x={cx}
+                          y={cy + 22}
+                          textAnchor="middle"
+                          fill="#ff0000"
+                          fontSize={11}
+                          fontWeight="bold"
+                        >
+                          {payload.symbol}
+                        </text>
+                      </g>
+                    );
+                  }}
+                  legendType="none"
+                />
+              )}
+            </ComposedChart>
           </ResponsiveContainer>
         </ChartContainer>
       </SectionCard>
