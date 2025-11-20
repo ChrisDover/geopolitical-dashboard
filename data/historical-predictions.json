@@ -1,11 +1,351 @@
 {
   "predictions": [
     {
-      "date": "2025-01-18T00:00:00Z",
+      "date": "2025-09-01T00:00:00.000Z",
       "scenarios": {
         "Iran-Israel War Q1 2026": {
-          "modelProbability": 42,
-          "polymarketPrice": 35,
+          "modelProbability": 25,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 51,
+          "polymarketPrice": 49,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 37,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 41,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 17,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 25,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-02T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 27,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 53,
+          "polymarketPrice": 49,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 37,
+          "polymarketPrice": 41,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 48,
+          "polymarketPrice": 40,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 19,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 25,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 32,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-03T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 20,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 60,
+          "polymarketPrice": 55,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 43,
+          "polymarketPrice": 46,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 48,
+          "polymarketPrice": 40,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 22,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 27,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-04T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 66,
+          "polymarketPrice": 61,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 43,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 45,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 22,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 28,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-05T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 22,
           "kalshiPrice": null,
           "divergence": 7,
           "actualOutcome": null,
@@ -13,7 +353,3782 @@
         },
         "China-Taiwan 2026": {
           "modelProbability": 13,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 68,
+          "polymarketPrice": 65,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 49,
+          "polymarketPrice": 53,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 46,
+          "polymarketPrice": 38,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 28,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 36,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-06T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 77,
+          "polymarketPrice": 75,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 49,
+          "polymarketPrice": 51,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 46,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 27,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-07T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 78,
+          "polymarketPrice": 73,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 53,
+          "polymarketPrice": 57,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 50,
+          "polymarketPrice": 43,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 25,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 32,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-08T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 1,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 85,
+          "polymarketPrice": 83,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 56,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 47,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 18,
           "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 27,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 37,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-09T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 90,
+          "polymarketPrice": 87,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 55,
+          "polymarketPrice": 56,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 25,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 35,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-10T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 27,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 91,
+          "polymarketPrice": 86,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 62,
+          "polymarketPrice": 64,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 51,
+          "polymarketPrice": 44,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 27,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 35,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-11T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US Election Result 2024": {
+          "modelProbability": 94,
+          "polymarketPrice": 91,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": true,
+          "resolved": true
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 60,
+          "polymarketPrice": 65,
+          "kalshiPrice": null,
+          "divergence": -5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 53,
+          "polymarketPrice": 44,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 26,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 25,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 32,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-12T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 33,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 61,
+          "polymarketPrice": 65,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 54,
+          "polymarketPrice": 47,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 21,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-13T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 27,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 69,
+          "polymarketPrice": 72,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 57,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 21,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-14T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 69,
+          "polymarketPrice": 71,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 54,
+          "polymarketPrice": 44,
+          "kalshiPrice": null,
+          "divergence": 10,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 35,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-15T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 73,
+          "polymarketPrice": 74,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 54,
+          "polymarketPrice": 44,
+          "kalshiPrice": null,
+          "divergence": 10,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 40,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-16T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 20,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 78,
+          "polymarketPrice": 82,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 58,
+          "polymarketPrice": 51,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 21,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-17T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 32,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 78,
+          "polymarketPrice": 81,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 55,
+          "polymarketPrice": 46,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 31,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 38,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-18T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 29,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 83,
+          "polymarketPrice": 87,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 61,
+          "polymarketPrice": 54,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 40,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-19T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 83,
+          "polymarketPrice": 84,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 56,
+          "polymarketPrice": 48,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 26,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 38,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-20T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 88,
+          "polymarketPrice": 90,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 56,
+          "polymarketPrice": 48,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 38,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-21T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Missile Test Sept 2025": {
+          "modelProbability": 87,
+          "polymarketPrice": 91,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": true,
+          "resolved": true
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 64,
+          "polymarketPrice": 55,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 33,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 38,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-22T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 60,
+          "polymarketPrice": 53,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 32,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 22,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 42,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-23T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 60,
+          "polymarketPrice": 52,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 29,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 22,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 46,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-24T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 13,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 64,
+          "polymarketPrice": 58,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 19,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-25T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 32,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 63,
+          "polymarketPrice": 54,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 30,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 19,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 47,
+          "polymarketPrice": 42,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-26T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 32,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 64,
+          "polymarketPrice": 56,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 31,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 24,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 41,
+          "polymarketPrice": 36,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-27T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 29,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 67,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 33,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 23,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 48,
+          "polymarketPrice": 43,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-28T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 30,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 20,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 62,
+          "polymarketPrice": 56,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 31,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 43,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-29T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 67,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 37,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 19,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 36,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-09-30T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 70,
+          "polymarketPrice": 62,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 35,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 38,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-01T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 65,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 17,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 38,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-02T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 33,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 20,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 2,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 73,
+          "polymarketPrice": 66,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 39,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-03T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 70,
+          "polymarketPrice": 63,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 34,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 22,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 48,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-04T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 36,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 74,
+          "polymarketPrice": 65,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 37,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 15,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 49,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-05T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 20,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 74,
+          "polymarketPrice": 67,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 35,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 15,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-06T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "OPEC Production Cut Oct 2025": {
+          "modelProbability": 75,
+          "polymarketPrice": 66,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": true,
+          "resolved": true
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 40,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 51,
+          "polymarketPrice": 46,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-07T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 32,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 42,
+          "polymarketPrice": 38,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 50,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-08T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 15,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 55,
+          "polymarketPrice": 49,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-09T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 42,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 49,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-10T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 28,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 44,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 55,
+          "polymarketPrice": 51,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-11T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 32,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-Ukraine Ceasefire Oct 2025": {
+          "modelProbability": 43,
+          "polymarketPrice": 39,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": false,
+          "resolved": true
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 54,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-12T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 6,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 55,
+          "polymarketPrice": 47,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-13T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 37,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 20,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 58,
+          "polymarketPrice": 53,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-14T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 33,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 2,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 17,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 51,
+          "polymarketPrice": 43,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-15T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 37,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 52,
+          "polymarketPrice": 45,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-16T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 35,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 15,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 59,
+          "polymarketPrice": 52,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-17T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 26,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 18,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 54,
+          "polymarketPrice": 46,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-18T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 37,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 19,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 57,
+          "polymarketPrice": 52,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-19T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 34,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 13,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 58,
+          "polymarketPrice": 54,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-20T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 36,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 12,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 61,
+          "polymarketPrice": 54,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-21T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 37,
+          "polymarketPrice": 29,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Border Skirmish Oct 2025": {
+          "modelProbability": 16,
+          "polymarketPrice": 19,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": false,
+          "resolved": true
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 60,
+          "polymarketPrice": 53,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-22T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 38,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 57,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-23T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 59,
+          "polymarketPrice": 54,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-24T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 57,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-25T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 36,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 63,
+          "polymarketPrice": 57,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-26T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 36,
+          "polymarketPrice": 27,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 59,
+          "polymarketPrice": 52,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-27T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 13,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 62,
+          "polymarketPrice": 55,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-28T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 63,
+          "polymarketPrice": 58,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-29T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 38,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 14,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 66,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-30T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 37,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 60,
+          "polymarketPrice": 56,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-10-31T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 15,
+          "polymarketPrice": 14,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 62,
+          "polymarketPrice": 57,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-01T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 38,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 66,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-02T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 64,
+          "polymarketPrice": 59,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-03T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 38,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 10,
           "kalshiPrice": null,
           "divergence": 1,
           "actualOutcome": null,
@@ -28,10 +4143,711 @@
           "resolved": false
         },
         "Russia-NATO 2026": {
-          "modelProbability": 6,
-          "polymarketPrice": 8,
+          "modelProbability": 4,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 69,
+          "polymarketPrice": 62,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-04T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 42,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
           "kalshiPrice": null,
           "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 68,
+          "polymarketPrice": 62,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-05T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 41,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 15,
+          "polymarketPrice": 15,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 25,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Major Cyberattack on EU Infrastructure Nov 2025": {
+          "modelProbability": 64,
+          "polymarketPrice": 58,
+          "kalshiPrice": null,
+          "divergence": 6,
+          "actualOutcome": true,
+          "resolved": true
+        }
+      }
+    },
+    {
+      "date": "2025-11-06T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 22,
+          "polymarketPrice": 20,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-07T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 13,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 9,
+          "polymarketPrice": 13,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-08T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 16,
+          "polymarketPrice": 16,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 23,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 4,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-09T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-10T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 38,
+          "polymarketPrice": 29,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-11T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 18,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 3,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-12T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 31,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 5,
+          "polymarketPrice": 7,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-13T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 7,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-14T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 44,
+          "polymarketPrice": 37,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 11,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 3,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 9,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-15T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 39,
+          "polymarketPrice": 30,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-16T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 41,
+          "polymarketPrice": 33,
+          "kalshiPrice": null,
+          "divergence": 8,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 22,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 5,
+          "kalshiPrice": null,
+          "divergence": -2,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-17T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 41,
+          "polymarketPrice": 34,
+          "kalshiPrice": null,
+          "divergence": 7,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 10,
+          "kalshiPrice": null,
+          "divergence": 0,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 23,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 3,
+          "polymarketPrice": 4,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-18T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 41,
+          "polymarketPrice": 32,
+          "kalshiPrice": null,
+          "divergence": 9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 12,
+          "polymarketPrice": 13,
+          "kalshiPrice": null,
+          "divergence": -1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 25,
+          "polymarketPrice": 21,
+          "kalshiPrice": null,
+          "divergence": 4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": -4,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-19T00:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 40,
+          "polymarketPrice": 35,
+          "kalshiPrice": null,
+          "divergence": 5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 10,
+          "polymarketPrice": 8,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 26,
+          "polymarketPrice": 24,
+          "kalshiPrice": null,
+          "divergence": 2,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 8,
+          "polymarketPrice": 11,
+          "kalshiPrice": null,
+          "divergence": -3,
+          "actualOutcome": null,
+          "resolved": false
+        }
+      }
+    },
+    {
+      "date": "2025-11-20T07:00:00.000Z",
+      "scenarios": {
+        "Iran-Israel War Q1 2026": {
+          "modelProbability": 42,
+          "polymarketPrice": 1.65,
+          "kalshiPrice": null,
+          "divergence": 40.4,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "China-Taiwan 2026": {
+          "modelProbability": 13,
+          "polymarketPrice": 12,
+          "kalshiPrice": null,
+          "divergence": 1,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "US-Venezuela 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 14.5,
+          "kalshiPrice": null,
+          "divergence": 9.5,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Russia-NATO 2026": {
+          "modelProbability": 6,
+          "polymarketPrice": 1.15,
+          "kalshiPrice": null,
+          "divergence": 4.9,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "North Korea Crisis 2026": {
+          "modelProbability": 27,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -23,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-Pakistan Kashmir 2026": {
+          "modelProbability": 19,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -31,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "South China Sea Confrontation 2026": {
+          "modelProbability": 31,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -19,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Saudi-Iran Regional War 2026": {
+          "modelProbability": 24,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -26,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "India-China Border War 2026": {
+          "modelProbability": 15,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -35,
+          "actualOutcome": null,
+          "resolved": false
+        },
+        "Turkey-Greece Aegean Crisis 2026": {
+          "modelProbability": 21,
+          "polymarketPrice": 50,
+          "kalshiPrice": null,
+          "divergence": -29,
           "actualOutcome": null,
           "resolved": false
         }
@@ -39,10 +4855,10 @@
     }
   ],
   "metadata": {
-    "totalPredictions": 1,
-    "correctPredictions": 0,
-    "accuracy": null,
-    "averageDivergence": 3.0,
-    "lastUpdate": "2025-01-18T00:00:00Z"
+    "totalPredictions": 6,
+    "correctPredictions": 4,
+    "accuracy": 67,
+    "averageDivergence": 4.1,
+    "lastUpdate": "2025-11-20T07:00:00.000Z"
   }
 }
