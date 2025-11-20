@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Scatter } from 'recharts';
 
 const Container = styled.div`
   padding: 0;
@@ -261,7 +261,7 @@ export default function EquitiesPortfolio() {
     );
   }
 
-  const { metadata, positions, equityCurve, riskMetrics } = data;
+  const { metadata, positions, equityCurve, riskMetrics, tradeHistory } = data;
 
   const totalValue = positions.reduce((sum: number, pos: any) => sum + (pos.currentValue || 0), 0);
   const totalCost = positions.reduce((sum: number, pos: any) => sum + Math.abs(pos.costBasis || 0), 0);
@@ -269,9 +269,27 @@ export default function EquitiesPortfolio() {
   // Format equity curve data for chart
   const chartData = equityCurve?.map((point: any) => ({
     date: new Date(point.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    fullDate: point.date,
     Portfolio: point.portfolioValue,
     'S&P 500': point.sp500Value
   })) || [];
+
+  // Map trades to chart data for markers
+  const tradeMarkers = tradeHistory?.map((trade: any) => {
+    const tradeDate = new Date(trade.date).toISOString().split('T')[0];
+    const chartPoint = chartData.find((point: any) => {
+      const pointDate = new Date(point.fullDate).toISOString().split('T')[0];
+      return pointDate === tradeDate;
+    });
+
+    return chartPoint ? {
+      date: chartPoint.date,
+      value: chartPoint.Portfolio,
+      type: trade.type,
+      symbol: trade.symbol,
+      reasoning: trade.reasoning
+    } : null;
+  }).filter((marker: any) => marker !== null) || [];
 
   // Calculate performance metrics
   const portfolioReturn = equityCurve && equityCurve.length > 0
@@ -480,6 +498,24 @@ export default function EquitiesPortfolio() {
                 dot={false}
                 strokeDasharray="5 5"
               />
+
+              {/* Trade markers */}
+              {tradeMarkers.map((marker: any, idx: number) => (
+                <ReferenceLine
+                  key={`trade-${idx}`}
+                  x={marker.date}
+                  stroke={marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '#ff0000' : '#00c853'}
+                  strokeWidth={2}
+                  strokeDasharray="3 3"
+                  label={{
+                    value: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '▼' : '▲',
+                    position: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? 'bottom' : 'top',
+                    fill: marker.type === 'SELL' || marker.type === 'SELL_SHORT' ? '#ff0000' : '#00c853',
+                    fontSize: 16,
+                    fontWeight: 'bold'
+                  }}
+                />
+              ))}
             </LineChart>
           </ResponsiveContainer>
         </ChartContainer>
@@ -539,6 +575,53 @@ export default function EquitiesPortfolio() {
           ))}
         </StatsGrid>
       </SectionCard>
+
+      {/* Trade History Section */}
+      {tradeHistory && tradeHistory.length > 0 && (
+        <SectionCard>
+          <SectionTitle>Trade History ({tradeHistory.length} trades)</SectionTitle>
+          <PositionsTable>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Value</th>
+                <th>P&L</th>
+                <th>Reasoning</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tradeHistory.slice().reverse().map((trade: any) => (
+                <tr key={trade.id}>
+                  <td>{new Date(trade.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+                  <td>
+                    <span style={{
+                      color: trade.type === 'BUY' ? '#00c853' : trade.type === 'SELL' || trade.type === 'SELL_SHORT' ? '#ff0000' : '#ff9800',
+                      fontWeight: 600
+                    }}>
+                      {trade.type}
+                    </span>
+                  </td>
+                  <td style={{ fontWeight: 600, fontFamily: 'Courier New' }}>{trade.symbol}</td>
+                  <td>{trade.shares || trade.contracts || '-'}</td>
+                  <td>${trade.price?.toFixed(2) || '-'}</td>
+                  <td>${trade.value?.toLocaleString() || '-'}</td>
+                  <td style={{
+                    color: trade.realizedPnL ? (trade.realizedPnL > 0 ? '#00c853' : '#ff0000') : '#888',
+                    fontWeight: trade.realizedPnL ? 600 : 400
+                  }}>
+                    {trade.realizedPnL ? `${trade.realizedPnL > 0 ? '+' : ''}$${trade.realizedPnL}` : '-'}
+                  </td>
+                  <td style={{ fontSize: '0.85rem', color: '#aaa' }}>{trade.reasoning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </PositionsTable>
+        </SectionCard>
+      )}
     </Container>
   );
 }

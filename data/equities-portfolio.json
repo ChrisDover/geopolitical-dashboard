@@ -258,6 +258,153 @@
       "commission": 0
     }
   ],
+  "tradeHistory": [
+    {
+      "id": "trade-001",
+      "date": "2025-02-22T00:00:00Z",
+      "type": "BUY",
+      "symbol": "RTX",
+      "shares": 100,
+      "price": 165.2,
+      "value": 16520,
+      "commission": 0,
+      "reasoning": "Opening position - Patriot missile system orders from Middle East allies",
+      "portfolioImpact": "New 16.5% position in defense sector"
+    },
+    {
+      "id": "trade-002",
+      "date": "2025-03-10T00:00:00Z",
+      "type": "BUY",
+      "symbol": "LMT",
+      "shares": 36,
+      "price": 465.35,
+      "value": 16753,
+      "commission": 0,
+      "reasoning": "Opening position - F-35 production ramp, THAAD systems to Middle East",
+      "portfolioImpact": "New 16.8% position in defense"
+    },
+    {
+      "id": "trade-003",
+      "date": "2025-04-05T00:00:00Z",
+      "type": "BUY",
+      "symbol": "XLE",
+      "shares": 130,
+      "price": 86.2,
+      "value": 11206,
+      "commission": 0,
+      "reasoning": "Opening position - Middle East supply disruption risk premium",
+      "portfolioImpact": "New 11.2% position in energy ETF"
+    },
+    {
+      "id": "trade-004",
+      "date": "2025-05-20T00:00:00Z",
+      "type": "BUY",
+      "symbol": "BA",
+      "shares": 90,
+      "price": 177.18,
+      "value": 15946,
+      "commission": 0,
+      "reasoning": "Opening position - Defense segment undervalued, Apache helicopters demand",
+      "portfolioImpact": "New 15.9% position in aerospace/defense"
+    },
+    {
+      "id": "trade-005",
+      "date": "2025-06-12T00:00:00Z",
+      "type": "BUY",
+      "symbol": "ITA",
+      "shares": 82,
+      "price": 158.65,
+      "value": 13009,
+      "commission": 0,
+      "reasoning": "Opening position - Aerospace & Defense ETF for diversification",
+      "portfolioImpact": "New 13% position in defense ETF"
+    },
+    {
+      "id": "trade-006",
+      "date": "2025-07-03T00:00:00Z",
+      "type": "BUY",
+      "symbol": "XOP",
+      "shares": 56,
+      "price": 128.67,
+      "value": 7206,
+      "commission": 0,
+      "reasoning": "Opening position - Small-cap energy producers levered to oil price recovery",
+      "portfolioImpact": "New 7.2% position in energy exploration"
+    },
+    {
+      "id": "trade-007",
+      "date": "2025-07-15T00:00:00Z",
+      "type": "BUY",
+      "symbol": "NOC",
+      "shares": 24,
+      "price": 520.48,
+      "value": 12492,
+      "commission": 0,
+      "reasoning": "Opening position - B-21 Raider bomber program accelerating",
+      "portfolioImpact": "New 12.5% position in defense"
+    },
+    {
+      "id": "trade-008",
+      "date": "2025-08-20T00:00:00Z",
+      "type": "SELL",
+      "symbol": "GD",
+      "shares": -45,
+      "price": 298.45,
+      "value": 13430,
+      "commission": 0,
+      "realizedPnL": 568,
+      "reasoning": "Closing position - Taking profits after 18% gain. Rebalancing into naval shipbuilding",
+      "portfolioImpact": "Exited GD position (+$568 realized). Freed capital for HII."
+    },
+    {
+      "id": "trade-009",
+      "date": "2025-09-18T00:00:00Z",
+      "type": "BUY",
+      "symbol": "CL",
+      "contracts": 1,
+      "price": 68.25,
+      "value": 770,
+      "commission": 9,
+      "reasoning": "Opening futures position - Small tactical bet on Iran-Israel escalation premium",
+      "portfolioImpact": "New 0.77% position in WTI crude futures (1 contract, $770 margin)"
+    },
+    {
+      "id": "trade-010",
+      "date": "2025-09-25T00:00:00Z",
+      "type": "SELL_SHORT",
+      "symbol": "SPY",
+      "shares": -24,
+      "price": 612.65,
+      "value": -14704,
+      "commission": 0,
+      "reasoning": "Opening short position - Portfolio hedge against market downturn",
+      "portfolioImpact": "New -14.7% short position in S&P 500 (hedge)"
+    },
+    {
+      "id": "trade-011",
+      "date": "2025-10-12T00:00:00Z",
+      "type": "BUY",
+      "symbol": "HII",
+      "shares": 13,
+      "price": 285.24,
+      "value": 3708,
+      "commission": 0,
+      "reasoning": "Opening position - Naval shipbuilding monopoly, South China Sea tensions",
+      "portfolioImpact": "New 3.7% position in naval defense"
+    },
+    {
+      "id": "trade-012",
+      "date": "2025-10-29T00:00:00Z",
+      "type": "BUY",
+      "symbol": "CL",
+      "contracts": 1,
+      "price": 65.10,
+      "value": 770,
+      "commission": 4.50,
+      "reasoning": "Rolling futures contract - Dec expiry approaching, rolled to Jan",
+      "portfolioImpact": "Rolled CL contract from Dec to Jan. Commission: $4.50"
+    }
+  ],
   "equityCurve": [
     {
       "date": "2024-11-18",

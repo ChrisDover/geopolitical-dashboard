@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navigation from '../../components/Navigation';
 import EquitiesPortfolio from '../../components/tabs/EquitiesPortfolio';
+import TradeNotifications from '../../components/TradeNotifications';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -48,14 +49,16 @@ const PageSubtitle = styled.p`
 
 export default function EquitiesPage() {
   const [totalPnL, setTotalPnL] = useState(0);
+  const [tradeHistory, setTradeHistory] = useState<any[]>([]);
 
   useEffect(() => {
-    // Fetch equities portfolio data for P&L
+    // Fetch equities portfolio data for P&L and trade history
     fetch('/api/portfolio/equities')
       .then(r => r.json())
       .then(portfolio => {
         if (portfolio.success && portfolio.data) {
           setTotalPnL(portfolio.data.metadata.unrealizedPnL || 0);
+          setTradeHistory(portfolio.data.tradeHistory || []);
         }
       })
       .catch(error => console.error('Failed to fetch data:', error));
@@ -64,6 +67,7 @@ export default function EquitiesPage() {
   return (
     <PageContainer>
       <Navigation totalPnL={totalPnL} />
+      <TradeNotifications equitiesTrades={tradeHistory} />
 
       <ContentContainer>
         <Header>
