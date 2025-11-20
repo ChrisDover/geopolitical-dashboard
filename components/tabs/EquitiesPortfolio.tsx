@@ -275,6 +275,18 @@ export default function EquitiesPortfolio() {
   })) || [];
 
   // Map trades to chart data for markers - find nearest date
+  console.log('=== TRADE MARKER DEBUG ===');
+  console.log('Trade history count:', tradeHistory?.length || 0);
+  console.log('Chart data points:', chartData.length);
+  if (tradeHistory && tradeHistory.length > 0) {
+    console.log('First trade:', tradeHistory[0].date, tradeHistory[0].symbol);
+    console.log('Last trade:', tradeHistory[tradeHistory.length - 1].date, tradeHistory[tradeHistory.length - 1].symbol);
+  }
+  if (chartData.length > 0) {
+    console.log('First chart point:', chartData[0].fullDate, '→', chartData[0].date);
+    console.log('Last chart point:', chartData[chartData.length - 1].fullDate, '→', chartData[chartData.length - 1].date);
+  }
+
   const tradeMarkers = tradeHistory?.map((trade: any) => {
     const tradeDate = new Date(trade.date);
 
@@ -293,6 +305,12 @@ export default function EquitiesPortfolio() {
       }
     });
 
+    if (nearestPoint) {
+      console.log(`✓ Matched trade ${trade.symbol} (${trade.date}) to chart point ${nearestPoint.date}`);
+    } else {
+      console.log(`✗ No match for trade ${trade.symbol} (${trade.date})`);
+    }
+
     return nearestPoint ? {
       date: nearestPoint.date,
       value: nearestPoint.Portfolio,
@@ -303,7 +321,8 @@ export default function EquitiesPortfolio() {
     } : null;
   }).filter((marker: any) => marker !== null) || [];
 
-  console.log('Trade markers:', tradeMarkers.length, 'out of', tradeHistory?.length || 0, 'trades');
+  console.log('Trade markers created:', tradeMarkers.length);
+  console.log('Markers:', tradeMarkers);
 
   // Calculate performance metrics
   const portfolioReturn = equityCurve && equityCurve.length > 0
