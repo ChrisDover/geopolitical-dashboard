@@ -558,7 +558,7 @@ export default function EquitiesPortfolio() {
                   fill="#00c853"
                   shape={(props: any) => {
                     const { cx, cy, payload } = props;
-                    if (!cx || !cy) return null;
+                    if (!cx || !cy) return <g />;
                     return (
                       <g>
                         <polygon
@@ -597,7 +597,7 @@ export default function EquitiesPortfolio() {
                   fill="#ff0000"
                   shape={(props: any) => {
                     const { cx, cy, payload } = props;
-                    if (!cx || !cy) return null;
+                    if (!cx || !cy) return <g />;
                     return (
                       <g>
                         <polygon
