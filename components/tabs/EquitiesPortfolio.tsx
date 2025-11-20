@@ -279,7 +279,7 @@ export default function EquitiesPortfolio() {
     const tradeDate = new Date(trade.date);
 
     // Find the nearest chart point (within 7 days)
-    let nearestPoint = null;
+    let nearestPoint: any = null;
     let minDiff = Infinity;
 
     chartData.forEach((point: any) => {
