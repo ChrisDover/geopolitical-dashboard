@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Container = styled.div`
   padding: 0;
@@ -128,6 +129,97 @@ const LoadingContainer = styled.div`
   color: #888;
 `;
 
+const SectionCard = styled.div`
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+`;
+
+const SectionTitle = styled.h3`
+  color: #0066cc;
+  font-size: 1.3rem;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+`;
+
+const ChartContainer = styled.div`
+  height: 400px;
+  margin-top: 20px;
+`;
+
+const StatsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+`;
+
+const StatBox = styled.div`
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 15px;
+`;
+
+const StatLabel = styled.div`
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+`;
+
+const StatValue = styled.div<{ $color?: string }>`
+  color: ${props => props.$color || '#fff'};
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+`;
+
+const PerformanceComparison = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PerformanceCard = styled.div<{ $borderColor: string }>`
+  background: #0a0a0a;
+  border: 2px solid ${props => props.$borderColor};
+  border-radius: 8px;
+  padding: 20px;
+`;
+
+const PerformanceTitle = styled.div`
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+`;
+
+const PerformanceValue = styled.div<{ $color: string }>`
+  color: ${props => props.$color};
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 10px;
+`;
+
+const PerformanceDetail = styled.div`
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+`;
+
 export default function EquitiesPortfolio() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -169,10 +261,77 @@ export default function EquitiesPortfolio() {
     );
   }
 
-  const { metadata, positions } = data;
+  const { metadata, positions, equityCurve, riskMetrics } = data;
 
   const totalValue = positions.reduce((sum: number, pos: any) => sum + (pos.currentValue || 0), 0);
   const totalCost = positions.reduce((sum: number, pos: any) => sum + Math.abs(pos.costBasis || 0), 0);
+
+  // Format equity curve data for chart
+  const chartData = equityCurve?.map((point: any) => ({
+    date: new Date(point.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    Portfolio: point.portfolioValue,
+    'S&P 500': point.sp500Value
+  })) || [];
+
+  // Calculate performance metrics
+  const portfolioReturn = equityCurve && equityCurve.length > 0
+    ? ((equityCurve[equityCurve.length - 1].portfolioValue - equityCurve[0].portfolioValue) / equityCurve[0].portfolioValue * 100).toFixed(2)
+    : '0.00';
+  const sp500Return = equityCurve && equityCurve.length > 0
+    ? ((equityCurve[equityCurve.length - 1].sp500Value - equityCurve[0].sp500Value) / equityCurve[0].sp500Value * 100).toFixed(2)
+    : '0.00';
+
+  // Calculate Sharpe Ratio (assuming 5% risk-free rate)
+  const returns = equityCurve?.map((point: any, idx: number, arr: any[]) => {
+    if (idx === 0) return 0;
+    return ((point.portfolioValue - arr[idx - 1].portfolioValue) / arr[idx - 1].portfolioValue) * 100;
+  }).filter((_: any, idx: number) => idx > 0) || [];
+
+  const avgReturn = returns.length > 0 ? returns.reduce((sum: number, r: number) => sum + r, 0) / returns.length : 0;
+  const variance = returns.length > 0 ? returns.reduce((sum: number, r: number) => sum + Math.pow(r - avgReturn, 2), 0) / returns.length : 0;
+  const stdDev = Math.sqrt(variance);
+  const annualizedReturn = avgReturn * 252; // Assuming daily returns
+  const annualizedStdDev = stdDev * Math.sqrt(252);
+  const sharpeRatio = annualizedStdDev > 0 ? ((annualizedReturn - 5) / annualizedStdDev).toFixed(2) : '0.00';
+
+  // Calculate Max Drawdown
+  let maxDrawdown = 0;
+  let peak = equityCurve && equityCurve.length > 0 ? equityCurve[0].portfolioValue : 0;
+  equityCurve?.forEach((point: any) => {
+    if (point.portfolioValue > peak) {
+      peak = point.portfolioValue;
+    }
+    const drawdown = ((point.portfolioValue - peak) / peak) * 100;
+    if (drawdown < maxDrawdown) {
+      maxDrawdown = drawdown;
+    }
+  });
+
+  // S&P 500 Sharpe Ratio
+  const sp500Returns = equityCurve?.map((point: any, idx: number, arr: any[]) => {
+    if (idx === 0) return 0;
+    return ((point.sp500Value - arr[idx - 1].sp500Value) / arr[idx - 1].sp500Value) * 100;
+  }).filter((_: any, idx: number) => idx > 0) || [];
+
+  const sp500AvgReturn = sp500Returns.length > 0 ? sp500Returns.reduce((sum: number, r: number) => sum + r, 0) / sp500Returns.length : 0;
+  const sp500Variance = sp500Returns.length > 0 ? sp500Returns.reduce((sum: number, r: number) => sum + Math.pow(r - sp500AvgReturn, 2), 0) / sp500Returns.length : 0;
+  const sp500StdDev = Math.sqrt(sp500Variance);
+  const sp500AnnualizedReturn = sp500AvgReturn * 252;
+  const sp500AnnualizedStdDev = sp500StdDev * Math.sqrt(252);
+  const sp500SharpeRatio = sp500AnnualizedStdDev > 0 ? ((sp500AnnualizedReturn - 5) / sp500AnnualizedStdDev).toFixed(2) : '0.00';
+
+  // S&P 500 Max Drawdown
+  let sp500MaxDrawdown = 0;
+  let sp500Peak = equityCurve && equityCurve.length > 0 ? equityCurve[0].sp500Value : 0;
+  equityCurve?.forEach((point: any) => {
+    if (point.sp500Value > sp500Peak) {
+      sp500Peak = point.sp500Value;
+    }
+    const drawdown = ((point.sp500Value - sp500Peak) / sp500Peak) * 100;
+    if (drawdown < sp500MaxDrawdown) {
+      sp500MaxDrawdown = drawdown;
+    }
+  });
 
   return (
     <Container>
@@ -249,6 +408,137 @@ export default function EquitiesPortfolio() {
           ))}
         </tbody>
       </PositionsTable>
+
+      <SectionCard>
+        <SectionTitle>Equity Curve: Portfolio vs S&P 500</SectionTitle>
+        <PerformanceComparison>
+          <PerformanceCard $borderColor="#0066cc">
+            <PerformanceTitle>Portfolio Performance</PerformanceTitle>
+            <PerformanceValue $color={parseFloat(portfolioReturn) >= 0 ? '#00c853' : '#ff0000'}>
+              {parseFloat(portfolioReturn) >= 0 ? '+' : ''}{portfolioReturn}%
+            </PerformanceValue>
+            <PerformanceDetail>
+              Total return since inception<br/>
+              Sharpe Ratio: {sharpeRatio}<br/>
+              Max Drawdown: {maxDrawdown.toFixed(2)}%
+            </PerformanceDetail>
+          </PerformanceCard>
+
+          <PerformanceCard $borderColor="#888">
+            <PerformanceTitle>S&P 500 Benchmark</PerformanceTitle>
+            <PerformanceValue $color={parseFloat(sp500Return) >= 0 ? '#00c853' : '#ff0000'}>
+              {parseFloat(sp500Return) >= 0 ? '+' : ''}{sp500Return}%
+            </PerformanceValue>
+            <PerformanceDetail>
+              Total return since inception<br/>
+              Sharpe Ratio: {sp500SharpeRatio}<br/>
+              Max Drawdown: {sp500MaxDrawdown.toFixed(2)}%
+            </PerformanceDetail>
+          </PerformanceCard>
+        </PerformanceComparison>
+
+        <ChartContainer>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <XAxis
+                dataKey="date"
+                stroke="#888"
+                tick={{ fill: '#888', fontSize: 12 }}
+              />
+              <YAxis
+                stroke="#888"
+                tick={{ fill: '#888', fontSize: 12 }}
+                tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+              />
+              <Tooltip
+                contentStyle={{
+                  background: '#1a1a1a',
+                  border: '1px solid #333',
+                  borderRadius: '8px',
+                  color: '#fff'
+                }}
+                formatter={(value: any) => [`$${value.toLocaleString()}`, '']}
+              />
+              <Legend
+                wrapperStyle={{ paddingTop: '20px' }}
+                iconType="line"
+              />
+              <Line
+                type="monotone"
+                dataKey="Portfolio"
+                stroke="#0066cc"
+                strokeWidth={3}
+                dot={false}
+                activeDot={{ r: 6 }}
+              />
+              <Line
+                type="monotone"
+                dataKey="S&P 500"
+                stroke="#888"
+                strokeWidth={2}
+                dot={false}
+                strokeDasharray="5 5"
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </ChartContainer>
+      </SectionCard>
+
+      <SectionCard>
+        <SectionTitle>Risk & Performance Metrics</SectionTitle>
+        <StatsGrid>
+          <StatBox>
+            <StatLabel>Profit Factor</StatLabel>
+            <StatValue $color={riskMetrics?.profitFactor >= 1 ? '#00c853' : '#ff0000'}>
+              {riskMetrics?.profitFactor?.toFixed(2) || '0.00'}
+            </StatValue>
+          </StatBox>
+
+          <StatBox>
+            <StatLabel>Deployment Ratio</StatLabel>
+            <StatValue $color="#0066cc">
+              {riskMetrics?.deploymentRatio?.toFixed(1) || '0.0'}%
+            </StatValue>
+          </StatBox>
+
+          <StatBox>
+            <StatLabel>Long/Short Ratio</StatLabel>
+            <StatValue $color="#fff">
+              {riskMetrics?.longShortRatio?.toFixed(2) || '0.00'}
+            </StatValue>
+          </StatBox>
+
+          <StatBox>
+            <StatLabel>Best Position</StatLabel>
+            <StatValue $color="#00c853">
+              {riskMetrics?.bestPosition?.symbol || 'N/A'}
+            </StatValue>
+            <div style={{ color: '#888', fontSize: '0.75rem', marginTop: '5px' }}>
+              {riskMetrics?.bestPosition ? `+${riskMetrics.bestPosition.unrealizedPnLPercent.toFixed(2)}%` : ''}
+            </div>
+          </StatBox>
+
+          <StatBox>
+            <StatLabel>Worst Position</StatLabel>
+            <StatValue $color="#ff0000">
+              {riskMetrics?.worstPosition?.symbol || 'N/A'}
+            </StatValue>
+            <div style={{ color: '#888', fontSize: '0.75rem', marginTop: '5px' }}>
+              {riskMetrics?.worstPosition ? `${riskMetrics.worstPosition.unrealizedPnLPercent.toFixed(2)}%` : ''}
+            </div>
+          </StatBox>
+
+          {riskMetrics?.sectorExposure && Object.keys(riskMetrics.sectorExposure).map((sector: string) => (
+            <StatBox key={sector}>
+              <StatLabel>{sector} Exposure</StatLabel>
+              <StatValue $color="#0066cc">
+                {riskMetrics.sectorExposure[sector].toFixed(1)}%
+              </StatValue>
+            </StatBox>
+          ))}
+        </StatsGrid>
+      </SectionCard>
     </Container>
   );
 }
