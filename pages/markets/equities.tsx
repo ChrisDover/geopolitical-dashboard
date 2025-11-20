@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navigation from '../../components/Navigation';
-import ExecutiveSummary from '../../components/tabs/ExecutiveSummary';
+import EquitiesPortfolio from '../../components/tabs/EquitiesPortfolio';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -47,23 +47,16 @@ const PageSubtitle = styled.p`
 `;
 
 export default function EquitiesPage() {
-  const [newsData, setNewsData] = useState<any[]>([]);
-  const [marketData, setMarketData] = useState<any[]>([]);
   const [totalPnL, setTotalPnL] = useState(0);
 
   useEffect(() => {
-    // Fetch portfolio data, news and market data
-    Promise.all([
-      fetch('/api/portfolio/equities').then(r => r.json()),
-      fetch('/api/news/feed?limit=10').then(r => r.json()),
-      fetch('/api/markets/divergence').then(r => r.json())
-    ])
-      .then(([portfolio, news, markets]) => {
+    // Fetch equities portfolio data for P&L
+    fetch('/api/portfolio/equities')
+      .then(r => r.json())
+      .then(portfolio => {
         if (portfolio.success && portfolio.data) {
           setTotalPnL(portfolio.data.metadata.unrealizedPnL || 0);
         }
-        if (news.success) setNewsData(news.data);
-        if (markets.success) setMarketData(markets.data);
       })
       .catch(error => console.error('Failed to fetch data:', error));
   }, []);
@@ -80,7 +73,7 @@ export default function EquitiesPage() {
           </PageSubtitle>
         </Header>
 
-        <ExecutiveSummary news={newsData} markets={marketData} />
+        <EquitiesPortfolio />
       </ContentContainer>
     </PageContainer>
   );
