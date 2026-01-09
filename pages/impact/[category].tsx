@@ -811,8 +811,8 @@ export default function ImpactCategoryPage() {
     return acc;
   }, {});
 
-  const topAreas = Object.entries(affectedAreaStats)
-    .map(([area, data]) => ({ area, ...data }))
+  const topAreas = Object.entries(affectedAreaStats as Record<string, { count: number; severity: string }>)
+    .map(([area, data]) => ({ area, count: data.count, severity: data.severity }))
     .sort((a, b) => {
       const severityDiff = severityRank[b.severity] - severityRank[a.severity];
       if (severityDiff !== 0) return severityDiff;
