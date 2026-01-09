@@ -18,6 +18,7 @@ interface RiskShift {
   description: string;
   impact: string;
   linkTo: string;
+  timestamp: string;
 }
 
 interface NewsArticle {
@@ -131,8 +132,8 @@ function generateImpactDescription(
 // Generate risk shifts from critical news
 function generateRiskShifts(articles: NewsArticle[]): RiskShift[] {
   const criticalArticles = articles
-    .filter(a => ['CRITICAL', 'HIGH'].includes(a.priority))
-    .slice(0, 5);
+    .filter(a => ['CRITICAL', 'HIGH', 'MEDIUM'].includes(a.priority))
+    .slice(0, 15);
 
   const now = new Date();
   const shifts: RiskShift[] = [];
@@ -142,7 +143,11 @@ function generateRiskShifts(articles: NewsArticle[]): RiskShift[] {
     const hoursAgo = (now.getTime() - articleDate.getTime()) / (1000 * 60 * 60);
     const timeframe: '24h' | '72h' = hoursAgo <= 24 ? '24h' : '72h';
     
-    const severity = article.priority === 'CRITICAL' ? 'critical' : 'high';
+    const severity = article.priority === 'CRITICAL'
+      ? 'critical'
+      : article.priority === 'HIGH'
+        ? 'high'
+        : 'medium';
     
     // Generate impact description based on article content
     const text = article.headline.toLowerCase();
@@ -174,7 +179,8 @@ function generateRiskShifts(articles: NewsArticle[]): RiskShift[] {
       severity,
       description: article.headline,
       impact,
-      linkTo: `/analysis/${subjectSlug}`
+      linkTo: `/analysis/${subjectSlug}`,
+      timestamp: article.timestamp
     });
   });
 

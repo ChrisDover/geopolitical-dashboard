@@ -10,6 +10,7 @@ interface RiskShift {
   description: string;
   impact: string;
   linkTo?: string;
+  timestamp?: string;
 }
 
 interface RiskStoryProps {
@@ -20,11 +21,11 @@ const StoryContainer = styled.div`
   background: #0a0a0a;
   border: 2px solid #333;
   border-radius: 12px;
-  padding: 30px;
+  padding: 22px;
   margin-bottom: 30px;
 
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 16px;
   }
 `;
 
@@ -53,121 +54,84 @@ const Title = styled.h2`
 const ShiftsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 6px;
 `;
 
 const EmptyState = styled.div`
   border: 1px dashed #333;
   border-radius: 8px;
-  padding: 20px;
+  padding: 14px;
   color: #aaa;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
   background: #111;
 `;
 
-const ShiftCard = styled.div<{ $severity: string }>`
-  background: #1a1a1a;
-  border-left: 4px solid ${props => {
-    switch (props.$severity) {
-      case 'critical': return '#ff0000';
-      case 'high': return '#ff6b00';
-      default: return '#ffaa00';
-    }
-  }};
-  border-radius: 8px;
-  padding: 20px;
-  transition: all 0.3s;
-  cursor: ${props => props.onClick ? 'pointer' : 'default'};
+const TickerRow = styled.a<{ $severity: string }>`
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 2px;
+  border-bottom: 1px solid #1a1a1a;
+  color: ${props => props.$severity === 'critical' ? '#ff3b30' : '#ddd'};
+  font-size: 0.88rem;
 
   &:hover {
-    background: #222;
-    transform: translateX(4px);
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 `;
 
-const ShiftHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-  gap: 10px;
+const TickerHeadline = styled.div`
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
-const ShiftTitle = styled.h3`
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0;
-  flex: 1;
-`;
-
-const TimeframeBadge = styled.div`
-  background: #333;
-  color: #ff6b00;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
+const TickerMeta = styled.div`
+  color: #777;
+  font-size: 0.72rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
   white-space: nowrap;
 `;
 
 const SeverityBadge = styled.div<{ $severity: string }>`
-  background: ${props => {
-    switch (props.$severity) {
-      case 'critical': return '#ff0000';
-      case 'high': return '#ff6b00';
-      default: return '#ffaa00';
-    }
-  }};
-  color: #000;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  color: ${props => props.$severity === 'critical' ? '#ff3b30' : props.$severity === 'high' ? '#ff6b00' : '#ffaa00'};
+  font-size: 0.72rem;
   text-transform: uppercase;
   white-space: nowrap;
 `;
 
-const ShiftDescription = styled.p`
-  color: #ddd;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 10px 0;
-`;
-
-const ImpactText = styled.div`
-  color: #ff6b00;
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 8px;
-`;
-
-const ViewLink = styled.a`
-  color: #ff6b00;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 12px;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 export const RiskStory: React.FC<RiskStoryProps> = ({ shifts }) => {
-  // Sort by severity and timeframe
-  const sortedShifts = [...shifts].sort((a, b) => {
-    const severityOrder = { critical: 3, high: 2, medium: 1 };
-    if (severityOrder[a.severity] !== severityOrder[b.severity]) {
-      return severityOrder[b.severity] - severityOrder[a.severity];
+  const timeAgo = (timestamp?: string, fallback?: string) => {
+    if (!timestamp) {
+      return fallback ? `within ${fallback}` : 'recent';
     }
-    return a.timeframe === '24h' ? -1 : 1;
+    const deltaMs = Date.now() - new Date(timestamp).getTime();
+    const minutes = Math.max(1, Math.floor(deltaMs / 60000));
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+  };
+
+  const sortedShifts = [...shifts].sort((a, b) => {
+    const aTime = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+    const bTime = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+    if (aTime !== bTime) {
+      return bTime - aTime;
+    }
+    const severityOrder = { critical: 3, high: 2, medium: 1 };
+    return severityOrder[b.severity] - severityOrder[a.severity];
   });
 
   return (
@@ -182,23 +146,16 @@ export const RiskStory: React.FC<RiskStoryProps> = ({ shifts }) => {
             Monitoring continues.
           </EmptyState>
         ) : (
-          sortedShifts.slice(0, 3).map((shift) => (
-            <ShiftCard key={shift.id} $severity={shift.severity}>
-              <ShiftHeader>
-                <ShiftTitle>{shift.title}</ShiftTitle>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <TimeframeBadge>{shift.timeframe}</TimeframeBadge>
-                  <SeverityBadge $severity={shift.severity}>{shift.severity}</SeverityBadge>
-                </div>
-              </ShiftHeader>
-              <ShiftDescription>{shift.description}</ShiftDescription>
-              <ImpactText>Impact: {shift.impact}</ImpactText>
-              {shift.linkTo && (
-                <Link href={shift.linkTo} passHref legacyBehavior>
-                  <ViewLink>View Analysis →</ViewLink>
-                </Link>
-              )}
-            </ShiftCard>
+          sortedShifts.slice(0, 10).map((shift) => (
+            <Link key={shift.id} href={shift.linkTo || '#'} passHref legacyBehavior>
+              <TickerRow $severity={shift.severity}>
+                <TickerHeadline title={shift.title}>
+                  {shift.title}
+                </TickerHeadline>
+                <TickerMeta>{timeAgo(shift.timestamp, shift.timeframe)}</TickerMeta>
+                <SeverityBadge $severity={shift.severity}>{shift.severity}</SeverityBadge>
+              </TickerRow>
+            </Link>
           ))
         )}
       </ShiftsList>

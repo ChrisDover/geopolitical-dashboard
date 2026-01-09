@@ -141,6 +141,22 @@ export default async function handler(
       console.error('AllSides RSS fetch error (continuing with GDELT only):', error);
     }
 
+    const supplementalResults = await Promise.allSettled([
+      fetchCisaKev(),
+      fetchUsgsEarthquakes(),
+      fetchGdacsAlerts(),
+      fetchAcledEvents(),
+      fetchEiaEnergySignal()
+    ]);
+
+    supplementalResults.forEach(result => {
+      if (result.status === 'fulfilled') {
+        allArticles.push(...result.value);
+      } else {
+        console.error('Supplemental source fetch error:', result.reason);
+      }
+    });
+
     // Sort by priority and recency
     const sorted = allArticles.sort((a, b) => {
       const priorityOrder = { CRITICAL: 4, HIGH: 3, MEDIUM: 2, LOW: 1 };
@@ -293,4 +309,165 @@ function isVerifiedSource(url: string): boolean {
     'aljazeera.com', 'axios.com', 'ground.news', 'allsides.com'
   ];
   return verifiedDomains.some(domain => url.includes(domain));
+}
+
+async function fetchCisaKev(): Promise<Article[]> {
+  try {
+    const response = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json');
+    if (!response.ok) return [];
+    const data = await response.json();
+    const vulnerabilities = (data.vulnerabilities || []) as any[];
+    return vulnerabilities
+      .sort((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime())
+      .slice(0, 5)
+      .map(vuln => ({
+        timestamp: vuln.dateAdded ? new Date(vuln.dateAdded).toISOString() : new Date().toISOString(),
+        source: 'CISA KEV',
+        priority: (vuln.knownRansomwareCampaignUse || '').toLowerCase() === 'known'
+          || (vuln.shortDescription || '').toLowerCase().includes('ransomware')
+          ? 'HIGH'
+          : 'MEDIUM',
+        region: 'Global',
+        headline: `CISA KEV: ${vuln.cveID} ${vuln.vulnerabilityName || ''}`.trim(),
+        url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
+        tags: ['cyber', 'kev', 'cisa'],
+        sentiment: 0,
+        verified: true
+      }));
+  } catch (error) {
+    console.error('CISA KEV fetch error:', error);
+    return [];
+  }
+}
+
+async function fetchUsgsEarthquakes(): Promise<Article[]> {
+  try {
+    const response = await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson');
+    if (!response.ok) return [];
+    const data = await response.json();
+    const events = (data.features || []) as any[];
+    return events.slice(0, 5).map(event => {
+      const props = event.properties || {};
+      const magnitude = typeof props.mag === 'number' ? props.mag : null;
+      let priority: Article['priority'] = 'MEDIUM';
+      if (magnitude !== null && magnitude >= 7.5) priority = 'CRITICAL';
+      else if (magnitude !== null && magnitude >= 6.0) priority = 'HIGH';
+      return {
+        timestamp: props.time ? new Date(props.time).toISOString() : new Date().toISOString(),
+        source: 'USGS',
+        priority,
+        region: 'Global',
+        headline: `M${magnitude ?? '?'} earthquake - ${props.place || 'Unknown location'}`,
+        url: props.url || 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson',
+        tags: ['earthquake', 'usgs', 'disaster'],
+        sentiment: 0,
+        verified: true
+      };
+    });
+  } catch (error) {
+    console.error('USGS fetch error:', error);
+    return [];
+  }
+}
+
+async function fetchGdacsAlerts(): Promise<Article[]> {
+  try {
+    const parser = new Parser({
+      timeout: 5000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; GeopoliticalDashboard/1.0)'
+      }
+    });
+
+    const feed = await parser.parseURL('https://www.gdacs.org/xml/rss.xml');
+    if (!feed || !feed.items) return [];
+
+    return feed.items.slice(0, 5).map(item => {
+      const title = item.title || 'GDACS Alert';
+      const normalized = title.toLowerCase();
+      let priority: Article['priority'] = 'MEDIUM';
+      if (normalized.includes('red')) priority = 'CRITICAL';
+      else if (normalized.includes('orange')) priority = 'HIGH';
+      return {
+        timestamp: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
+        source: 'GDACS',
+        priority,
+        region: categorizeRegion(title, item.link || ''),
+        headline: title,
+        url: item.link || 'https://www.gdacs.org/',
+        tags: ['gdacs', 'disaster', 'alert'],
+        sentiment: 0,
+        verified: true
+      };
+    });
+  } catch (error) {
+    console.error('GDACS fetch error:', error);
+    return [];
+  }
+}
+
+async function fetchAcledEvents(): Promise<Article[]> {
+  const apiKey = process.env.ACLED_API_KEY;
+  const email = process.env.ACLED_EMAIL;
+  if (!apiKey || !email) return [];
+
+  try {
+    const url = `https://api.acleddata.com/acled/read?key=${encodeURIComponent(apiKey)}&email=${encodeURIComponent(email)}&limit=10&order=event_date:desc&fields=event_date,country,event_type,sub_event_type,notes,region`;
+    const response = await fetch(url);
+    if (!response.ok) return [];
+    const data = await response.json();
+    const events = (data.data || []) as any[];
+    return events.map(event => {
+      const eventType = event.event_type || 'Event';
+      const subType = event.sub_event_type ? ` - ${event.sub_event_type}` : '';
+      const headline = `${eventType}${subType} in ${event.country || 'Unknown'}`;
+      const isSevere = /battle|explosion|remote violence|violence against civilians/i.test(eventType);
+      return {
+        timestamp: event.event_date ? new Date(event.event_date).toISOString() : new Date().toISOString(),
+        source: 'ACLED',
+        priority: isSevere ? 'HIGH' : 'MEDIUM',
+        region: event.region || event.country || 'Global',
+        headline,
+        url: 'https://acleddata.com/',
+        tags: ['acled', 'conflict', 'incident'],
+        sentiment: 0,
+        verified: true
+      };
+    });
+  } catch (error) {
+    console.error('ACLED fetch error:', error);
+    return [];
+  }
+}
+
+async function fetchEiaEnergySignal(): Promise<Article[]> {
+  const apiKey = process.env.EIA_API_KEY;
+  if (!apiKey) return [];
+
+  try {
+    const response = await fetch(`https://api.eia.gov/series?api_key=${encodeURIComponent(apiKey)}&series_id=PET.RWTC.D`);
+    if (!response.ok) return [];
+    const data = await response.json();
+    const series = data.series && data.series[0];
+    const latest = series && series.data && series.data[0];
+    if (!latest) return [];
+    const [dateStr, value] = latest;
+    const timestamp = dateStr
+      ? new Date(`${dateStr.slice(0, 4)}-${dateStr.slice(4, 6)}-${dateStr.slice(6, 8)}T00:00:00Z`).toISOString()
+      : new Date().toISOString();
+    return [{
+      timestamp,
+      source: 'EIA',
+      priority: 'LOW',
+      region: 'Global',
+      headline: `EIA WTI spot: $${Number(value).toFixed(2)} (${dateStr})`,
+      url: 'https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm',
+      tags: ['energy', 'eia', 'oil'],
+      sentiment: 0,
+      verified: true
+    }];
+  } catch (error) {
+    console.error('EIA fetch error:', error);
+    return [];
+  }
 }
