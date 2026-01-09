@@ -2,9 +2,11 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Link from 'next/link';
+import ModeToggle, { ViewMode } from './ModeToggle';
 
 interface NavigationProps {
-  totalPnL?: number;
+  viewMode?: ViewMode;
+  onViewModeChange?: (mode: ViewMode) => void;
 }
 
 const Nav = styled.nav`
@@ -94,32 +96,19 @@ const NavTab = styled.a<{ $active: boolean; $color: string }>`
   }
 `;
 
-const PnLDisplay = styled.div<{ $positive: boolean }>`
-  padding: 12px 20px;
-  border-radius: 6px;
-  background: ${props => props.$positive ? 'rgba(0, 200, 83, 0.15)' : 'rgba(255, 0, 0, 0.15)'};
-  border: 1px solid ${props => props.$positive ? '#00c853' : '#ff0000'};
-  font-weight: 700;
-  font-size: 1rem;
-  color: ${props => props.$positive ? '#00c853' : '#ff0000'};
-  font-family: 'Courier New', monospace;
-  white-space: nowrap;
+const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
 
   @media (max-width: 768px) {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-    margin-top: 10px;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
   }
 `;
 
-const PnLLabel = styled.span`
-  font-size: 0.75rem;
-  color: #888;
-  margin-right: 8px;
-  font-weight: 600;
-`;
-
-export default function Navigation({ totalPnL = 0 }: NavigationProps) {
+export default function Navigation({ viewMode = 'CEO', onViewModeChange }: NavigationProps) {
   const router = useRouter();
   const currentPath = router.pathname;
 
@@ -144,30 +133,13 @@ export default function Navigation({ totalPnL = 0 }: NavigationProps) {
               Overview
             </NavTab>
           </Link>
-
-          <Link href="/markets/events" passHref legacyBehavior>
-            <NavTab $active={isActive('/markets/events')} $color="#ff6b00">
-              Events
-            </NavTab>
-          </Link>
-
-          <Link href="/markets/equities" passHref legacyBehavior>
-            <NavTab $active={isActive('/markets/equities')} $color="#0066cc">
-              Equities
-            </NavTab>
-          </Link>
-
-          <Link href="/analytics/risk" passHref legacyBehavior>
-            <NavTab $active={isActive('/analytics/risk')} $color="#9333ea">
-              Risk
-            </NavTab>
-          </Link>
         </NavTabs>
 
-        <PnLDisplay $positive={totalPnL >= 0}>
-          <PnLLabel>TOTAL P&L</PnLLabel>
-          {totalPnL >= 0 ? '+' : ''}${totalPnL.toLocaleString()}
-        </PnLDisplay>
+        <RightSection>
+          {onViewModeChange && (
+            <ModeToggle mode={viewMode} onChange={onViewModeChange} />
+          )}
+        </RightSection>
       </NavContainer>
     </Nav>
   );

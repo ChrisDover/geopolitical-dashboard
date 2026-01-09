@@ -153,19 +153,19 @@ const NewsBadge = styled.span`
   color: #000;
   padding: 3px 8px;
   border-radius: 3px;
-  font-size: 0.7rem;
+  font-size: 0.875rem; /* 14px - increased from 0.7rem (11.2px) */
   font-weight: 700;
   text-transform: uppercase;
 `;
 
 const NewsTime = styled.span`
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
 `;
 
 const NewsTitle = styled.a`
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1.125rem; /* 18px - increased from 0.9rem (14.4px) */
   font-weight: 600;
   text-decoration: none;
   display: block;
@@ -178,7 +178,7 @@ const NewsTitle = styled.a`
 
 const NewsSource = styled.div`
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
 `;
 
 const OpportunityItem = styled.div<{ $borderColor: string }>`
@@ -225,7 +225,7 @@ const OpportunityTitle = styled.div`
 
 const OpportunityDetail = styled.div`
   color: #888;
-  font-size: 0.8rem;
+  font-size: 1rem; /* 16px - increased from 0.8rem (12.8px) */
 `;
 
 const RegionGrid = styled.div`
@@ -257,7 +257,7 @@ const RegionCount = styled.div`
 
 const RegionCritical = styled.div`
   color: #ff0000;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
 `;
 
 const BlufContainer = styled.div`
@@ -388,7 +388,7 @@ const MetricBox = styled.div`
 
 const MetricLabel = styled.div`
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   text-transform: uppercase;
   margin-bottom: 8px;
   letter-spacing: 0.5px;
@@ -473,7 +473,7 @@ const HealthStatus = styled.span<{ $health: number }>`
     props.$health >= 40 ? '#ffaa00' :
     props.$health >= 20 ? '#ff6b00' : '#ff0000'
   };
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -481,7 +481,7 @@ const HealthStatus = styled.span<{ $health: number }>`
 
 const HealthScore = styled.span`
   color: #888;
-  font-size: 0.7rem;
+  font-size: 0.875rem; /* 14px - increased from 0.7rem (11.2px) */
   font-family: 'Courier New', monospace;
 `;
 
@@ -556,7 +556,7 @@ const GaugeValue = styled.div`
 
 const GaugeSubtext = styled.div`
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   margin-top: 5px;
 `;
 
@@ -594,7 +594,7 @@ const LeverageWarning = styled.div`
   border-radius: 4px;
   padding: 8px 12px;
   color: #ff6b00;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -623,7 +623,7 @@ const FuturesMetricBox = styled.div`
 
 const FuturesMetricLabel = styled.div`
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -783,7 +783,7 @@ const UrgencyBadge = styled.div<{ level: 'critical' | 'high' | 'medium' }>`
   color: #000;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -812,7 +812,7 @@ const AlertMetric = styled.div`
 
 const AlertMetricLabel = styled.div`
   color: #ffcccc;
-  font-size: 0.75rem;
+  font-size: 0.9375rem; /* 15px - increased from 0.75rem (12px) */
   text-transform: uppercase;
   margin-bottom: 6px;
   letter-spacing: 0.5px;
@@ -1344,25 +1344,45 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
             <MetricValue>${(portfolioData.metadata?.totalCapital || 0).toLocaleString()}</MetricValue>
           </MetricBox>
           <MetricBox>
-            <MetricLabel>Unrealized P&L</MetricLabel>
+            <Tooltip
+              text="Unrealized P&L"
+              explanation="Profit or loss if you sold all positions right now. This is 'paper' money - it's not locked in until you actually sell. Can go up or down with market movements."
+            >
+              <MetricLabel>Unrealized P&L</MetricLabel>
+            </Tooltip>
             <MetricValue $color={(portfolioData.metadata?.unrealizedPnL || 0) >= 0 ? '#00ff00' : '#ff0000'}>
               {(portfolioData.metadata?.unrealizedPnL || 0) >= 0 ? '+' : ''}${(portfolioData.metadata?.unrealizedPnL || 0).toLocaleString()}
             </MetricValue>
           </MetricBox>
           <MetricBox>
-            <MetricLabel>Realized P&L</MetricLabel>
+            <Tooltip
+              text="Realized P&L"
+              explanation="Actual profit or loss from positions you've already sold. This is 'real' money that's locked in. Unlike unrealized P&L, this won't change unless you make new trades."
+            >
+              <MetricLabel>Realized P&L</MetricLabel>
+            </Tooltip>
             <MetricValue $color={(portfolioData.metadata?.realizedPnL || 0) >= 0 ? '#00ff00' : '#ff0000'}>
               {(portfolioData.metadata?.realizedPnL || 0) >= 0 ? '+' : ''}${(portfolioData.metadata?.realizedPnL || 0).toLocaleString()}
             </MetricValue>
           </MetricBox>
           <MetricBox>
-            <MetricLabel>Portfolio Return</MetricLabel>
+            <Tooltip
+              text="Portfolio Return"
+              explanation="Your total percentage gain or loss. This includes both realized and unrealized profits. Positive means you're up, negative means you're down."
+            >
+              <MetricLabel>Portfolio Return</MetricLabel>
+            </Tooltip>
             <MetricValue $color={parseFloat(formatted.portfolioReturn) >= 0 ? '#00ff00' : '#ff0000'}>
               {parseFloat(formatted.portfolioReturn) >= 0 ? '+' : ''}{formatted.portfolioReturn}%
             </MetricValue>
           </MetricBox>
           <MetricBox>
-            <MetricLabel>Alpha vs S&P 500</MetricLabel>
+            <Tooltip
+              text="Alpha vs S&P 500"
+              explanation="How much you're beating (or lagging) the S&P 500. Positive alpha means you're outperforming. Negative alpha means you're underperforming, but this might be intentional if you're using a defensive strategy."
+            >
+              <MetricLabel>Alpha vs S&P 500</MetricLabel>
+            </Tooltip>
             <MetricValue $color={parseFloat(formatted.alpha) >= 0 ? '#00ff00' : '#ff0000'}>
               {parseFloat(formatted.alpha) >= 0 ? '+' : ''}{formatted.alpha}%
             </MetricValue>
@@ -1374,7 +1394,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
             <RiskMetricsTitle>Risk & Portfolio Analytics</RiskMetricsTitle>
             <GaugeGrid>
               <GaugeContainer>
-                <GaugeLabel>Capital Deployment</GaugeLabel>
+                <Tooltip
+                  text="Capital Deployment"
+                  explanation="How much of your available capital is invested. 100% means you're fully invested with no cash reserves. Above 95% might be risky - consider keeping some cash for opportunities or emergencies."
+                >
+                  <GaugeLabel>Capital Deployment</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={Math.min(100, portfolioData.riskMetrics.deploymentRatio || 0)}
                   $color={
@@ -1417,7 +1442,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
               </GaugeContainer>
 
               <GaugeContainer>
-                <GaugeLabel>Long/Short Ratio</GaugeLabel>
+                <Tooltip
+                  text="Long/Short Ratio"
+                  explanation="How many 'betting up' positions vs 'betting down' positions you have. Above 5x means you're mostly betting things will go up. Below 0.5x means you're mostly betting things will go down. Balanced is around 1x."
+                >
+                  <GaugeLabel>Long/Short Ratio</GaugeLabel>
+                </Tooltip>
                 <GaugeCircle
                   $percentage={Math.min(100, ((portfolioData.riskMetrics.longShortRatio || 0) / 10) * 100)}
                   $color="#ff6b00"
@@ -1527,12 +1557,12 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
                 <XAxis
                   dataKey="date"
                   stroke="#888"
-                  style={{ fontSize: '0.75rem' }}
+                  style={{ fontSize: '0.9375rem' }} /* 15px - increased from 0.75rem */
                   interval={Math.floor(formatted.chartData.length / 8)}
                 />
                 <YAxis
                   stroke="#888"
-                  style={{ fontSize: '0.75rem' }}
+                  style={{ fontSize: '0.9375rem' }} /* 15px - increased from 0.75rem */
                   tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                 />
                 <ChartTooltip
@@ -1617,11 +1647,11 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
                           Notional: ${(pos.notionalExposure || 0).toLocaleString()}
                         </PositionDetail>
                         {pos.rollDate && (
-                          <PositionDetail style={{ marginTop: '4px', fontSize: '0.75rem', color: '#ff6b00' }}>
+                          <PositionDetail style={{ marginTop: '4px', fontSize: '0.9375rem', color: '#ff6b00' }}> {/* 15px */}
                             Roll Date: {new Date(pos.rollDate).toLocaleDateString()} (Cost: ${pos.rollCost || 0})
                           </PositionDetail>
                         )}
-                        <PositionDetail style={{ marginTop: '4px', fontSize: '0.75rem' }}>
+                        <PositionDetail style={{ marginTop: '4px', fontSize: '0.9375rem' }}> {/* 15px */}
                           {pos.reasoning}
                         </PositionDetail>
                         <PositionHealthContainer>
@@ -1669,7 +1699,7 @@ export default function ExecutiveSummary({ news = [], markets = [] }: ExecutiveS
                       Entry: ${pos.entryPrice.toFixed(2)} → Current: ${pos.currentPrice.toFixed(2)} |
                       {pos.contracts ? ` ${pos.contracts.toLocaleString()} contracts` : ` ${Math.abs(pos.shares).toLocaleString()} shares`}
                     </PositionDetail>
-                    <PositionDetail style={{ marginTop: '4px', fontSize: '0.75rem' }}>
+                    <PositionDetail style={{ marginTop: '4px', fontSize: '0.9375rem' }}> {/* 15px */}
                       {pos.reasoning}
                     </PositionDetail>
                     <PositionHealthContainer>
