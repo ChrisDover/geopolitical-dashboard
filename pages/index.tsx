@@ -131,6 +131,53 @@ export default function OverviewPage() {
 
   const [enterpriseImpacts, setEnterpriseImpacts] = useState<any[]>([]);
   const [riskShifts, setRiskShifts] = useState<any[]>([]);
+  const fallbackImpacts = [
+    {
+      category: 'legal',
+      label: 'Legal Exposure',
+      severity: 'low',
+      count: 0,
+      description: '0 active legal matters requiring executive attention.',
+      ceoFocus: '0 active legal matters requiring executive attention.',
+      gcFocus: '0 regulatory investigations or compliance reviews.'
+    },
+    {
+      category: 'supply-chain',
+      label: 'Supply Chain',
+      severity: 'low',
+      count: 0,
+      description: '0 critical supply chain disruptions detected.',
+      ceoFocus: '0 critical supply chain disruptions detected.',
+      gcFocus: '0 supply chain disruptions with regulatory implications.'
+    },
+    {
+      category: 'people',
+      label: 'People & Operations',
+      severity: 'low',
+      count: 0,
+      description: '0 operational risks affecting workforce in key regions.',
+      ceoFocus: '0 operational risks affecting workforce in key regions.',
+      gcFocus: '0 workforce risks requiring employment law review.'
+    },
+    {
+      category: 'cyber',
+      label: 'Cyber Security',
+      severity: 'low',
+      count: 0,
+      description: '0 active cyber threats targeting infrastructure.',
+      ceoFocus: '0 active cyber threats targeting infrastructure.',
+      gcFocus: '0 cybersecurity incidents requiring notification.'
+    },
+    {
+      category: 'regulatory',
+      label: 'Regulatory',
+      severity: 'low',
+      count: 0,
+      description: '0 regulatory changes affecting operations.',
+      ceoFocus: '0 regulatory changes affecting operations.',
+      gcFocus: '0 regulatory changes requiring legal review.'
+    }
+  ];
 
   useEffect(() => {
     // Fetch notifications and analysis data
@@ -168,7 +215,7 @@ export default function OverviewPage() {
   };
 
   // Use API data, fallback to empty arrays if not loaded yet
-  const displayImpacts = enterpriseImpacts.length > 0 ? enterpriseImpacts : [];
+  const displayImpacts = enterpriseImpacts.length > 0 ? enterpriseImpacts : fallbackImpacts;
   const displayRiskShifts = riskShifts.length > 0 ? riskShifts : [];
 
   return (
@@ -185,14 +232,10 @@ export default function OverviewPage() {
 
       <ContentContainer>
         {/* Enterprise Impact Snapshot - NEW */}
-        {displayImpacts.length > 0 && (
-          <EnterpriseImpactSnapshot mode={viewMode} impacts={displayImpacts} />
-        )}
+        <EnterpriseImpactSnapshot mode={viewMode} impacts={displayImpacts} />
 
         {/* 24-72h Risk Story - NEW */}
-        {displayRiskShifts.length > 0 && (
-          <RiskStory shifts={displayRiskShifts} />
-        )}
+        <RiskStory shifts={displayRiskShifts} />
       </ContentContainer>
     </PageContainer>
   );

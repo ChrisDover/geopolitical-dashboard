@@ -56,6 +56,16 @@ const ShiftsList = styled.div`
   gap: 20px;
 `;
 
+const EmptyState = styled.div`
+  border: 1px dashed #333;
+  border-radius: 8px;
+  padding: 20px;
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #111;
+`;
+
 const ShiftCard = styled.div<{ $severity: string }>`
   background: #1a1a1a;
   border-left: 4px solid ${props => {
@@ -166,28 +176,34 @@ export const RiskStory: React.FC<RiskStoryProps> = ({ shifts }) => {
         <Title>24-72h Risk Story</Title>
       </Header>
       <ShiftsList>
-        {sortedShifts.slice(0, 3).map((shift) => (
-          <ShiftCard key={shift.id} $severity={shift.severity}>
-            <ShiftHeader>
-              <ShiftTitle>{shift.title}</ShiftTitle>
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                <TimeframeBadge>{shift.timeframe}</TimeframeBadge>
-                <SeverityBadge $severity={shift.severity}>{shift.severity}</SeverityBadge>
-              </div>
-            </ShiftHeader>
-            <ShiftDescription>{shift.description}</ShiftDescription>
-            <ImpactText>Impact: {shift.impact}</ImpactText>
-            {shift.linkTo && (
-              <Link href={shift.linkTo} passHref legacyBehavior>
-                <ViewLink>View Analysis →</ViewLink>
-              </Link>
-            )}
-          </ShiftCard>
-        ))}
+        {sortedShifts.length === 0 ? (
+          <EmptyState>
+            No critical or high-priority shifts detected in the last 72 hours.
+            Monitoring continues.
+          </EmptyState>
+        ) : (
+          sortedShifts.slice(0, 3).map((shift) => (
+            <ShiftCard key={shift.id} $severity={shift.severity}>
+              <ShiftHeader>
+                <ShiftTitle>{shift.title}</ShiftTitle>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <TimeframeBadge>{shift.timeframe}</TimeframeBadge>
+                  <SeverityBadge $severity={shift.severity}>{shift.severity}</SeverityBadge>
+                </div>
+              </ShiftHeader>
+              <ShiftDescription>{shift.description}</ShiftDescription>
+              <ImpactText>Impact: {shift.impact}</ImpactText>
+              {shift.linkTo && (
+                <Link href={shift.linkTo} passHref legacyBehavior>
+                  <ViewLink>View Analysis →</ViewLink>
+                </Link>
+              )}
+            </ShiftCard>
+          ))
+        )}
       </ShiftsList>
     </StoryContainer>
   );
 };
 
 export default RiskStory;
-
