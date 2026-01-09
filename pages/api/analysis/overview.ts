@@ -198,17 +198,26 @@ export default async function handler(
 
   try {
     // Fetch live news data - use internal API call
-    const baseUrl = req.headers.host 
-      ? `http://${req.headers.host}`
+    const forwardedProto = req.headers['x-forwarded-proto'] as string | undefined;
+    const forwardedHost = req.headers['x-forwarded-host'] as string | undefined;
+    const host = forwardedHost || req.headers.host;
+    const proto = forwardedProto || (host?.includes('localhost') ? 'http' : 'https');
+    const baseUrl = host
+      ? `${proto}://${host}`
       : process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const newsResponse = await fetch(`${baseUrl}/api/news/feed?limit=50`);
-    
-    if (!newsResponse.ok) {
-      throw new Error('Failed to fetch news data');
-    }
 
-    const newsData = await newsResponse.json();
-    const articles: NewsArticle[] = newsData.data || [];
+    let articles: NewsArticle[] = [];
+    try {
+      const newsResponse = await fetch(`${baseUrl}/api/news/feed?limit=50`);
+      if (newsResponse.ok) {
+        const newsData = await newsResponse.json();
+        articles = newsData.data || [];
+      } else {
+        console.error('News feed response not ok:', newsResponse.status);
+      }
+    } catch (fetchError) {
+      console.error('News feed fetch error (continuing with empty set):', fetchError);
+    }
 
     // Categorize articles by impact type
     const impactCategories: { [key: string]: NewsArticle[] } = {
