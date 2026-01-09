@@ -57,7 +57,6 @@ const Section = styled.div`
 `;
 
 export default function RiskPage() {
-  const [totalPnL, setTotalPnL] = useState(0);
   const [marketData, setMarketData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -69,14 +68,6 @@ export default function RiskPage() {
       fetch('/api/markets/divergence').then(r => r.json())
     ])
       .then(([eventsPortfolio, equitiesPortfolio, markets]) => {
-        // Calculate combined P&L from both portfolios
-        const eventsPnL = eventsPortfolio.success && eventsPortfolio.data ?
-          eventsPortfolio.data.metadata.unrealizedPnL : 0;
-        const equitiesPnL = equitiesPortfolio.success && equitiesPortfolio.data ?
-          equitiesPortfolio.data.metadata.unrealizedPnL : 0;
-
-        setTotalPnL(eventsPnL + equitiesPnL);
-
         if (markets.success) {
           setMarketData(markets.data);
         }
@@ -90,7 +81,7 @@ export default function RiskPage() {
 
   return (
     <PageContainer>
-      <Navigation totalPnL={totalPnL} />
+      <Navigation />
 
       <ContentContainer>
         <Header>
