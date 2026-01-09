@@ -65,19 +65,8 @@ export default function EventsPage() {
   const [newsData, setNewsData] = useState<any>({ data: [], loading: true });
   const [marketData, setMarketData] = useState<any[]>([]);
   const [marketLoading, setMarketLoading] = useState(true);
-  const [totalPnL, setTotalPnL] = useState(0);
 
   React.useEffect(() => {
-    // Fetch portfolio data for P&L
-    fetch('/api/portfolio')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success && data.data) {
-          setTotalPnL(data.data.metadata.unrealizedPnL || 0);
-        }
-      })
-      .catch(err => console.error('Portfolio data error:', err));
-
     // Fetch news feed
     fetch('/api/news/feed?limit=20')
       .then(res => res.json())
@@ -101,7 +90,7 @@ export default function EventsPage() {
 
   return (
     <PageContainer>
-      <Navigation totalPnL={totalPnL} />
+      <Navigation />
 
       <ContentContainer>
         <Header>

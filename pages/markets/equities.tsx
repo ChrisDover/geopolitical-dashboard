@@ -48,7 +48,6 @@ const PageSubtitle = styled.p`
 `;
 
 export default function EquitiesPage() {
-  const [totalPnL, setTotalPnL] = useState(0);
   const [tradeHistory, setTradeHistory] = useState<any[]>([]);
 
   useEffect(() => {
@@ -57,7 +56,6 @@ export default function EquitiesPage() {
       .then(r => r.json())
       .then(portfolio => {
         if (portfolio.success && portfolio.data) {
-          setTotalPnL(portfolio.data.metadata.unrealizedPnL || 0);
           setTradeHistory(portfolio.data.tradeHistory || []);
         }
       })
@@ -66,7 +64,7 @@ export default function EquitiesPage() {
 
   return (
     <PageContainer>
-      <Navigation totalPnL={totalPnL} />
+      <Navigation />
       <TradeNotifications equitiesTrades={tradeHistory} />
 
       <ContentContainer>
